@@ -1,0 +1,22 @@
+.default{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; 
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    border-radius: 9999px; 
+    font-weight: 500; 
+    font-size: 1.25rem; 
+    line-height: 1.75rem; 
+}
+.selected{
+    color: #ffffff; 
+    background-color: #374151; 
+
+}
+.active{
+    color: black;
+}
+.active:hover{
+    color: #ffffff; 
+    background-color: #374151; 
+}

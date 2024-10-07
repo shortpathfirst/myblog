@@ -1,0 +1,17 @@
+.button{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; 
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    border-radius:  9999px; 
+    border : 2px, solid,teal;
+    color: white; 
+    background-color: teal;
+    font-size: 16px;
+    font-weight: bolder;
+    text-wrap: nowrap;
+}
+.button:hover{
+    background-color: white;
+    color:teal;
+}

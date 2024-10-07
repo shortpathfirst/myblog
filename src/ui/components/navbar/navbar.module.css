@@ -1,0 +1,66 @@
+.navbar {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.nameImg {
+    display: flex;
+    align-items: center;
+}
+
+.profileImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid rgb(37 89 87);
+    margin-right: 16px;
+    margin-left: 16px;
+
+}
+
+.profileName {
+    color: rgb(37 89 87);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.navButtonsContainer {
+    display: none;
+    flex-grow: 1;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+}
+
+.navButtons {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.download {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .profileImg {
+        margin-left: 0;
+    }
+
+    .download {
+        display: block;
+    }
+
+    .mobileMenu {
+        display: none;
+    }
+
+    .navButtonsContainer {
+        display: flex;
+    }
+}
