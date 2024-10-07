@@ -8,13 +8,19 @@
 }
 
 .aboutme {
-    justify-content: center;
+    color:rgb(75 85 99);
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-align: justify;
+    text-justify: inter-word;
     padding: 1.5rem;
     border-radius: 0.5rem;
     width: 100%;
     background-color: #f9f9f9;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    
+}
+.aboutme p{
+    margin-bottom: 1rem;
 }
 
 @media (min-width: 1024px) {

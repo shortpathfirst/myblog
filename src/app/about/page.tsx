@@ -9,8 +9,9 @@ export default function About() {
         <Title> About me </Title>
         <div className={styles.aboutme}>
           <p>
-            Elit quis ullamco occaecat laboris nisi in. Incididunt labore pariatur dolor sint Lorem mollit. Nulla irure aliqua elit nisi enim aliquip. Labore duis nostrud proident culpa sit ipsum est ea. Amet incididunt Lorem ex enim qui mollit nulla officia magna. Veniam ea eiusmod laborum mollit et deserunt ipsum in ut tempor exercitation voluptate id.
+          I’m a passionate technology enthusiast with an engineering mindset and an insatiable curiosity for learning. My journey into the world of tech started at a young age, driven by a fascination with how things work and a desire to build and create.
           </p>
+
           <p>
             Nisi duis amet aute non ut dolore. Deserunt dolore deserunt adipisicing do dolore fugiat nisi id officia non. Pariatur nulla do nulla aliqua commodo laborum sint. Sint eiusmod commodo laboris irure enim ullamco adipisicing occaecat eiusmod nisi consequat ex aute duis.
           </p>

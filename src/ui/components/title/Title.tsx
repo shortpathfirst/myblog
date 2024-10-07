@@ -7,10 +7,11 @@ export default function Title({
   }>) {
     return (
         <h1 style={{
+            "color":"#3D3D3D",
             "paddingTop":"1rem",
             "paddingBottom":"1rem",
             "marginBottom":"1.5rem",
-            "fontWeight":700,
+            "fontWeight":800,
             "textAlign":"center",
             "textDecoration":"underline",
             "textDecorationColor":"teal",
