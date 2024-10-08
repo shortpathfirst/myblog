@@ -42,10 +42,19 @@
     padding-right: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
+
 }
 
 .description>p {
     color: #4B5563;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1.5;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3; 
+    /* Set the number of lines */
+    -webkit-box-orient: vertical;
 }
 
 @media (min-width: 640px) {

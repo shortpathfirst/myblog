@@ -12,11 +12,10 @@ export default function NavButton({ href, label }: Readonly<NavButtonProps>) {
 	const pathname = usePathname();
 
 	const linkClasses = (path: string) =>
-		`${styles.default } ${pathname === path 
+		`${styles.default } ${pathname.startsWith(path)
 			?styles.selected
 			:styles.active}`;
-	
-
+		
 	return (
 		<Link href={href} className={linkClasses(href)}>
 			{label}

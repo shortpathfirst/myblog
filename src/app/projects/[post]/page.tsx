@@ -1,6 +1,6 @@
 
 
-export default  function Post({ params }: Params) {
+export default  function ProjectPage({ params }: Params) {
  return (
     <main>
 

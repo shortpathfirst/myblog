@@ -12,10 +12,10 @@ interface CardProps {
 export default function BlogPostCard({ imageSrc, title, href, description }: CardProps) {
 	return (
 		<Link href={href}
-			  className={styles.card}
-			  rel="noopener noreferrer"
-			//    target="_blank"
-			  >
+			className={styles.card}
+			rel="noopener noreferrer"
+		//    target="_blank"
+		>
 			<Image
 				src={imageSrc}
 				alt={title}
@@ -27,9 +27,11 @@ export default function BlogPostCard({ imageSrc, title, href, description }: Car
 			<div className={styles.title}>
 				<h2>{title}</h2>
 			</div>
-			<div className={styles.description} style={!description?{"display":"none"}:undefined}>
-				<p>{description}</p>
-			</div>
+			{description ?
+				<div className={styles.description}>
+					<p>{description}</p>
+				</div>
+				: undefined}
 		</Link>
 	);
 };
