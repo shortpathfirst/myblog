@@ -1,0 +1,12 @@
+.anchor{
+    color: transparent;
+    position:absolute;
+
+    left:-2.5rem;
+}
+h2:hover .anchor {
+    color: #ccc;
+}
+.anchor:hover {
+    color: #3d3d3d;
+}
