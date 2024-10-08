@@ -8,10 +8,10 @@ export default function Blog() {
     <PageContainer>
       <Title>Articles</Title>
       <CardConteiner>
-        <BlogPostCard imageSrc={"/assets/images/article_2.webp"} title={"Creating a blog post"} href={"/"}></BlogPostCard>
-        <BlogPostCard imageSrc={"/assets/images/article_3.webp"} title={"Creating a blog post"} href={"/"}></BlogPostCard>
-        <BlogPostCard imageSrc={"/assets/images/article_1.webp"} title={"Creating a blog post"} href={"/"}></BlogPostCard>
-        <BlogPostCard imageSrc={"/assets/images/article_4.webp"} title={"Creating a blog post"} href={"/"}></BlogPostCard>
+        <BlogPostCard imageSrc={"/assets/images/article_2.webp"} title={"Creating a blog post"} href={"/blog/post2"}></BlogPostCard>
+        <BlogPostCard imageSrc={"/assets/images/article_3.webp"} title={"Creating a blog post"} href={"/blog/pos3"}></BlogPostCard>
+        <BlogPostCard imageSrc={"/assets/images/article_1.webp"} title={"Creating a blog post"} href={"/blog/post1"}></BlogPostCard>
+        <BlogPostCard imageSrc={"/assets/images/article_4.webp"} title={"Creating a blog post"} href={"/blog/post4"}></BlogPostCard>
       </CardConteiner>
     </PageContainer>
   );

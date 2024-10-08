@@ -13,7 +13,9 @@ export default function BlogPostCard({ imageSrc, title, href, description }: Car
 	return (
 		<Link href={href}
 			  className={styles.card}
-			  target="_blank" rel="noopener noreferrer">
+			  rel="noopener noreferrer"
+			//    target="_blank"
+			  >
 			<Image
 				src={imageSrc}
 				alt={title}
