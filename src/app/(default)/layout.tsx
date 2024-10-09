@@ -1,6 +1,6 @@
 import PageContainer from "@/ui/components/page-container/PageContainer";
 
-export default function RootLayout({
+export default function Layout({
     children,
 }: Readonly<{
     children: React.ReactNode;
