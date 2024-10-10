@@ -3,12 +3,13 @@ import Image from 'next/image';
 import ModalGeneric from "../modal/ModalGeneric";
 import ButtonDownload from "../ButtonDownload/ButtonDownload";
 import styles from './navbar.module.css'
+import React from "react";
 
 export default function NavbarProfile() {
-		
-	return (
+
+    return (
         <div className={styles.nameImg}>
-        <Link href={'/'}>
+
             <ModalGeneric img={
                 <Image
                     src="/assets/profile.webp"
@@ -32,16 +33,13 @@ export default function NavbarProfile() {
                         <h2>Software Engineer</h2>
                         <p>I'm a passionate technology enthusiast with an engeneering background.</p>
                         <ButtonDownload></ButtonDownload>
-
                     </div>
-
                 </div>
-
             </ModalGeneric>
-        </Link>
-        <Link href={'/'}>
-            <h1 className={styles.profileName}>Andrea Blog</h1>
-        </Link>
-    </div>
-	);
+
+            <Link href={'/'}>
+                <h1 className={styles.profileName}>Andrea Blog</h1>
+            </Link>
+        </div>
+    );
 }

@@ -73,7 +73,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    scale: 0.7;
 }
 
 .modalDescription h1 {
@@ -92,7 +91,7 @@
     font-size: 1.125rem;
     line-height: 1.75rem;
     text-wrap: wrap;
-    max-width: 50%;
+    max-width: 70%;
     text-align: center;
 }
 
@@ -120,4 +119,11 @@
         height: 70vmin;
     }
 
+}
+@media (max-width: 420px) {
+    .modalDescription {
+        border-radius: unset;
+        background-color: unset;
+        border: unset;
+    }
 }
