@@ -1,6 +1,7 @@
 
 import Post1 from "@/_posts/Post1";
 import Post2 from "@/_posts/Post2";
+import Post3 from "@/_posts/Post3";
 
 export function getPostBySlug(post: string) {
 
@@ -10,7 +11,9 @@ export function getPostBySlug(post: string) {
     if (post == "post2") {
         return <Post2></Post2>;
     }
-
+    if (post == "post3") {
+        return <Post3></Post3>;
+    }
 
     return <></> as React.ReactNode;
 }

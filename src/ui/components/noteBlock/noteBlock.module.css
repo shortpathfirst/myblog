@@ -1,0 +1,8 @@
+.note{
+    font-family: 'PT Serif','serif';
+    box-shadow: 0 8px 16px rgba(204, 204, 119, 0.4);
+    background: #ffa;
+    border-bottom: solid 1px rgba(204, 204, 119, 0.6);
+    padding: 18px;
+    margin: 2em -18px 0 -18px;
+}

@@ -1,0 +1,274 @@
+{
+    "center": {
+        "region_id": "DABEL",
+        "districts": [
+            {
+                "name": "batista_campo",
+                "relation_id": 5130874
+            },
+            {
+                "name": "campina",
+                "relation_id": 5130964
+            },
+            {
+                "name": "cidade_velha",
+                "relation_id": 5130875
+            },
+            {
+                "name": "marco",
+                "relation_id": 5144658
+            },
+            {
+                "name": "Nazare",
+                "relation_id": 5136602
+            },
+            {
+                "name": "Reduto",
+                "relation_id": 5130967
+            },
+            {
+                "name": "sao_bras",
+                "relation_id": 5136603
+            },
+            {
+                "name": "umarizal",
+                "relation_id": 5136604
+            }
+        ]
+    },
+    "guama": {
+        "region_id": "DAGUA",
+        "districts": [
+            {
+                "name": "guama",
+                "relation_id": 5138474
+            },
+            {
+                "name": "canudos",
+                "relation_id": 5144657
+            },
+            {
+                "name": "condor",
+                "relation_id": 5130965
+            },
+            {
+                "name": "cremacao",
+                "relation_id": 5136601
+            },
+            {
+                "name": "jurunas",
+                "relation_id": 5130966
+            },
+            {
+                "name": "terra_firme",
+                "relation_id": 5138476
+            }
+        ]
+    },
+    "outeiro": {
+        "region_id": "DAOUT",
+        "districts": [
+            {
+                "name": "full",
+                "relation_id": 6458567
+            },
+            {
+                "name": "ilha_de_carateua",
+                "relation_id": 1162524
+            },
+            {
+                "name": "ilha_cotijuba",
+                "relation_id": 7798187
+            },
+            {
+                "name": "ilha_paqueta-acu",
+                "relation_id": 11334121
+            },
+            {
+                "name": "mixed_islands",
+                "relation_id": null
+            },
+            {
+                "name": "agua_boa",
+                "relation_id": null
+            },
+            {
+                "name": "brasilia",
+                "relation_id": null
+            },
+            {
+                "name": "itaiteua",
+                "relation_id": null
+            },
+            {
+                "name": "sao_joao_do_outeiro",
+                "relation_id": null
+            }
+        ]
+    },
+    "entrocamento": {
+        "region_id": "DAENT",
+        "districts": [
+            {
+                "name": "aguas_lindas",
+                "relation_id": 6049602
+            },
+            {
+                "name": "aura",
+                "relation_id": 6049592
+            },
+            {
+                "name": "castanheira",
+                "relation_id": 5295198
+            },
+            {
+                "name": "curio-utinga",
+                "relation_id": 6049595
+            },
+            {
+                "name": "guanabara",
+                "relation_id": 6049596
+            },
+            {
+                "name": "mangueirao",
+                "relation_id": 5273090
+            },
+            {
+                "name": "marambaia",
+                "relation_id": 5241548
+            },
+            {
+                "name": "souza",
+                "relation_id": 5241549
+            },
+            {
+                "name": "universitario",
+                "relation_id": 5241550
+            },
+            {
+                "name": "val_de_caes",
+                "relation_id": 5249872
+            }
+        ]
+    },
+    "icoaraci": {
+        "region_id": "DAICO",
+        "districts": [
+            {
+                "name": "aguas_negras",
+                "relation_id": 5295200
+            },
+            {
+                "name": "Agulha",
+                "relation_id": 5283439
+            },
+            {
+                "name": "Campina_de_Icoaraci",
+                "relation_id": 5283440
+            },
+            {
+                "name": "Cruzeiro",
+                "relation_id": 5283441
+            },
+            {
+                "name": "Maracacuera",
+                "relation_id": 5283442
+            },
+            {
+                "name": "Paracuri",
+                "relation_id": 5283443
+            },
+            {
+                "name": "Parque_guajara",
+                "relation_id": 5283444
+            },
+            {
+                "name": "Ponta Grossa",
+                "relation_id": 5283445
+            },
+            {
+                "name": "Tenone",
+                "relation_id": 5295199
+            }
+        ]
+    },
+    "bengui": {
+        "region_id": "DABEN",
+        "districts": [
+            {
+                "name": "bengui",
+                "relation_id": 5249869
+            },
+            {
+                "name": "cabanagem",
+                "relation_id": 5249870
+            },
+            {
+                "name": "Coqueiro",
+                "relation_id": 5273089
+            },
+            {
+                "name": "parque_verde",
+                "relation_id": 5249871
+            },
+            {
+                "name": "pratinha",
+                "relation_id": 5278970
+            },
+            {
+                "name": "sao_clemente",
+                "relation_id": 5283446
+            },
+            {
+                "name": "tapana",
+                "relation_id": 5283447
+            },
+            {
+                "name": "una",
+                "relation_id": 5278971
+            }
+        ]
+    },
+    "mosqueiro": {
+        "region_id": "DAMOS",
+        "districts": [
+            {
+                "name": "ilha_do_mosqueiro",
+                "relation_id": 1162522
+            }
+        ]
+    },
+    "sacramenta": {
+        "region_id": "DASAC",
+        "districts": [
+            {
+                "name": "sacramenta",
+                "relation_id": 5158495
+            },
+            {
+                "name": "fatima",
+                "relation_id": 5138473
+            },
+            {
+                "name": "Barreiro",
+                "relation_id": 5158493
+            },
+            {
+                "name": "maracangalha",
+                "relation_id": 5230358
+            },
+            {
+                "name": "miramar",
+                "relation_id": 5230359
+            },
+            {
+                "name": "Pedreira",
+                "relation_id": 5158494
+            },
+            {
+                "name": "Telegrafo",
+                "relation_id": 5138475
+            }
+        ]
+    }
+}

@@ -15,11 +15,31 @@ npm i --save @fortawesome/free-brands-svg-icons
 npm i --save @fortawesome/react-fontawesome@latest
 ```
 
+2. Adding d3
 
+```js
+npm i d3
+npm i @types/d3
+```
 
+3. Adding syntax highlither with marked parser
+```js
+npm i highlight.js marked
+// Stylesin appjs file
+import "highlight.js/styles/github.css"; 
 
+// Using ES6 import syntax
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
 
-
+// Then register the languages you need
+hljs.registerLanguage('javascript', javascript);
+```
+Add dom purifier for `marked` to prevent XSS attacks
+```js
+npm i dompurify
+npm i @types/dompurify
+```
 
 
 
