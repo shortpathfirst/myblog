@@ -31,7 +31,7 @@ export default function NavbarProfile() {
                         />
                         <h1>Andrea Blog</h1>
                         <h2>Software Engineer</h2>
-                        <p>I'm a passionate technology enthusiast with an engeneering background.</p>
+                        <p>I&apos;m a passionate technology enthusiast with an engeneering background.</p>
                         <ButtonDownload></ButtonDownload>
                     </div>
                 </div>

@@ -1,6 +1,5 @@
 import PostBody from "@/ui/components/post/post-body";
 import PostHeader from "@/ui/components/post/post-header";
-import { AnchorTitle } from "@/ui/components/title/AnchorTitle";
 import React from "react";
 import VisualizationBigData from "./post2/VisualizationBigData";
 import ModalImage from "@/ui/components/modal/ModalImage";

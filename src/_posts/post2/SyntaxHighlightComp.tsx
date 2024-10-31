@@ -37,7 +37,7 @@ function SyntaxHighlightComp() {
         <div >
         {/* Example with raw JS */}
         <pre>
-          <code className="language-typescript">const variable = 'raw';</code>
+          <code className="language-typescript">const variable = &apos;raw&apos;;</code>
         </pre>
   
         {/* Example with marked */}

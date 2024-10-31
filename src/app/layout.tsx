@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "../ui/components/footer/Footer";
 import Navbar from "@/ui/components/navbar/Navbar";
+import PageContainer from "@/ui/components/page-container/PageContainer";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -29,10 +30,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh"}}>
-         <Navbar></Navbar>
-          <main style={{ "flex": 1}}>
-            {children}
-          </main>
+          <Navbar></Navbar>
+            <main style={{ "flex": 1 }}>
+    <PageContainer>
+              {children}</PageContainer>
+            </main>
           <Footer />
         </div>
       </body>

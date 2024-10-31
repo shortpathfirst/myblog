@@ -1,5 +1,3 @@
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
-
 export default function Title({
     children,
   }: Readonly<{

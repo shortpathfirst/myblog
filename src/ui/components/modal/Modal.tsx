@@ -1,6 +1,6 @@
-import React, { MouseEventHandler } from "react";
+import React, { CSSProperties, MouseEventHandler } from "react";
 
-const modal: any = {
+const modal: CSSProperties = {
     position: "fixed",
     zIndex: 10,
     left: 0,
@@ -11,7 +11,7 @@ const modal: any = {
     backgroundColor: "rgba(0, 0, 0, 0.8)"
 };
 
-const close: any = {
+const close: CSSProperties = {
     position: "absolute",
     top: 15,
     right: 35,
@@ -21,13 +21,13 @@ const close: any = {
     cursor: "pointer"
 };
 
-const modalContent = {
+const modalContent: CSSProperties = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     height: "100%",
     width: "100%",
-    
+
 
 };
 

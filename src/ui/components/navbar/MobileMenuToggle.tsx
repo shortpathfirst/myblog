@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import styles from './mobilemenu.module.css'
-import ButtonDownload from '../ButtonDownload/ButtonDownload';
 
 export default function MobileMenuToggle() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

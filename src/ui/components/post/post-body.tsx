@@ -1,5 +1,4 @@
-import Divider from "../divider/Divider";
-import styles from './postheader.module.css'
+
 type Props = {
     children:  React.ReactNode;
 }
