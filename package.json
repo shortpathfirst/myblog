@@ -1,6 +1,19 @@
 {
   "name": "myblog",
-  "version": "0.1.0",
+  "version": "0.9.0",
+  "description": "My personal blog to showcase some project",
+  "homepage": "https://localhost:3000",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shortpathfirst/myblog"
+  },
+  "keywords": [
+    "nextjs",
+    "blog"
+  ],
+  "author": {
+    "name": "Andrea"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
