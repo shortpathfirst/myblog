@@ -1,3 +1,4 @@
+import { getAllProject } from "@/lib/api";
 
 type Params = {
   params: {
@@ -7,12 +8,19 @@ type Params = {
 
 
 
-export default  function ProjectPage({ params }: Params) {
+export default function ProjectPage({ params }: Params) {
   console.log(params)
- return (
+  return (
     <main>
 
     </main>
   );
 }
 
+// Fetching dynamic paths
+export async function generateStaticParams() {
+  const posts = getAllProject();
+  return posts.map(post => ({
+    post: post.urlTitle,
+  }));
+}

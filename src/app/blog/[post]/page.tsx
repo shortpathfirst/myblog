@@ -1,5 +1,6 @@
 import { getPostBySlug } from "@/lib/api";
 import Divider from "@/ui/components/divider/Divider";
+import { getAllPost } from "@/lib/api";
 
 export default function Post({ params }: Params) {
 
@@ -21,3 +22,12 @@ type Params = {
     post: string;
   };
 };
+
+
+// Fetching dynamic paths
+export async function generateStaticParams() {
+  const posts = getAllPost();
+  return posts.map(post => ({
+    post: post.urlTitle,
+  }));
+}
