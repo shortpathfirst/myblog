@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import styles from './mobilemenu.module.css'
+import { NAVLINKS } from '@/lib/constants';
 
 export default function MobileMenuToggle() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,10 +22,9 @@ export default function MobileMenuToggle() {
 			{isMobileMenuOpen && (
 				<div className={styles.menuContainer}>
 					<div className={styles.menu}>
-						<NavButton href="/blog" label="Blog" />
-						<NavButton href="/projects" label="Projects" />
-						<NavButton href="/experience" label="Experience" />
-						<NavButton href="/about" label="About" />
+						{NAVLINKS.map((url,i) =>
+							<NavButton key={i} href={url.url} label={url.label} />
+						)}
 					</div>
 				</div>
 			)}

@@ -5,6 +5,7 @@ import Footer from "../ui/components/footer/Footer";
 import Navbar from "@/ui/components/navbar/Navbar";
 import PageContainer from "@/ui/components/page-container/PageContainer";
 
+
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Blog",
+  title: "My Next.js Blog",
   description: "my persona blog",
 };
 
@@ -28,13 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh"}}>
+        <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh" }}>
           <Navbar></Navbar>
-            <main style={{ "flex": 1 }}>
-    <PageContainer>
+          <main style={{ "flex": 1 }}>
+            <PageContainer>
               {children}</PageContainer>
-            </main>
+          </main>
           <Footer />
         </div>
       </body>

@@ -4,6 +4,7 @@ import ButtonDownload from '../ButtonDownload/ButtonDownload';
 import MobileMenuToggle from './MobileMenuToggle';
 import PageContainer from '../page-container/PageContainer';
 import NavbarProfile from './NavbarProfile';
+import { NAVLINKS } from '@/lib/constants';
 
 
 export default function Navbar() {
@@ -14,10 +15,9 @@ export default function Navbar() {
 					<NavbarProfile></NavbarProfile>
 					<div className={styles.navButtonsContainer}>
 						<div className={styles.navButtons}>
-							<NavButton href="/blog" label="Blog" />
-							<NavButton href="/projects" label="Projects" />
-							<NavButton href="/experience" label="Experience" />
-							<NavButton href="/about" label="About" />
+							{NAVLINKS.map((url,i) =>
+								<NavButton key={i} href={url.url} label={url.label} />
+							)}
 						</div>
 					</div>
 					<div className={styles.download}>

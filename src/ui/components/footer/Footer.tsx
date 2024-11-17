@@ -8,19 +8,21 @@ export default function Footer() {
 
     const icon_size = '2x';
 
+    const LINKS = [
+        { url: "https://github.com/shortpathfirst", label: "GitHub", icon: faGithub },
+        { url: "https://github.com/shortpathfirst", label: "LinkedIn", icon: faLinkedin },
+        { url: "https://github.com/shortpathfirst", label: "Email", icon: faEnvelope },
+    ]
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.social}>
-                    <a href="https://github.com/lraveri" target="_blank" aria-label="GitHub" >
-                        <FontAwesomeIcon icon={faGithub} size={icon_size} />
-                    </a>
-                    <a href="https://www.linkedin.com/in/lucaraveri" target="_blank" aria-label="LinkedIn">
-                        <FontAwesomeIcon icon={faLinkedin} size={icon_size} />
-                    </a>
-                    <a href="mailto:info@lucaraveri.com" aria-label="Email" >
-                        <FontAwesomeIcon icon={faEnvelope} size={icon_size} />
-                    </a>
+                    {LINKS.map((link,i) =>
+                        <a key={i} href={link.url} target="_blank" aria-label={link.label} >
+                            <FontAwesomeIcon icon={link.icon} size={icon_size} />
+                        </a>
+                    )}
                 </div>
                 <div className={styles.description}>
                     Made with Next.js and hosted on Vercel

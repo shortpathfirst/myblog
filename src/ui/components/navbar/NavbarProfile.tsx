@@ -12,7 +12,7 @@ export default function NavbarProfile() {
 
             <ModalGeneric img={
                 <Image
-                    src="/assets/profile.webp"
+                    src="/assets/profile.jpg"
                     alt="Logo"
                     width={40}
                     height={40}
@@ -23,7 +23,7 @@ export default function NavbarProfile() {
                 <div className={styles.modalDescription}>
                     <div>
                         <Image
-                            src="/assets/profile.webp"
+                            src="/assets/profile.jpg"
                             alt="Logo"
                             width={200}
                             height={200}
