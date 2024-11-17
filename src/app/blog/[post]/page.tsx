@@ -1,7 +1,6 @@
 import { getPostBySlug } from "@/lib/api";
 import Divider from "@/ui/components/divider/Divider";
 import { getAllPost } from "@/lib/api";
-import Title from "@/ui/components/title/Title";
 
 export default async function Post({ params }: Params) {
 
