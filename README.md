@@ -17,6 +17,10 @@ npm i --save @fortawesome/react-fontawesome@latest
 
 2. Adding d3
 
+3. Remark
+npm i remark
+npm i remark-html
+
 ```js
 npm i d3
 npm i @types/d3

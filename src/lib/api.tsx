@@ -2,9 +2,14 @@
 import Post1 from "@/_posts/Post1";
 import Post2 from "@/_posts/Post2";
 import Post3 from "@/_posts/Post3";
+import { join } from "path";
+import fs from "fs";
+import markdownToHtml from "./markdownToHtml";
 
-export function getPostBySlug(post: string) {
+const postsDirectory = join(process.cwd(), "src/_posts");
 
+export async function getPostBySlug(post: string) {
+    console.log(postsDirectory)
     if (post == "post1") {
         return <Post1></Post1>;
     }
@@ -13,6 +18,14 @@ export function getPostBySlug(post: string) {
     }
     if (post == "post3") {
         return <Post3></Post3>;
+    }
+    if(post=="post4"){
+        const fullPath = join(postsDirectory, `${post}.md`);
+        const fileContents = fs.readFileSync(fullPath, "utf8");
+
+        return <div
+        dangerouslySetInnerHTML={{ __html: await markdownToHtml(fileContents) }}
+      /> 
     }
 
     return <></> as React.ReactNode;
@@ -69,3 +82,4 @@ export function getAllProject(){
         },
     ]
 }
+
