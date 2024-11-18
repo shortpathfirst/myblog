@@ -4,4 +4,4 @@ export const NAVLINKS = [
     { url: "/experience", label: "Experience" },
     { url: "/about", label: "About" },
 ]
-export const basePath = process.env.NODE_ENV === 'production'?'/myblog/public':''
+export const basePath = process.env.NODE_ENV === 'production' ? '/myblog/blob/master/public' : ''
