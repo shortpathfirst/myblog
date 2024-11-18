@@ -7,6 +7,7 @@ import SyntaxHighlightComp from "./post2/SyntaxHighlightComp";
 import ImageHoverCard from "@/ui/components/ImageHoverCard/ImageHoverCard";
 import ImageHoverContent from "@/ui/components/ImageHoverCard/ImageHoverContent";
 import NoteBlock from "@/ui/components/noteBlock/NoteBlock";
+import { basePath } from "@/lib/constants";
 
 export default function Post2() {
   return (
@@ -25,10 +26,10 @@ export default function Post2() {
         </p>
 
       </PostBody>
-      <ModalImage src="/assets/images/article_2.webp" width={600} height={600}></ModalImage>
+      <ModalImage src={`${basePath}/assets/images/article_2.webp`} width={600} height={600}></ModalImage>
       <VisualizationBigData></VisualizationBigData>
       <SyntaxHighlightComp></SyntaxHighlightComp>
-      <ImageHoverCard src="/assets/images/article_2.webp" width={400} height={400}>
+      <ImageHoverCard src={`${basePath}/assets/images/article_2.webp`} width={400} height={400}>
         <ImageHoverContent title="Example">This is an example of content</ImageHoverContent>
       </ImageHoverCard>
       <NoteBlock>This is a block</NoteBlock>

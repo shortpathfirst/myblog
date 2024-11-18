@@ -5,6 +5,7 @@ import Post3 from "@/_posts/Post3";
 import { join } from "path";
 import fs from "fs";
 import markdownToHtml from "./markdownToHtml";
+import { basePath } from "./constants";
 
 const postsDirectory = join(process.cwd(), "src/_posts");
 
@@ -27,6 +28,14 @@ export async function getPostBySlug(post: string) {
         dangerouslySetInnerHTML={{ __html: await markdownToHtml(fileContents) }}
       /> 
     }
+    if(post=="Geojson"){
+        const fullPath = join(postsDirectory, `${post}.md`);
+        const fileContents = fs.readFileSync(fullPath, "utf8");
+
+        return <div
+        dangerouslySetInnerHTML={{ __html: await markdownToHtml(fileContents) }}
+      /> 
+    }
 
     return <></> as React.ReactNode;
 }
@@ -34,25 +43,30 @@ export async function getPostBySlug(post: string) {
 export function getAllPost() {
     return [
         {
-            imageSrc: "/assets/images/article_2.webp",
+            imageSrc: `${basePath}/assets/images/article_2.webp`,
             title: "Creating a blog post",
             urlTitle: "post2",
             description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
         },
         {
-            imageSrc: "/assets/images/article_3.webp",
+            imageSrc: `${basePath}/assets/images/article_3.webp`,
             title: "Creating a blog post",
             urlTitle: "post3",
         },
         {
-            imageSrc: "/assets/images/article_1.webp",
+            imageSrc: `${basePath}/assets/images/article_1.webp`,
             title: "Creating a blog post",
             urlTitle: "post1",
         },
         {
-            imageSrc: "/assets/images/article_4.webp",
+            imageSrc: `${basePath}/assets/images/article_4.webp`,
             title: "Creating a blog post",
             urlTitle: "post4",
+        },
+        {
+            imageSrc: `${basePath}/assets/images/article_4.webp`,
+            title: "Creating a blog post",
+            urlTitle: "Geojson",
         },
     ];
 }
@@ -60,13 +74,13 @@ export function getAllPost() {
 export function getAllProject(){
     return [
         {
-            imageSrc: "/assets/images/article_1.webp",
+            imageSrc: `${basePath}/assets/images/article_1.webp`,
             title: "Creating a blog post",
             urlTitle: "https://shortpathfirst.github.io/AngularPesi/",
             description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
         },
         {
-            imageSrc: "/assets/images/article_2.webp",
+            imageSrc: `${basePath}/assets/images/article_2.webp`,
             title: "Creating a blog post",
             urlTitle: "/projects/AngularPesi",
             description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
