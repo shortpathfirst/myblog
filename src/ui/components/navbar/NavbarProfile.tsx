@@ -4,7 +4,7 @@ import ModalGeneric from "../modal/ModalGeneric";
 import ButtonDownload from "../ButtonDownload/ButtonDownload";
 import styles from './navbar.module.css'
 import React from "react";
-import { basePath } from "@/lib/constants";
+import config from "@/../next.config.mjs";
 
 export default function NavbarProfile() {
 
@@ -13,7 +13,7 @@ export default function NavbarProfile() {
 
             <ModalGeneric img={
                 <Image
-                    src={`${basePath}/assets/profile.jpg`}
+                    src={`${config.basePath}/assets/profile.jpg`}
                     alt="Logo"
                     width={40}
                     height={40}
@@ -24,7 +24,7 @@ export default function NavbarProfile() {
                 <div className={styles.modalDescription}>
                     <div>
                         <Image
-                            src={`${basePath}/assets/profile.jpg`}
+                            src={`${config.basePath}/assets/profile.jpg`}
                             alt="Logo"
                             width={200}
                             height={200}
