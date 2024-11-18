@@ -20,6 +20,9 @@ npm i --save @fortawesome/react-fontawesome@latest
 3. Remark
 npm i remark
 npm i remark-html
+4. Rehype
+npm i rehype
+npm i rehype-highlight
 
 ```js
 npm i d3

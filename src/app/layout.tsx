@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   icons: {
     icon:["icons/favicon.ico"],
   },
-  manifest:"./manifest.json"
+  // manifest:"./manifest.json"
 };
 
 export default function RootLayout({

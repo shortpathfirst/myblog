@@ -34,6 +34,8 @@
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
+    "rehype": "^13.0.2",
+    "rehype-highlight": "^7.0.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },
