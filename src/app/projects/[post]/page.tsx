@@ -1,14 +1,13 @@
 import { getAllProject } from "@/lib/api";
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
+// type Params = {
+//   params: {
+//     slug: string;
+//   };
+// };
 
 
-
-export default function ProjectPage({ params }: Params) {
+export default function ProjectPage() {
   return (
     <main>
 
