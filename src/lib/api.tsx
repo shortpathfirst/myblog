@@ -6,6 +6,7 @@ import { join } from "path";
 import fs from "fs";
 import markdownToHtml from "./markdownToHtml";
 import { basePath } from "./constants";
+import { config } from "process";
 
 const postsDirectory = join(process.cwd(), "src/_posts");
 
