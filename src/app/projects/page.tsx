@@ -14,7 +14,7 @@ export default function Projects() {
       <Title>Projects</Title>
       <CardConteiner>
         {postsData.map((p, i) =>
-          <BlogPostCard key={`${i}`} imageSrc={p.imageSrc} title={p.title} href={`/projects/${p.urlTitle}`} description={p.description}></BlogPostCard>
+          <BlogPostCard key={`${i}`} imageSrc={p.imageSrc} title={p.title} href={`${p.urlTitle}`} description={p.description}></BlogPostCard>
         )}
       </CardConteiner>
     </PageContainer>

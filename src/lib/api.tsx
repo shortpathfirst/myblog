@@ -62,23 +62,14 @@ export function getAllProject(){
         {
             imageSrc: "/assets/images/article_1.webp",
             title: "Creating a blog post",
-            urlTitle: "post2",
+            urlTitle: "https://shortpathfirst.github.io/AngularPesi/",
             description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
         },
         {
             imageSrc: "/assets/images/article_2.webp",
             title: "Creating a blog post",
-            urlTitle: "post3",
-        },
-        {
-            imageSrc: "/assets/images/article_3.webp",
-            title: "Creating a blog post",
-            urlTitle: "post1",
-        },
-        {
-            imageSrc: "/assets/images/article_4.webp",
-            title: "Creating a blog post",
-            urlTitle: "post4",
+            urlTitle: "/projects/AngularPesi",
+            description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
         },
     ]
 }
