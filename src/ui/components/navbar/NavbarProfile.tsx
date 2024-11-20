@@ -7,13 +7,17 @@ import React from "react";
 import config from "@/../next.config.mjs";
 
 export default function NavbarProfile() {
+    const profile = {
+        modalImg:`${config.basePath}/assets/profile.jpg`,
+        img:`${config.basePath}/assets/profile.jpg`
+    }
 
     return (
         <div className={styles.nameImg}>
 
             <ModalGeneric img={
                 <Image
-                    src={`${config.basePath}/assets/profile.jpg`}
+                    src={profile.img}
                     alt="Logo"
                     width={40}
                     height={40}
@@ -24,7 +28,7 @@ export default function NavbarProfile() {
                 <div className={styles.modalDescription}>
                     <div>
                         <Image
-                            src={`${config.basePath}/assets/profile.jpg`}
+                            src={profile.modalImg}
                             alt="Logo"
                             width={200}
                             height={200}

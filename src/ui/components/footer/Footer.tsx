@@ -7,7 +7,7 @@ import styles from './footer.module.css'
 export default function Footer() {
 
     const icon_size = '2x';
-
+    const HOSTPLATFORM = 'Github'
     const LINKS = [
         { url: "https://github.com/shortpathfirst", label: "GitHub", icon: faGithub },
         { url: "https://github.com/shortpathfirst", label: "LinkedIn", icon: faLinkedin },
@@ -25,7 +25,7 @@ export default function Footer() {
                     )}
                 </div>
                 <div className={styles.description}>
-                    Made with Next.js and hosted on Vercel
+                    Made with Next.js and hosted on {HOSTPLATFORM}
                 </div>
             </div>
         </footer>

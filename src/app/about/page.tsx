@@ -9,7 +9,7 @@ export default function About() {
         <Title> About me </Title>
         <div className={styles.aboutme}>
           <p>
-          I’m a passionate technology enthusiast with an engineering mindset and an insatiable curiosity for learning. My journey into the world of tech started at a young age, driven by a fascination with how things work and a desire to build and create.
+          I'm a passionate technology enthusiast with an engineering mindset and an insatiable curiosity for learning. My journey into the world of tech started at a young age, driven by a fascination with how things work and a desire to build and create.
           </p>
 
           <p>
