@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from 'next/image';
 import ModalGeneric from "../modal/ModalGeneric";
-import ButtonDownload from "../ButtonDownload/ButtonDownload";
-import styles from './navbar.module.css'
+import ButtonDownload from "../buttons/ButtonDownload";
+import styles from '@/ui/styles/navbar/navbar.module.css'
 import React from "react";
 import config from "@/../next.config.mjs";
 

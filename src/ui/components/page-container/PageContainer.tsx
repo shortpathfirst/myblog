@@ -1,5 +1,5 @@
 
-import styles from './pagecontainer.module.css'
+import styles from '@/ui/styles/pagecontainer.module.css'
 
 export default function PageContainer({
     children,

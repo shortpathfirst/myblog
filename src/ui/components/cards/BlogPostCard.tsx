@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './blogpostcard.module.css'
+import styles from '@/ui/styles/cards/blogpostcard.module.css'
 
 interface CardProps {
 	imageSrc: string;

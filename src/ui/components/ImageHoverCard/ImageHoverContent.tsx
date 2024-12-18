@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './imagehovercard.module.css'
+import styles from '@/ui/styles/imagehovercard.module.css'
 type Props = {
     title:string;
     children:string;

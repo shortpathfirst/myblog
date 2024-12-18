@@ -1,4 +1,4 @@
-import styles from './postheader.module.css'
+import styles from '@/ui/styles/postheader.module.css'
 
 type Props = {
     title: string;

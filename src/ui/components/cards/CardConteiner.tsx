@@ -1,4 +1,4 @@
-import styles from './cardcontainer.module.css'
+import styles from '@/ui/styles/cards/cardcontainer.module.css'
 
 export default function CardConteiner({
     children,

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './noteBlock.module.css'
+import styles from '@/ui/styles/noteBlock.module.css'
 
 type Props ={
     title?:string,

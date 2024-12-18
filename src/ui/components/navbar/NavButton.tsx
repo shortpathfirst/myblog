@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import styles from './navbutton.module.css'
+import styles from '@/ui/styles/navbar/navbutton.module.css'
 
 interface NavButtonProps {
 	href: string;

@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import styles from './imagehovercard.module.css'
+import styles from '@/ui/styles/imagehovercard.module.css'
 import Link from 'next/link';
 
 type Props = {

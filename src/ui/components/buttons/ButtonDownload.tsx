@@ -1,5 +1,5 @@
 'use client'
-import styles from './buttondownload.module.css'
+import styles from '@/ui/styles/buttondownload.module.css'
 
 export default function ButtonDownload() {
     return (

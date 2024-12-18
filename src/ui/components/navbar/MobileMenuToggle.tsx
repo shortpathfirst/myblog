@@ -4,7 +4,7 @@ import NavButton from './NavButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
-import styles from './mobilemenu.module.css'
+import styles from '@/ui/styles/navbar/mobilemenu.module.css'
 import { NAVLINKS } from '@/lib/constants';
 
 export default function MobileMenuToggle() {
