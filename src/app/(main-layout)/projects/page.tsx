@@ -10,13 +10,13 @@ export default function Projects() {
   const postsData: PostData[] = getAllProject();
 
   return (
-    <PageContainer>
+    <>
       <Title>Projects</Title>
       <CardConteiner>
         {postsData.map((p, i) =>
           <BlogPostCard key={`${i}`} imageSrc={p.imageSrc} title={p.title} href={`${p.urlTitle}`} description={p.description}></BlogPostCard>
         )}
       </CardConteiner>
-    </PageContainer>
+    </>
   );
 }

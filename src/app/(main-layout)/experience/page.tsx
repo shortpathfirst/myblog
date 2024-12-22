@@ -3,8 +3,8 @@ import Title from "@/ui/components/title/Title";
 
 export default function Experience() {
   return (
-    <PageContainer>
+    <>
       <Title>Experiences</Title>
-    </PageContainer>
+    </>
   );
 }
