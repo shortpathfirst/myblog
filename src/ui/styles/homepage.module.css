@@ -1,46 +1,70 @@
 .page {
-
   min-height: 100svh;
-  background-color: azure;
+}
 
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+.main {
+  font-size: 18px;
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+}
 
+.main>.strip:nth-child(odd) {
+  background-color: #2d2d2d;
+  color: white;
+}
+
+.main>.strip:nth-child(even) {
+  background-color: inherit;
+  color: black;
+}
+
+.strip {
+  width: 100%;
+  background-color: #2d2d2d;
   display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 
-  padding: 80px;
-  gap: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.image {
+  flex: 1;
+  padding: 2rem;
 }
 
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
+.description {
+  flex: 1;
+  padding: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.highlight {
+  width: fit-content;
+  padding: 2rem;
+  color: black;
+  padding: 1rem;
+  opacity: 0.8;
+  border-radius: 25px;
+}
+
+.strip:nth-child(even) .highlight {
+  background-color: rgba(51, 51, 51, 0.39);
+}
+
+.strip:nth-child(odd) .highlight {
+  background-color: rgba(255, 255, 255, 0.856);
+}
+
+.imageList {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .strip {
+    flex-direction: column;
   }
-} 
+
+}
