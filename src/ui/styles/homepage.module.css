@@ -4,7 +4,6 @@
 
 .main {
   font-size: 18px;
-
 }
 
 .main>.strip:nth-child(odd) {
@@ -14,6 +13,7 @@
 
 .main>.strip:nth-child(even) {
   background-color: inherit;
+  /* background-color: rgb(219, 219, 224); */
   color: black;
 }
 
@@ -30,7 +30,7 @@
 
 .image {
   flex: 1;
-  padding: 2rem;
+  padding: 2rem ;
 }
 
 .description {
@@ -65,6 +65,9 @@
 @media screen and (max-width: 1024px) {
   .strip {
     flex-direction: column;
+  }
+.description{
+    padding-top: 0;
   }
 
 }
