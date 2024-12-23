@@ -52,14 +52,15 @@ export const content = [
     title: "Angular",
     imageURL: `${config.basePath}/assets/skills/angular.jpg`,
     description: <>
-      <p className={styles.highlight}>Angular is a development platform built on Typescript.
-      
-      <ul>
-        <li>A component-based framework for building scalable web applications</li>
-        <li>Feature libraris for routing, forms, materials</li>
-        <li>Tools for build, test, and update your code.</li>
-      </ul>
-      </p>
+      <div className={styles.highlight}>
+        <p >Angular is a development platform built on Typescript.
+        </p>
+        <ul>
+          <li>A component-based framework for building scalable web applications</li>
+          <li>Feature libraris for routing, forms, materials</li>
+          <li>Tools for build, test, and update your code.</li>
+        </ul>
+      </div>
       <p>
         Angular applications are perfect candidates for serving with a simple static HTML server. You
         don't need a server-side engine to dynamically compose application pages because Angular does
