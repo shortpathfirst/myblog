@@ -108,7 +108,8 @@ export const content = [
         <li>Neural Networks, CNN</li>
       </ul>
     </>,
-    skills: ["Readable and mantainable architecture for easier testing.", "Basic concepts of React frameworks like NextJS and its SSG and SSR features."],
+    skills:[],
+    projects: [{name:"TSNE and DBSCAN Clustering: CrimesData",image:""}],
   },
   {
     title: "Java",

@@ -2,7 +2,6 @@ import { PostData } from "@/interfaces/post";
 import { getAllProject } from "@/lib/api";
 import BlogPostCard from "@/ui/components/cards/BlogPostCard";
 import CardConteiner from "@/ui/components/cards/CardConteiner";
-import PageContainer from "@/ui/components/page-container/PageContainer";
 import Title from "@/ui/components/title/Title";
 
 export default function Projects() {

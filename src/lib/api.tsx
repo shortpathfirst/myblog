@@ -75,14 +75,14 @@ export function getAllProject(){
     return [
         {
             imageSrc: `${config.basePath}/assets/images/article_1.webp`,
-            title: "Creating a blog post",
+            title: "Project of Weightlifting",
             urlTitle: "https://shortpathfirst.github.io/AngularPesi/",
             description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
         },
         {
             imageSrc: `${config.basePath}/assets/images/article_2.webp`,
-            title: "Creating a blog post",
-            urlTitle: "/projects/AngularPesi",
+            title: "Project for bracelet making",
+            urlTitle: "https://shortpathfirst.github.io/grid-palline/",
             description: "Amet occaecat adipisicing est ea.Ea elit enim aute aute amet proident. Quis minim aliquip est ea sunt non exercitation incididunt do aliquip eiusmod eiusmod. Proident amet proident officia adipisicing dolor aliquip ex quis ullamco."
         },
     ]
