@@ -46,14 +46,17 @@ const StripDescription = ({ skills, projects }: { skills: string[], projects?: {
       <div>
         <h1>Skills</h1>
         <ul>
-          {skills.map((skill: any, i: number) => (
+          {skills.map((skill: string, i: number) => (
             <li key={i}>{skill}</li>
           ))}
 
           {projects && projects[0]?.name && <>
             <li>Projects:</li>
             <ul>
-              {projects.map((p: any, i: number) => (
+              {projects.map((p: {
+                name: string;
+                image: string;
+              }, i: number) => (
                 <li key={i}>{p.name}</li>
               ))}
             </ul>
@@ -61,7 +64,10 @@ const StripDescription = ({ skills, projects }: { skills: string[], projects?: {
         </ul>
         {projects && projects[0]?.image &&
           <div className={styles.imageList}>
-            {projects.map((p: any, i: number) => (
+            {projects.map((p: {
+              name: string;
+              image: string;
+            }, i: number) => (
               <img key={i} src={p.image} width={180} height={180} />
             ))}
           </div>}

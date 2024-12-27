@@ -12,7 +12,7 @@ export const content = [
       <p className={styles.highlight}>
         D3 is a JavaScript library for producing dynamic and interactive data visualizations in web
         browsers.
-        D3's low-level approach provides the building blocks for constructing flexible and highly
+        D3&apos;s low-level approach provides the building blocks for constructing flexible and highly
         customizable data representations.
       </p>
 
@@ -63,7 +63,7 @@ export const content = [
       </div>
       <p>
         Angular applications are perfect candidates for serving with a simple static HTML server. You
-        don't need a server-side engine to dynamically compose application pages because Angular does
+        don&apos;t need a server-side engine to dynamically compose application pages because Angular does
         that on the client-side.
       </p>
     </>,
@@ -142,7 +142,7 @@ export const content = [
       <p>
         Containerization is for scaling of application deployed in the cloud.
         The container becomes the unit for distributing and testing your application.
-        What is a container? Containers are isolated processes for each of your app's components. Each component - the frontend - the Python API engine - the database - runs in its own isolated environment, completely isolated from everything else on your machine.
+        What is a container? Containers are isolated processes for each of your app&apos;s components. Each component - the frontend - the Python API engine - the database - runs in its own isolated environment, completely isolated from everything else on your machine.
       </p>
     </>,
     skills: ["Creating docker file",

@@ -1,5 +1,3 @@
-
-import PageContainer from '@/ui/components/page-container/PageContainer';
 import Title from '@/ui/components/title/Title';
 import styles from './about.module.css'
 export default function About() {
@@ -8,9 +6,8 @@ export default function About() {
       <Title> About me </Title>
       <div className={styles.aboutme}>
         <p>
-          I'm a passionate technology enthusiast with an engineering mindset and an insatiable curiosity for learning. My journey into the world of tech started at a young age, driven by a fascination with how things work and a desire to build and create.
+          I&apos;m a passionate technology enthusiast with an engineering mindset and an insatiable curiosity for learning. My journey into the world of tech started at a young age, driven by a fascination with how things work and a desire to build and create.
         </p>
-
         <p>
           Nisi duis amet aute non ut dolore. Deserunt dolore deserunt adipisicing do dolore fugiat nisi id officia non. Pariatur nulla do nulla aliqua commodo laborum sint. Sint eiusmod commodo laboris irure enim ullamco adipisicing occaecat eiusmod nisi consequat ex aute duis.
         </p>
