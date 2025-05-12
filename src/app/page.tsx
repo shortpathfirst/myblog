@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Contacts from "@/components/contact/contacts";
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <p className={styles.welcomeParagraph}>
         Hello and Welcome 👋&nbsp;
       </p>
+      <Contacts/>
     </div>
   );
 }
