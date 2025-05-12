@@ -66,8 +66,9 @@ export default async function Blog({ params }: BlogParams) {
         }}
       />
       <h1 >{post.metadata.title}</h1>
+      <p>{post.metadata.description}</p>
+      <ul>{post.metadata.tags.map((tag)=>(<li>{tag}</li>))}</ul>
       <article className={styles.mdxContent} >
-        {/* add className here to style the components */}
         {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
         {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}
         {post.content}

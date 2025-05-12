@@ -13,7 +13,7 @@ const postsDirectory = join(process.cwd(), "src", "_posts");
 
 // Get all .mdx files in a given directory
 function getMDXFiles(dir: string): string[] {
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
+  return fs.readdirSync(dir).filter((file) =>  ['.md','.mdx'].includes(path.extname(file)));
 }
 
 // Read and parse a single MDX file using next-mdx-remote instead of gray-matter

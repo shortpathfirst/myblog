@@ -40,7 +40,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "next-mdx-remote": "^5.0.0",
-    "react-syntax-highlighter": "^15.6.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-highlight": "^7.0.2",
     "rehype-pretty-code": "^0.14.1",
