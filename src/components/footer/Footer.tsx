@@ -2,7 +2,7 @@ import { FooterMinimal } from "./FooterMinimal";
 import { FooterSection } from "./FooterSection";
 
 type Props = {
-  version: "minimal" | "normal";
+  version?: "minimal" | "normal";
 }
 export const Footer = ({ version = "normal" }: Props) => {
 

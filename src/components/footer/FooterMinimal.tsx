@@ -3,7 +3,7 @@ import styles from './footer.module.css'
 
 
 export const FooterMinimal = () => {
-  const icon_size = '2x';
+  // const icon_size = '2x';
   const HOSTPLATFORM = 'Github'
   const LINKS = [
     { url: "https://github.com/shortpathfirst", label: "GitHub", icon: FaGithub },

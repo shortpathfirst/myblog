@@ -1,69 +1,54 @@
+
 import { notFound } from 'next/navigation'
-import {  getBlogPosts } from '@/lib/posts'
-import {  MDXRemote } from 'next-mdx-remote/rsc'
-import { serialize } from 'next-mdx-remote/serialize'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode from 'rehype-pretty-code'
+import { getBlogPosts } from '@/lib/posts'
+import styles from '@/styles/mdx.module.css'
 
 interface BlogParams {
-  params: {
-    slug: string
-  }
+
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  const posts = getBlogPosts()
+  const posts = await getBlogPosts()
 
-  return posts.map((post) => ({
+  return posts.map(async (post) => ({
     slug: post.slug,
   }))
 }
-export function generateMetadata({ params }: BlogParams) {
-  // let post = getBlogPosts().find((post) => post.slug === params.slug)
-  // if (!post) {
-  //   return
-  // }
+export async function generateMetadata({ params }: BlogParams) {
+  const { slug } = await params; // Only necessary if params is a Promise
+  let posts = await getBlogPosts()
+  const post = posts.find((post) => post.slug === slug)
+  if (!post) {
+    return
+  }
 
-  // let {
-  //   title,
-  //   description,
-  // } = post.metadata
+  let {
+    title,
+    description,
+  } = post.metadata
 
-  // return {
-  //   title,
-  //   description,
-  //   openGraph: {
-  //     title,
-  //     description,
-  //     type: 'article',
-  //     // url: `${baseUrl}/blog/${post.slug}`,
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      // url: `${baseUrl}/blog/${post.slug}`,
 
-  //   },
-  // }
+    },
+  }
 }
 
-// export async function compileMDX(source: string) {
-//   return await serialize(source, {
-//     mdxOptions: {
-//       remarkPlugins: [],
-//       rehypePlugins: [
-//         rehypeSlug,
-//         rehypeAutolinkHeadings,
-//         [rehypePrettyCode, { theme: 'github-dark' }],
-//       ],
-//       format: 'mdx',
-//     },
-//   });
-// }
-
 export default async function Blog({ params }: BlogParams) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug)
- 
+  const { slug } = await params; // Only necessary if params is a Promise
+  const posts = await getBlogPosts();
+  const post = posts.find((post) => post.slug === slug);
+
   if (!post) {
     notFound()
   }
-//  const mdx = await compileMDX(post.content);
 
   return (
     <section >
@@ -81,8 +66,11 @@ export default async function Blog({ params }: BlogParams) {
         }}
       />
       <h1 >{post.metadata.title}</h1>
-      <article >
-        <MDXRemote source={post.content} />
+      <article className={styles.mdxContent} >
+        {/* add className here to style the components */}
+        {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
+        {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}
+        {post.content}
       </article>
     </section>
   )

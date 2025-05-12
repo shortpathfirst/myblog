@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement } from "react";
+import {  ReactElement } from "react";
 
 type Author = {
     name: string,
@@ -21,5 +21,5 @@ export type MetadataBlog = {
 export type BlogPost = {
     metadata: MetadataBlog;
     slug: string; // File name
-    content:string// ReactElement<any, string | JSXElementConstructor<any>>, // Content with Elements
+    content: ReactElement, // Parsed Content
 }

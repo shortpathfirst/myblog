@@ -1,9 +1,13 @@
 import fs from "fs";
 import path from 'path';
-import matter from "gray-matter";
 import { join } from "path";
 import { BlogPost, MetadataBlog } from "./interfaces";
-
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { compileMDX } from 'next-mdx-remote/rsc'
+import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
+import {  ReactElement } from "react";
 
 const postsDirectory = join(process.cwd(), "src", "_posts");
 
@@ -12,25 +16,48 @@ function getMDXFiles(dir: string): string[] {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
 }
 
-// Read and parse a single MDX file using gray-matter
-function readMDXFile(filePath: string): { metadata: MetadataBlog; content: string } {
+// Read and parse a single MDX file using next-mdx-remote instead of gray-matter
+async function  readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; content: ReactElement; }> {
   const rawContent = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(rawContent);
-  return { metadata: data as MetadataBlog, content };
+
+ const { frontmatter, content } = await compileMDX<{ title: string, date: string, tags: string[] }>({
+        source: rawContent,
+        components: {//Add style components
+        },
+        options: {
+            parseFrontmatter: true,
+            mdxOptions: {
+                rehypePlugins: [
+                    rehypeSlug,
+                    [rehypePrettyCode, { theme: 'github-dark' }],
+                    rehypeHighlight,
+                    [rehypeAutolinkHeadings, {
+                        behavior: 'wrap'
+                    }],
+                ],
+            },
+        }
+    })
+
+  return { metadata: frontmatter as MetadataBlog, content };
 }
 
 // Aggregate all blog post data
-export function getBlogPosts(): BlogPost[] {
+export async function getBlogPosts(): Promise<BlogPost[]> {
   const mdxFiles = getMDXFiles(postsDirectory);
 
-  return mdxFiles.map((file) => {
-    const { metadata, content } = readMDXFile(path.join(postsDirectory, file));
-    const slug = path.basename(file, path.extname(file));
+  const posts = Promise.all(
+    mdxFiles.map( async (file) => {
+      const { metadata, content } = await readMDXFile(path.join(postsDirectory, file));
+      const slug = path.basename(file, path.extname(file));
 
-    return {
-      metadata,
-      slug,
-      content,
-    };
-  });
+      return {
+        metadata,
+        slug,
+        content: content,
+      };
+    }))
+
+
+  return posts;
 }

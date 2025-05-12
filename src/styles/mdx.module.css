@@ -1,0 +1,28 @@
+/* styles/mdx.css */
+.mdxContent h1 {
+  color: #1e40af;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.mdxContent p {
+  line-height: 1.7;
+  color: #374151;
+  margin: 1rem 0;
+}
+
+.mdxContent pre {
+  background-color: #0f172a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.mdxContent code {
+  font-family: monospace;
+  color: #facc15;
+}
+.mdxContent h1[id]::before{
+    content:"#";
+    color: red;
+}
