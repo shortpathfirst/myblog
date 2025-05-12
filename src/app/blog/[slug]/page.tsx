@@ -2,6 +2,7 @@
 import { notFound } from 'next/navigation'
 import { getBlogPosts } from '@/lib/posts'
 import styles from '@/styles/mdx.module.css'
+import getFormattedDate from '@/lib/getFormattedDate'
 
 interface BlogParams {
 
@@ -51,28 +52,31 @@ export default async function Blog({ params }: BlogParams) {
   }
 
   return (
-    <section >
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.date,
-            description: post.metadata.description,
-          }),
-        }}
-      />
-      <h1 >{post.metadata.title}</h1>
-      <p>{post.metadata.description}</p>
-      <ul>{post.metadata.tags.map((tag)=>(<li>{tag}</li>))}</ul>
-      <article className={styles.mdxContent} >
-        {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
-        {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}
-        {post.content}
-      </article>
-    </section>
+    <div className="container">
+      <section>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              headline: post.metadata.title,
+              datePublished: post.metadata.date,
+              description: post.metadata.description,
+            }),
+          }}
+        />
+        <h1 >{post.metadata.title}</h1>
+        <p className={styles.date}>{getFormattedDate(post.metadata.date)}</p>
+        <p>{post.metadata.description}</p>
+        <ul>{post.metadata.tags.map((tag, i) => (<li key={i}>{tag}</li>))}</ul>
+        <article className={styles.mdxContent} >
+          {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
+          {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}
+          {post.content}
+        </article>
+      </section>
+    </div>
   )
 }

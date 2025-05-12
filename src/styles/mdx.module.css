@@ -1,7 +1,13 @@
+.date {
+  font-size: 17px;
+  color: rgb(136, 136, 136);
+  margin-bottom: 25px;
+}
+
 /* styles/mdx.css */
 .mdxContent h1 {
   color: #1e40af;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-top: 2rem;
 }
 
@@ -9,6 +15,8 @@
   line-height: 1.7;
   color: #374151;
   margin: 1rem 0;
+  font-size: 18px;
+
 }
 
 .mdxContent pre {
@@ -22,7 +30,18 @@
   font-family: monospace;
   color: #facc15;
 }
-.mdxContent h1[id]::before{
-    content:"#";
-    color: red;
+
+.mdxContent h1[id] {
+  position: relative;
+}
+
+.mdxContent h1[id]::before {
+  content: "#";
+  color: transparent;
+  position: absolute;
+  left: -2.5rem;
+}
+
+.mdxContent h1[id]:hover::before {
+  color: #3d3d3d;
 }
