@@ -15,14 +15,14 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
 /*  Cards */
-/* block bg-white shadow-md rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 mx-8 sm:mx-0 */
 .card {
     display: block;
     overflow: hidden;
     margin-left: 2rem;
     margin-right: 2rem;
-    border-radius:10px;
+    border-radius: 10px;
     background-color: #bde4f3;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,8 +68,9 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     line-height: 1.5;
-    -webkit-line-clamp: 3; /* number of lines to show */
-    line-clamp: 3; 
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
     /* Set the number of lines */
     -webkit-box-orient: vertical;
 }

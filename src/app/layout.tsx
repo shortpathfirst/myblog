@@ -5,7 +5,6 @@ import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
 
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -47,7 +46,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh" }}>
@@ -59,6 +57,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-
   );
 }

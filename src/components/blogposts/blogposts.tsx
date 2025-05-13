@@ -1,12 +1,13 @@
 import { BlogPost } from '@/lib/interfaces'
 import React from 'react'
+import styles from './blogpage.module.css'
 import BlogPostCard from './blogpostcard'
 
 const BlogPosts = ({ blogData }: {
     blogData: BlogPost[]
 }) => {
     return (
-        <div>
+        <div className={styles.cardContainer}>
             {
                 blogData.sort((a, b) => {
                     if (new Date(a.metadata.date) > new Date(b.metadata.date))
@@ -21,8 +22,8 @@ const BlogPosts = ({ blogData }: {
                             title={post.metadata.title}
                             href={`/blog/${post.slug}`}
                             description={post.metadata.description}
-                            tags = {post.metadata.tags}
-                            />
+                            tags={post.metadata.tags}
+                        />
                     ))
             }
         </div>

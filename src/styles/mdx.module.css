@@ -21,7 +21,7 @@
 }
 
 .mdxContent h3 {
-  font-size: 2%;
+  font-size: 1.75rem;
 }
 
 .mdxContent p {
@@ -31,19 +31,30 @@
   font-size: 18px;
 
 }
-
+/* Code */
 .mdxContent pre {
   background-color: #0f172a;
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
 }
-
+/* 
 .mdxContent code {
   font-family: monospace;
   color: #facc15;
+} */
+/* Inline code */
+.mdxContent p code {
+  background-color: #b4b4b4; /* light gray background */
+  color: #1e293b; /* dark text for contrast */
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  white-space: nowrap;
 }
 
+/* Anchor link styling */
 .mdxContent h1[id],
 .mdxContent h2[id],
 .mdxContent h3[id] {
@@ -63,4 +74,86 @@
 .mdxContent h2[id]:hover::before,
 .mdxContent h3[id]:hover::before {
   color: #3d3d3d;
+}
+.mdxContent h1[id],
+.mdxContent h2[id],
+.mdxContent h3[id],
+.mdxContent h4[id],
+.mdxContent h5[id],
+.mdxContent h6[id] {
+  scroll-margin-top: 100px; 
+}
+
+@media (max-width: 640px) {
+  .mdxContent h1[id],
+  .mdxContent h2[id],
+  .mdxContent h3[id],
+  .mdxContent h4[id],
+  .mdxContent h5[id],
+  .mdxContent h6[id] {
+    scroll-margin-top: 140px;
+  }
+}
+
+
+/* Table Styling */
+.mdxContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.mdxContent th,
+.mdxContent td {
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.mdxContent th {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Blockquote */
+.mdxContent blockquote {
+  border-left: 4px solid #1e40af;
+  padding-left: 1rem;
+  color: #4b5563;
+  font-style: italic;
+  margin: 1.5rem 0;
+  background-color: #f9fafb;
+}
+
+/* Lists */
+.mdxContent ul,
+.mdxContent ol {
+  margin: 1rem 0 1rem 1.5rem;
+  padding-left: 1rem;
+  color: #374151;
+}
+
+.mdxContent li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Images */
+.mdxContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+}
+
+/* Links */
+.mdxContent a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.mdxContent a:hover {
+  color: #1d4ed8;
 }
