@@ -5,10 +5,23 @@
 }
 
 /* styles/mdx.css */
-.mdxContent h1 {
+.mdxContent h1,
+.mdxContent h2,
+.mdxContent h3 {
   color: #1e40af;
-  font-size: 3rem;
   margin-top: 2rem;
+}
+
+.mdxContent h1 {
+  font-size: 3rem;
+}
+
+.mdxContent h2 {
+  font-size: 2.5rem;
+}
+
+.mdxContent h3 {
+  font-size: 2%;
 }
 
 .mdxContent p {
@@ -31,17 +44,23 @@
   color: #facc15;
 }
 
-.mdxContent h1[id] {
+.mdxContent h1[id],
+.mdxContent h2[id],
+.mdxContent h3[id] {
   position: relative;
 }
 
-.mdxContent h1[id]::before {
+.mdxContent h1[id]::before,
+.mdxContent h2[id]::before,
+.mdxContent h3[id]::before {
   content: "#";
   color: transparent;
   position: absolute;
   left: -2.5rem;
 }
 
-.mdxContent h1[id]:hover::before {
+.mdxContent h1[id]:hover::before,
+.mdxContent h2[id]:hover::before,
+.mdxContent h3[id]:hover::before {
   color: #3d3d3d;
 }
