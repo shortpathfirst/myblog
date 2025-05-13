@@ -2,8 +2,8 @@ import Link from 'next/link';
 import React from 'react'
 import styles from '@/app/blog/blogpage.module.css'
 import Image from 'next/image';
-import { TechStackAvatar } from './techAvatars/techStackAvatar';
 import { Tag } from '@/lib/interfaces';
+import { TechIcons } from './techIcons/techIcons';
 
 type CardProps = {
 	imageSrc: string;
@@ -38,7 +38,7 @@ const BlogPostCard = ({ imageSrc, title, href, description, tags }: CardProps) =
 			}
 			{
 				tags?.length > 0 &&
-				<TechStackAvatar items={tags}/>
+				<TechIcons items={tags}/>
 			}
 
 		</Link>

@@ -1,0 +1,27 @@
+.avatarGroup {
+  display: flex;
+  padding: 15px;
+}
+
+.avatarGroup>*:not(:first-child) {
+  margin-left: -1rem;
+}
+
+.technology-icon {
+  position: relative;
+  display: flex;
+  height: 36px;
+  width: 36px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.342);
+  justify-content: center;
+  align-items: center;
+}
+
+.technology-icon img {
+  height: 30px;
+  width: 30px;
+}
