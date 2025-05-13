@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getBlogPosts } from '@/lib/posts'
 import styles from '@/styles/mdx.module.css'
 import getFormattedDate from '@/lib/getFormattedDate'
+import { TechIcons } from '@/components/techIcons/techIcons'
 
 interface BlogParams {
 
@@ -71,6 +72,7 @@ export default async function Blog({ params }: BlogParams) {
         <p className={styles.date}>{getFormattedDate(post.metadata.date)}</p>
         <p>{post.metadata.description}</p>
         <ul>{post.metadata.tags.map((tag, i) => (<li key={i}>{tag.name}</li>))}</ul>
+        <TechIcons items={post.metadata.tags} ></TechIcons>
         <article className={styles.mdxContent} >
           {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
           {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}

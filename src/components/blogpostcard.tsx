@@ -1,9 +1,10 @@
-import Link from 'next/link';
+
 import React from 'react'
 import styles from '@/app/blog/blogpage.module.css'
 import Image from 'next/image';
 import { Tag } from '@/lib/interfaces';
 import { TechIcons } from './techIcons/techIcons';
+import Link from 'next/link';
 
 type CardProps = {
 	imageSrc: string;
