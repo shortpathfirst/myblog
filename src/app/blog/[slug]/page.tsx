@@ -70,7 +70,7 @@ export default async function Blog({ params }: BlogParams) {
         <h1 >{post.metadata.title}</h1>
         <p className={styles.date}>{getFormattedDate(post.metadata.date)}</p>
         <p>{post.metadata.description}</p>
-        <ul>{post.metadata.tags.map((tag, i) => (<li key={i}>{tag}</li>))}</ul>
+        <ul>{post.metadata.tags.map((tag, i) => (<li key={i}>{tag.name}</li>))}</ul>
         <article className={styles.mdxContent} >
           {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
           {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}

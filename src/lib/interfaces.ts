@@ -5,14 +5,16 @@ type Author = {
     source: string;
     picture?: string;
 }
-
+export type Tag = {
+    name:string;
+    url:string;
+}
 export type MetadataBlog = {
     // id: string,
     title: string;
     description: string;
     date: string;
-    tags: string[],
-
+    tags: Tag[],
     author?: Author;
     ogImage?: {
         url: string;

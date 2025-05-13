@@ -2,15 +2,19 @@ import Link from 'next/link';
 import React from 'react'
 import styles from '@/app/blog/blogpage.module.css'
 import Image from 'next/image';
+import { TechStackAvatar } from './techAvatars/techStackAvatar';
+import { Tag } from '@/lib/interfaces';
+
 type CardProps = {
 	imageSrc: string;
 	title: string;
 	description?: string;
 	href: string;
+	tags: Tag[];
 }
-const BlogPostCard = ({ imageSrc, title, href, description }: CardProps) => {
-  return (
-    		<Link href={href}
+const BlogPostCard = ({ imageSrc, title, href, description, tags }: CardProps) => {
+	return (
+		<Link href={href}
 			className={styles.card}
 			rel="noopener noreferrer"
 		//    target="_blank"
@@ -26,13 +30,19 @@ const BlogPostCard = ({ imageSrc, title, href, description }: CardProps) => {
 			<div className={styles.title}>
 				<h2>{title}</h2>
 			</div>
-			{description ?
+			{
+				description &&
 				<div className={styles.description}>
 					<p>{description}</p>
 				</div>
-				: undefined}
+			}
+			{
+				tags?.length > 0 &&
+				<TechStackAvatar items={tags}/>
+			}
+
 		</Link>
-  )
+	)
 }
 
 export default BlogPostCard

@@ -1,7 +1,6 @@
-import { BlogPost, MetadataBlog } from '@/lib/interfaces'
+import { BlogPost } from '@/lib/interfaces'
 import React from 'react'
 import BlogPostCard from './blogpostcard'
-import styles from './blogpage.module.css'
 
 const BlogPosts = ({ blogData }: {
     blogData: BlogPost[]
@@ -21,7 +20,9 @@ const BlogPosts = ({ blogData }: {
                             imageSrc={"file.svg"}
                             title={post.metadata.title}
                             href={`/blog/${post.slug}`}
-                            description={post.metadata.description} />
+                            description={post.metadata.description}
+                            tags = {post.metadata.tags}
+                            />
                     ))
             }
         </div>

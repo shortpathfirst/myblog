@@ -1,21 +1,13 @@
 import React from 'react'
 import styles from './blogpage.module.css'
 import { getBlogPosts } from '@/lib/posts'
-import { MetadataBlog } from '@/lib/interfaces'
 import BlogPosts from '@/components/blogposts'
-
-type BlogPageParams = {
-    params: Promise<{
-        postsMeta: MetadataBlog;
-        slug: string;
-    }[]>
-}
-
 
 const Page = async () => {
      const blogdata = await getBlogPosts();
 
     return (
+        // <ViewTransition>
         <div className='container'>
             <section>
                  <h1>Blog page</h1>

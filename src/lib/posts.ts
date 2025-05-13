@@ -20,7 +20,7 @@ function getMDXFiles(dir: string): string[] {
 async function  readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; content: ReactElement; }> {
   const rawContent = fs.readFileSync(filePath, 'utf-8');
 
- const { frontmatter, content } = await compileMDX<{ title: string, date: string, tags: string[] }>({
+ const { frontmatter, content } = await compileMDX<MetadataBlog>({
         source: rawContent,
         components: {//Add style components
         },
