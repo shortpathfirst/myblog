@@ -1,0 +1,55 @@
+.techContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.scroll {
+    width: 700px;
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+}
+
+.scroll>div {
+    display: inline-flex;
+    gap: 1rem;
+    animation: scroll-left linear infinite;
+    animation-duration: var(--time, 20s);
+}
+
+.scroll span {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.scroll div span:hover {
+    background: #3fd2f9;
+    cursor: pointer;
+}
+
+.imgBox img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
