@@ -7,11 +7,11 @@ const TechStack = () => {
     return (
         <section className={styles.section}>
             <h1 className={styles.title}>🛠 My Tech Stack</h1>
-            <div className={styles.figure}>
+            {/* <div className={styles.figure}>
                 <Dendrogram></Dendrogram>
-            </div>
+            </div> */}
             <div className={styles.figure}>
-                <RadialDendrogram></RadialDendrogram>
+                <RadialDendrogram/>
             </div>
 
         </section>

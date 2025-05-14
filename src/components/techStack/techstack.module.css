@@ -13,5 +13,8 @@
 }
 
 .figure {
-    width: 80%;
+    width: 60vw;
+}
+.figure svg{
+    max-height: 60vw;
 }

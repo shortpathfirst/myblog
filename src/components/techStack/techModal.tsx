@@ -16,7 +16,7 @@ const TechModal = ({ data, handleCloseModal }: techModalProps) => {
         <div className={styles.modal}>
             <button className={styles.closeIcon} onClick={handleCloseModal}>x</button>
             <div className={styles.titleSection}>
-                <Image className={styles.titleIcon} src="/images/qgis-icon.png" alt={data.title} />
+                <Image className={styles.titleIcon} width={40} height={40} src="/images/qgis-icon.png" alt={data.title} />
                 <h2>{data.title}</h2>
             </div>
             <div className={styles.divisor}></div>

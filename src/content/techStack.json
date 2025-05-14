@@ -7,27 +7,32 @@
         {
           "name": "Java",
           "level": 80,
-          "description": "Object-oriented language used for building cross-platform applications and backend systems."
+          "description": "Object-oriented language used for building cross-platform applications and backend systems.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
         },
         {
           "name": "Python",
           "level": 95,
-          "description": "Versatile high-level programming language popular in data science, web development, and scripting."
+          "description": "Versatile high-level programming language popular in data science, web development, and scripting.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
         },
         {
           "name": "C",
           "level": 70,
-          "description": "Low-level programming language used for systems programming and performance-critical applications."
+          "description": "Low-level programming language used for systems programming and performance-critical applications.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
         },
         {
           "name": "Go",
           "level": 65,
-          "description": "Compiled language known for simplicity and concurrency, commonly used in backend development."
+          "description": "Compiled language known for simplicity and concurrency, commonly used in backend development.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
         },
         {
           "name": "JavaScript (Node.js, React.js)",
           "level": 90,
-          "description": "Dynamic scripting language used for interactive web applications and full-stack development."
+          "description": "Dynamic scripting language used for interactive web applications and full-stack development.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
         }
       ]
     },
@@ -37,32 +42,38 @@
         {
           "name": "Numpy",
           "level": 85,
-          "description": "Library for numerical computing with support for large multi-dimensional arrays and matrices."
+          "description": "Library for numerical computing with support for large multi-dimensional arrays and matrices.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "Pandas",
           "level": 90,
-          "description": "Data analysis and manipulation library built on top of NumPy, ideal for handling structured data."
+          "description": "Data analysis and manipulation library built on top of NumPy, ideal for handling structured data.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "Pomegranate",
           "level": 60,
-          "description": "Probabilistic modeling library for Bayesian networks, HMMs, and other models."
+          "description": "Probabilistic modeling library for Bayesian networks, HMMs, and other models.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "TensorFlow",
           "level": 75,
-          "description": "End-to-end open-source platform for machine learning and deep learning."
+          "description": "End-to-end open-source platform for machine learning and deep learning.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
         },
         {
           "name": "skLearn",
           "level": 80,
-          "description": "Machine learning library offering simple and efficient tools for data mining and analysis."
+          "description": "Machine learning library offering simple and efficient tools for data mining and analysis.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "PyTorch",
           "level": 70,
-          "description": "Deep learning framework that emphasizes flexibility and dynamic computation graphs."
+          "description": "Deep learning framework that emphasizes flexibility and dynamic computation graphs.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
         }
       ]
     },
@@ -72,17 +83,20 @@
         {
           "name": "Django",
           "level": 80,
-          "description": "High-level Python web framework that promotes rapid development and clean design."
+          "description": "High-level Python web framework that promotes rapid development and clean design.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
         },
         {
           "name": "HTML",
           "level": 95,
-          "description": "Standard markup language for creating and structuring content on the web."
+          "description": "Standard markup language for creating and structuring content on the web.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
         },
         {
           "name": "CSS",
           "level": 90,
-          "description": "Stylesheet language used for describing the presentation of HTML documents."
+          "description": "Stylesheet language used for describing the presentation of HTML documents.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
         }
       ]
     },
@@ -92,17 +106,20 @@
         {
           "name": "SQLite",
           "level": 80,
-          "description": "Lightweight, file-based relational database often used in embedded systems and prototyping."
+          "description": "Lightweight, file-based relational database often used in embedded systems and prototyping.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
         },
         {
           "name": "MySQL",
           "level": 75,
-          "description": "Open-source relational database management system widely used in web applications."
+          "description": "Open-source relational database management system widely used in web applications.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
         },
         {
           "name": "PostgreSQL",
           "level": 70,
-          "description": "Advanced open-source relational database known for robustness and standards compliance."
+          "description": "Advanced open-source relational database known for robustness and standards compliance.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
         }
       ]
     },
@@ -112,57 +129,68 @@
         {
           "name": "Git",
           "level": 90,
-          "description": "Version control system for tracking changes in source code during development."
+          "description": "Version control system for tracking changes in source code during development.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
         },
         {
           "name": "Unix",
           "level": 85,
-          "description": "Powerful, multitasking operating system used for servers, development, and scripting."
+          "description": "Powerful, multitasking operating system used for servers, development, and scripting.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
         },
         {
           "name": "IntelliJ",
           "level": 75,
-          "description": "Popular IDE for Java development offering smart code completion and deep code analysis."
+          "description": "Popular IDE for Java development offering smart code completion and deep code analysis.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"
         },
         {
           "name": "PyCharm",
           "level": 80,
-          "description": "IDE for Python development providing code analysis and a range of productivity tools."
+          "description": "IDE for Python development providing code analysis and a range of productivity tools.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"
         },
         {
           "name": "VSCode",
           "level": 95,
-          "description": "Lightweight yet powerful source code editor with extensive extension support."
+          "description": "Lightweight yet powerful source code editor with extensive extension support.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
         },
         {
           "name": "Eclipse",
           "level": 60,
-          "description": "IDE primarily for Java development, known for its plugin ecosystem."
+          "description": "IDE primarily for Java development, known for its plugin ecosystem.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg"
         },
         {
           "name": "XCode",
           "level": 50,
-          "description": "IDE for developing applications for Apple's platforms like iOS and macOS."
+          "description": "IDE for developing applications for Apple's platforms like iOS and macOS.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg"
         },
         {
           "name": "Vim",
           "level": 70,
-          "description": "Highly configurable text editor known for its efficiency and keyboard-based navigation."
+          "description": "Highly configurable text editor known for its efficiency and keyboard-based navigation.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg"
         },
         {
           "name": "Micro",
           "level": 60,
-          "description": "Terminal-based text editor that aims to be easy to use and intuitive."
+          "description": "Terminal-based text editor that aims to be easy to use and intuitive.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "Jupyter Lab",
           "level": 90,
-          "description": "Web-based interactive development environment for notebooks, code, and data visualization."
+          "description": "Web-based interactive development environment for notebooks, code, and data visualization.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
         },
         {
           "name": "ObservableHQ",
           "level": 65,
-          "description": "Platform for interactive JavaScript notebooks focused on data visualization."
+          "description": "Platform for interactive JavaScript notebooks focused on data visualization.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         }
       ]
     },
@@ -172,22 +200,26 @@
         {
           "name": "Adobe InDesign",
           "level": 60,
-          "description": "Desktop publishing software used for creating layouts for print and digital media."
+          "description": "Desktop publishing software used for creating layouts for print and digital media.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "Illustrator",
           "level": 70,
-          "description": "Vector graphics editor used for illustrations, logos, and complex graphic designs."
+          "description": "Vector graphics editor used for illustrations, logos, and complex graphic designs.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         },
         {
           "name": "Photoshop",
           "level": 80,
-          "description": "Industry-standard software for image editing and graphic design."
+          "description": "Industry-standard software for image editing and graphic design.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
         },
         {
           "name": "Premiere",
           "level": 65,
-          "description": "Video editing software used for film, television, and web video production."
+          "description": "Video editing software used for film, television, and web video production.",
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
         }
       ]
     }

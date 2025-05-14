@@ -1,11 +1,13 @@
 "use client";
-import React, { useMemo, useState } from 'react';
+
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import techHierarchy from "@/content/techStack.json";
 import TechModal from './techModal';
 
 type Tree = {
     name: string;
+    imageUrl?: string;
     description?: string;
     level?: number;
     children?: Tree[];
@@ -16,20 +18,42 @@ type modalData = {
     imageUrl: string;
     progress: number;
 }
-const width = 500;
-const height = 580;
-const MARGIN = 80;
+const width = 950;
+const height = 950;
+const MARGIN = 60;
+const panOffset = 30;
 
-// 360 → 2π
-const degToRad = (deg: number) => (deg * 2 * Math.PI) / 360;
+const degToRad = (deg: number) => (deg * 2 * Math.PI) / 360; // 360 → 2π
 
 const RadialDendrogram = () => {
-    const [isPanning, setIsPanning] = useState(false);
-    const [pointerStart, setPointerStart] = useState<{ x: number; y: number } | null>(null);
+
     const [modalDescription, setmodalDescription] = useState<modalData | null>(null);
 
-    // Panning offset
-    const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
+    const svgRef = useRef<SVGSVGElement | null>(null);
+    const groupRef = useRef<SVGGElement | null>(null);
+
+    useEffect(() => {
+        if (!svgRef.current || !groupRef.current) return;
+        const svg = d3.select(svgRef.current);
+        const group = d3.select(groupRef.current);
+
+        const zoomBehavior = d3.zoom<SVGSVGElement, unknown>()
+            .scaleExtent([0.8, 5])
+            .translateExtent([[-width / 2 - panOffset, -height / 2 - panOffset], [width / 2 + panOffset, height / 2 + panOffset]])
+            .on("zoom", (event) => {
+                group.attr("transform", event.transform);
+            });
+
+        svg.call(zoomBehavior);
+        svg.call(
+            zoomBehavior.transform,
+            d3.zoomIdentity.translate(width / 2, height / 2)
+        );
+        return () => {
+            svg.on(".zoom", null); // Clean up zoom event listener
+
+        };
+    }, []);
 
     const hierarchy = useMemo(() => d3.hierarchy<Tree>(techHierarchy), []);
 
@@ -65,7 +89,6 @@ const RadialDendrogram = () => {
             />
         );
     });
-
     const allNodes = dendrogram.descendants().map((node, key) => {
         const turnLabelUpsideDown = node.x > 180;
 
@@ -73,54 +96,71 @@ const RadialDendrogram = () => {
             <g
                 key={node.id + `_${key}`}
                 transform={`rotate(${node.x - 90}) translate(${node.y})`}
+                style={{ cursor: "pointer" }}
+                onClick={() => !node.children && handleOpendrawer(node.data)}
             >
-                <circle cx={0} cy={0} r={5} stroke="transparent" fill={"#69b3a2"} style={{ cursor: "pointer" }}
-                    onClick={() => !node.children && handleOpendrawer(node.data)}></circle>
-
-                <text
-                    x={node.children ? 0 : (turnLabelUpsideDown ? -15 : 15)}
+                {node.children && <rect
+                    x={-80}
                     y={0}
-                    fontSize={12}
-                    textAnchor={node.children ? "start" : (turnLabelUpsideDown ? "end" : "start")}
+                    width={180}
+                    height={50}
+                    rx={20}
+                    ry={20}
+                    fill={"rgba(0, 0, 0, 0.1)"}
                     transform={node.children
                         ? `rotate(${-node.x + 90}) translate(10,0)`
                         : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+
+                />}
+                {/* Image inside the card */}
+                {!node.children && <image
+                    href={node.data.imageUrl || "/images/qgis-icon.png"}
+                    x={-30}
+                    y={-25}
+                    width={60}
+                    height={40}
+                    transform={node.children
+                        ? `rotate(${-node.x + 90}) translate(10,0)`
+                        : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+                    preserveAspectRatio="xMidYMid meet"
+                />}
+                {/* White background of text */}
+                <text
+                    x={0}
+                    y={22}
+                    transform={node.children
+                        ? `rotate(${-node.x + 90}) translate(10,0)`
+                        : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+                    textAnchor="middle"
+                    fontSize={node.children ? 26 : 20}
+                    fill='none'
+                    stroke='white'
+                    strokeWidth={5}
+                    strokeLinejoin='round'
                     alignmentBaseline="middle"
                     style={{ userSelect: 'none' }}
                 >
                     {node.data.name}
                 </text>
+                {/* Text label below the image */}
+                <text
+                    x={0}
+                    y={22}
+                    transform={node.children
+                        ? `rotate(${-node.x + 90}) translate(10,0)`
+                        : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+                    textAnchor="middle"
+                    fontSize={node.children ? 26 : 20}
+                    alignmentBaseline="middle"
+                    style={{ userSelect: 'none' }}
+                >
+                    {node.data.name}
+                </text>
+
             </g>
         );
     });
 
-    // Panning handlers
-    const handlePointerDown = (e: React.PointerEvent) => {
-        setIsPanning(true);
-        setPointerStart({ x: e.clientX, y: e.clientY });
-    };
-
-    const handlePointerUp = () => {
-        setIsPanning(false);
-        setPointerStart(null);
-    };
-
-    const handlePointerMove = (e: React.PointerEvent) => {
-        if (!isPanning || !pointerStart) return;
-
-        const dx = e.clientX - pointerStart.x;
-        const dy = e.clientY - pointerStart.y;
-
-        const maxOffset = 50;
-
-        const newOffset = {
-            x: Math.max(Math.min(panOffset.x + dx, maxOffset), -maxOffset),
-            y: Math.max(Math.min(panOffset.y + dy, maxOffset), -maxOffset),
-        };
-
-        setPanOffset(newOffset);
-        setPointerStart({ x: e.clientX, y: e.clientY });
-    };
     // Open drawer
     const handleOpendrawer = (node: Tree) => {
         const isSameData = modalDescription?.title === node.name
@@ -141,21 +181,24 @@ const RadialDendrogram = () => {
 
     return (
         <div style={{ position: 'relative' }}>
-            {modalDescription && <TechModal data={modalDescription} handleCloseModal={() => setmodalDescription(null)}></TechModal>}
+            {
+                modalDescription &&
+                <TechModal
+                    data={modalDescription}
+                    handleCloseModal={() => setmodalDescription(null)} />
+            }
             <svg
+                ref={svgRef}
                 width="100%"
-                height={height}
+                height={height * 0.8}
                 viewBox={`0 0 ${width} ${height}`}
-                onPointerDown={handlePointerDown}
-                onPointerUp={handlePointerUp}
-                onPointerLeave={handlePointerUp}
-                onPointerMove={handlePointerMove}
                 style={{
-                    cursor: isPanning ? 'grabbing' : 'grab',
+                    borderRadius: "80px",
+                    cursor: 'grab',
                     backgroundColor: "#f4f4f4",
                 }}
             >
-                <g transform={`translate(${width / 2 + panOffset.x}, ${height / 2 + panOffset.y})`}>
+                <g ref={groupRef} transform={`translate(${width / 2}, ${height / 2})`}>
                     {allEdges}
                     {allNodes}
                 </g>
