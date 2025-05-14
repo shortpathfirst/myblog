@@ -1,0 +1,195 @@
+{
+  "name": "Tech Stack",
+  "children": [
+    {
+      "name": "⌨️ Languages",
+      "children": [
+        {
+          "name": "Java",
+          "level": 80,
+          "description": "Object-oriented language used for building cross-platform applications and backend systems."
+        },
+        {
+          "name": "Python",
+          "level": 95,
+          "description": "Versatile high-level programming language popular in data science, web development, and scripting."
+        },
+        {
+          "name": "C",
+          "level": 70,
+          "description": "Low-level programming language used for systems programming and performance-critical applications."
+        },
+        {
+          "name": "Go",
+          "level": 65,
+          "description": "Compiled language known for simplicity and concurrency, commonly used in backend development."
+        },
+        {
+          "name": "JavaScript (Node.js, React.js)",
+          "level": 90,
+          "description": "Dynamic scripting language used for interactive web applications and full-stack development."
+        }
+      ]
+    },
+    {
+      "name": "⚙️ Libraries",
+      "children": [
+        {
+          "name": "Numpy",
+          "level": 85,
+          "description": "Library for numerical computing with support for large multi-dimensional arrays and matrices."
+        },
+        {
+          "name": "Pandas",
+          "level": 90,
+          "description": "Data analysis and manipulation library built on top of NumPy, ideal for handling structured data."
+        },
+        {
+          "name": "Pomegranate",
+          "level": 60,
+          "description": "Probabilistic modeling library for Bayesian networks, HMMs, and other models."
+        },
+        {
+          "name": "TensorFlow",
+          "level": 75,
+          "description": "End-to-end open-source platform for machine learning and deep learning."
+        },
+        {
+          "name": "skLearn",
+          "level": 80,
+          "description": "Machine learning library offering simple and efficient tools for data mining and analysis."
+        },
+        {
+          "name": "PyTorch",
+          "level": 70,
+          "description": "Deep learning framework that emphasizes flexibility and dynamic computation graphs."
+        }
+      ]
+    },
+    {
+      "name": "🌐 Web",
+      "children": [
+        {
+          "name": "Django",
+          "level": 80,
+          "description": "High-level Python web framework that promotes rapid development and clean design."
+        },
+        {
+          "name": "HTML",
+          "level": 95,
+          "description": "Standard markup language for creating and structuring content on the web."
+        },
+        {
+          "name": "CSS",
+          "level": 90,
+          "description": "Stylesheet language used for describing the presentation of HTML documents."
+        }
+      ]
+    },
+    {
+      "name": "🛢 Databases",
+      "children": [
+        {
+          "name": "SQLite",
+          "level": 80,
+          "description": "Lightweight, file-based relational database often used in embedded systems and prototyping."
+        },
+        {
+          "name": "MySQL",
+          "level": 75,
+          "description": "Open-source relational database management system widely used in web applications."
+        },
+        {
+          "name": "PostgreSQL",
+          "level": 70,
+          "description": "Advanced open-source relational database known for robustness and standards compliance."
+        }
+      ]
+    },
+    {
+      "name": "🔧 Tools & Editors",
+      "children": [
+        {
+          "name": "Git",
+          "level": 90,
+          "description": "Version control system for tracking changes in source code during development."
+        },
+        {
+          "name": "Unix",
+          "level": 85,
+          "description": "Powerful, multitasking operating system used for servers, development, and scripting."
+        },
+        {
+          "name": "IntelliJ",
+          "level": 75,
+          "description": "Popular IDE for Java development offering smart code completion and deep code analysis."
+        },
+        {
+          "name": "PyCharm",
+          "level": 80,
+          "description": "IDE for Python development providing code analysis and a range of productivity tools."
+        },
+        {
+          "name": "VSCode",
+          "level": 95,
+          "description": "Lightweight yet powerful source code editor with extensive extension support."
+        },
+        {
+          "name": "Eclipse",
+          "level": 60,
+          "description": "IDE primarily for Java development, known for its plugin ecosystem."
+        },
+        {
+          "name": "XCode",
+          "level": 50,
+          "description": "IDE for developing applications for Apple's platforms like iOS and macOS."
+        },
+        {
+          "name": "Vim",
+          "level": 70,
+          "description": "Highly configurable text editor known for its efficiency and keyboard-based navigation."
+        },
+        {
+          "name": "Micro",
+          "level": 60,
+          "description": "Terminal-based text editor that aims to be easy to use and intuitive."
+        },
+        {
+          "name": "Jupyter Lab",
+          "level": 90,
+          "description": "Web-based interactive development environment for notebooks, code, and data visualization."
+        },
+        {
+          "name": "ObservableHQ",
+          "level": 65,
+          "description": "Platform for interactive JavaScript notebooks focused on data visualization."
+        }
+      ]
+    },
+    {
+      "name": "👩🏼‍🎨 Design",
+      "children": [
+        {
+          "name": "Adobe InDesign",
+          "level": 60,
+          "description": "Desktop publishing software used for creating layouts for print and digital media."
+        },
+        {
+          "name": "Illustrator",
+          "level": 70,
+          "description": "Vector graphics editor used for illustrations, logos, and complex graphic designs."
+        },
+        {
+          "name": "Photoshop",
+          "level": 80,
+          "description": "Industry-standard software for image editing and graphic design."
+        },
+        {
+          "name": "Premiere",
+          "level": 65,
+          "description": "Video editing software used for film, television, and web video production."
+        }
+      ]
+    }
+  ]
+}

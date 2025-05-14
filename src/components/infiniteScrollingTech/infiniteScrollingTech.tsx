@@ -17,6 +17,7 @@ const InfiniteScrollingTech = () => {
         { name: "Java", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
         { name: "TensorflowJS", url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
         { name: "TypeScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+         { name: "QGIS", url: "/images/qgis-icon.png" },
     ]
 
     return (

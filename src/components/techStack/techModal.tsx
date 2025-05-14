@@ -1,0 +1,30 @@
+import React from 'react'
+import styles from './techModal.module.css'
+import ProgressBar from './progressBar'
+type techModalProps = {
+    data: {
+        title: string,
+        description: string,
+        progress: number,
+        imageUrl: string,
+    }
+    handleCloseModal: () => void,
+}
+const TechModal = ({ data, handleCloseModal }: techModalProps) => {
+    return (
+        <div className={styles.modal}>
+            <button className={styles.closeIcon} onClick={handleCloseModal}>x</button>
+            <div className={styles.titleSection}>
+                <img className={styles.titleIcon} src="/images/qgis-icon.png" alt={data.title} />
+                <h2>{data.title}</h2>
+            </div>
+            <div className={styles.divisor}></div>
+            <ProgressBar progress={data.progress}></ProgressBar>
+            <p>
+                {data.description}
+            </p>
+        </div>
+    )
+}
+
+export default TechModal

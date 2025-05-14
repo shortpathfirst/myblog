@@ -37,10 +37,10 @@ const TopShape = () => {
 
 const FooterContent = () => {
   const codeSource = [
-    { link: "https://localhost:3000/link", name: "Source1" },
-    { link: "https://localhost:3000/link", name: "Source2" },
-    { link: "https://localhost:3000/link", name: "Source3" },
-    { link: "https://localhost:3000/link", name: "Source4" },
+    { link: "https://localhost:3000/link", name: "Kaggle" },
+    { link: "https://localhost:3000/link", name: "Observable" },
+    { link: "https://localhost:3000/link", name: "Linkedin" },
+    { link: "https://localhost:3000/link", name: "Github" },
   ]
   const tecnologyUsed = [
     { link: "https://localhost:3000/link", name: "Next.js" },
@@ -48,17 +48,16 @@ const FooterContent = () => {
     { link: "https://localhost:3000/link", name: "i18 React" },
   ]
   const contact = [
-    { link: "https://localhost:3000/link", name: "Github" },
     { link: "https://localhost:3000/link", name: "Email" },
     { link: "https://localhost:3000/link", name: "Privacy Policy" },
     { link: "https://localhost:3000/link", name: "Term of Use" },
   ]
   return (
     <div className={styles.row}>
-      {/* Code Source */}
+      {/* My Notebooks */}
       <div className={styles.colLeft}>
         <div className={styles.footerWidget}>
-          <h4>Code Source</h4>
+          <h4>My Notebooks</h4>
           <ul className={styles.footerLinks}>
             {codeSource.map((s, i) =>
               <li key={i}><a href={s.link} target="_blank" rel="noopener noreferrer">{s.name}</a></li>
