@@ -101,12 +101,12 @@ const RadialDendrogram = () => {
             >
                 {node.children && <rect
                     x={-80}
-                    y={0}
+                    y={-4}
                     width={180}
                     height={50}
                     rx={20}
                     ry={20}
-                    fill={"rgba(0, 0, 0, 0.1)"}
+                    fill="url(#fadeGradient)"
                     transform={node.children
                         ? `rotate(${-node.x + 90}) translate(10,0)`
                         : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
@@ -119,18 +119,20 @@ const RadialDendrogram = () => {
                     y={-25}
                     width={60}
                     height={40}
-                    transform={node.children
-                        ? `rotate(${-node.x + 90}) translate(10,0)`
-                        : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+                     transform={`rotate(${-node.x + 90}) translate(10,0)`}
+                    // transform={node.children
+                    //     ? `rotate(${-node.x + 90}) translate(10,0)`
+                    //     : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
                     preserveAspectRatio="xMidYMid meet"
                 />}
                 {/* White background of text */}
                 <text
                     x={0}
                     y={22}
-                    transform={node.children
-                        ? `rotate(${-node.x + 90}) translate(10,0)`
-                        : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+                  transform={`rotate(${-node.x + 90}) translate(10,0)`}
+                    // transform={node.children
+                    //     ? `rotate(${-node.x + 90}) translate(10,0)`
+                    //     : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
                     textAnchor="middle"
                     fontSize={node.children ? 26 : 20}
                     fill='none'
@@ -146,9 +148,10 @@ const RadialDendrogram = () => {
                 <text
                     x={0}
                     y={22}
-                    transform={node.children
-                        ? `rotate(${-node.x + 90}) translate(10,0)`
-                        : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
+                      transform={`rotate(${-node.x + 90}) translate(10,0)`}
+                    // transform={node.children
+                    //     ? `rotate(${-node.x + 90}) translate(10,0)`
+                    //     : (turnLabelUpsideDown ? "rotate(180)" : "rotate(0)")}
                     textAnchor="middle"
                     fontSize={node.children ? 26 : 20}
                     alignmentBaseline="middle"
@@ -198,6 +201,15 @@ const RadialDendrogram = () => {
                     backgroundColor: "#f4f4f4",
                 }}
             >
+                <defs>
+                    {/* Linear gradient for rect */}
+                    <linearGradient id="fadeGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" style={{ stopColor: "white", stopOpacity: 0 }} />
+                        <stop offset="25%" style={{ stopColor: "black", stopOpacity: 0.2 }} />
+                         <stop offset="85%" style={{ stopColor: "black", stopOpacity: 0.2 }} />
+                        <stop offset="100%" style={{ stopColor: "white", stopOpacity: 0 }} />
+                    </linearGradient>
+                </defs>
                 <g ref={groupRef} transform={`translate(${width / 2}, ${height / 2})`}>
                     {allEdges}
                     {allNodes}
