@@ -81,3 +81,15 @@
         margin-right: 0;
     }
 }
+
+/* Blog header */
+.date {
+  font-size: 17px;
+  color: rgb(136, 136, 136);
+  margin-bottom: 25px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

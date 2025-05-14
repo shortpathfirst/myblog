@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import techHierarchy from "@/content/techStack.json";
+import techHierarchy from "@/content/techStack_v2.json";
 import TechModal from './techModal';
 
 type Tree = {

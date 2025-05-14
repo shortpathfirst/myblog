@@ -1,9 +1,8 @@
 
 import { notFound } from 'next/navigation'
 import { getBlogPosts } from '@/lib/posts'
+import BlogPageHeader from '@/components/blogposts/blogpageHeader'
 import styles from '@/styles/mdx.module.css'
-import getFormattedDate from '@/lib/getFormattedDate'
-import { TechIcons } from '@/components/techIcons/techIcons'
 
 interface BlogParams {
 
@@ -38,7 +37,6 @@ export async function generateMetadata({ params }: BlogParams) {
       description,
       type: 'article',
       // url: `${baseUrl}/blog/${post.slug}`,
-
     },
   }
 }
@@ -68,16 +66,19 @@ export default async function Blog({ params }: BlogParams) {
             }),
           }}
         />
-        <h1 >{post.metadata.title}</h1>
-        <p className={styles.date}>{getFormattedDate(post.metadata.date)}</p>
-        <p>{post.metadata.description}</p>
-        <ul>{post.metadata.tags.map((tag, i) => (<li key={i}>{tag.name}</li>))}</ul>
-        <TechIcons items={post.metadata.tags} ></TechIcons>
+        <BlogPageHeader data={{
+          title: post.metadata.title,
+          date: post.metadata.date,
+          description: post.metadata.description,
+          tags: post.metadata.tags
+        }}/>
+
         <article className={styles.mdxContent} >
           {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
           {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}
           {post.content}
         </article>
+
       </section>
     </div>
   )

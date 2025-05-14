@@ -18,3 +18,7 @@
 .figure svg{
     max-height: 60vw;
 }
+.figure image:hover{
+    opacity: 0.7;
+    scale: 1.6;
+}

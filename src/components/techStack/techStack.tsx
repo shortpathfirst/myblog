@@ -1,5 +1,4 @@
 import React from 'react'
-import Dendrogram from './techDendrogram';
 import RadialDendrogram from './techRadialDendrogram';
 import styles from './techStack.module.css'
 

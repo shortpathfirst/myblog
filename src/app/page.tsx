@@ -2,13 +2,12 @@ import InfiniteScrollingTech from "@/components/infiniteScrollingTech/infiniteSc
 import Contacts from "@/components/contact/contacts";
 import TechStack from "@/components/techStack/techStack";
 
-
 export default function Home() {
   return (
     <div className="container">
-      <TechStack></TechStack>
-      <InfiniteScrollingTech/>
-      <Contacts/>
+      <TechStack/>
+      <InfiniteScrollingTech />
+      <Contacts />
     </div>
   );
 }
