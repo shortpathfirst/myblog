@@ -19,13 +19,13 @@ export async function generateStaticParams() {
 }
 export async function generateMetadata({ params }: BlogParams) {
   const { slug } = await params; // Only necessary if params is a Promise
-  let posts = await getBlogPosts()
+  const posts = await getBlogPosts()
   const post = posts.find((post) => post.slug === slug)
   if (!post) {
     return
   }
 
-  let {
+  const {
     title,
     description,
   } = post.metadata

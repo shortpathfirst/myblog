@@ -59,7 +59,7 @@ const Dendrogram = () => {
             }
             const children = current.children || current._children;
             if (children) {
-                for (let child of children) {
+                for (const child of children) {
                     if (findAndToggle(child)) return true;
                 }
             }

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './techModal.module.css'
 import ProgressBar from './progressBar'
+import Image from 'next/image'
 type techModalProps = {
     data: {
         title: string,
@@ -15,7 +16,7 @@ const TechModal = ({ data, handleCloseModal }: techModalProps) => {
         <div className={styles.modal}>
             <button className={styles.closeIcon} onClick={handleCloseModal}>x</button>
             <div className={styles.titleSection}>
-                <img className={styles.titleIcon} src="/images/qgis-icon.png" alt={data.title} />
+                <Image className={styles.titleIcon} src="/images/qgis-icon.png" alt={data.title} />
                 <h2>{data.title}</h2>
             </div>
             <div className={styles.divisor}></div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './infiniteScrolling.module.css'
+import Image from 'next/image'
 
 const InfiniteScrollingTech = () => {
     //This should be a prop
@@ -39,7 +40,7 @@ const InfiniteScrollingTech = () => {
             <div className={`${styles.scroll} ${styles.imgBox}`} style={{ '--time': `20s` } as React.CSSProperties}>
                 <div>
                     {techStack.map((tech, index) => (
-                        <img key={`image-${index}`} src={tech.url} alt={tech.name} />
+                        <Image key={`image-${index}`} height={50} width={50} src={tech.url} alt={tech.name} />
                     ))}
 
                 </div>

@@ -6,15 +6,15 @@ import TechModal from './techModal';
 
 type Tree = {
     name: string;
-    description?:string;
+    description?: string;
     level?: number;
     children?: Tree[];
 };
 type modalData = {
-    title:string;
-    description:string;
-    imageUrl:string;
-    progress:number;
+    title: string;
+    description: string;
+    imageUrl: string;
+    progress: number;
 }
 const width = 500;
 const height = 580;
@@ -33,9 +33,8 @@ const RadialDendrogram = () => {
 
     const hierarchy = useMemo(() => d3.hierarchy<Tree>(techHierarchy), []);
 
-    const radius = Math.min(width, height) / 2 - MARGIN;
-
     const dendrogram = useMemo(() => {
+        const radius = Math.min(width, height) / 2 - MARGIN;
         const dendrogramGenerator = d3.cluster<Tree>().size([360, radius]);
         return dendrogramGenerator(hierarchy);
     }, [hierarchy]);
@@ -75,8 +74,8 @@ const RadialDendrogram = () => {
                 key={node.id + `_${key}`}
                 transform={`rotate(${node.x - 90}) translate(${node.y})`}
             >
-                <circle cx={0} cy={0} r={5} stroke="transparent" fill={"#69b3a2"}  style={{cursor: "pointer"}}
-                onClick={() => !node.children && handleOpendrawer(node.data)}></circle>
+                <circle cx={0} cy={0} r={5} stroke="transparent" fill={"#69b3a2"} style={{ cursor: "pointer" }}
+                    onClick={() => !node.children && handleOpendrawer(node.data)}></circle>
 
                 <text
                     x={node.children ? 0 : (turnLabelUpsideDown ? -15 : 15)}
@@ -124,43 +123,43 @@ const RadialDendrogram = () => {
     };
     // Open drawer
     const handleOpendrawer = (node: Tree) => {
-    const isSameData = modalDescription?.title === node.name 
+        const isSameData = modalDescription?.title === node.name
 
-    if (isSameData) {
-        // Close the drawer if the same data is already open
-        setmodalDescription(null);
-    } else {
-        // Open or update the drawer with new data
-        setmodalDescription({
-            title: node.name,
-            description: node.description || "",
-            imageUrl: node.name,
-            progress:node.level || 0,
-        });
-    }
-};
+        if (isSameData) {
+            // Close the drawer if the same data is already open
+            setmodalDescription(null);
+        } else {
+            // Open or update the drawer with new data
+            setmodalDescription({
+                title: node.name,
+                description: node.description || "",
+                imageUrl: node.name,
+                progress: node.level || 0,
+            });
+        }
+    };
 
     return (
-        <div style={{position:'relative'}}>
-            {modalDescription&&<TechModal data={modalDescription} handleCloseModal={()=>setmodalDescription(null) }></TechModal>}
-        <svg
-            width="100%"
-            height={height}
-            viewBox={`0 0 ${width} ${height}`}
-            onPointerDown={handlePointerDown}
-            onPointerUp={handlePointerUp}
-            onPointerLeave={handlePointerUp}
-            onPointerMove={handlePointerMove}
-            style={{
-                cursor: isPanning ? 'grabbing' : 'grab',
-                backgroundColor: "#f4f4f4",
-            }}
-        >
-            <g transform={`translate(${width / 2 + panOffset.x}, ${height / 2 + panOffset.y})`}>
-                {allEdges}
-                {allNodes}
-            </g>
-        </svg>
+        <div style={{ position: 'relative' }}>
+            {modalDescription && <TechModal data={modalDescription} handleCloseModal={() => setmodalDescription(null)}></TechModal>}
+            <svg
+                width="100%"
+                height={height}
+                viewBox={`0 0 ${width} ${height}`}
+                onPointerDown={handlePointerDown}
+                onPointerUp={handlePointerUp}
+                onPointerLeave={handlePointerUp}
+                onPointerMove={handlePointerMove}
+                style={{
+                    cursor: isPanning ? 'grabbing' : 'grab',
+                    backgroundColor: "#f4f4f4",
+                }}
+            >
+                <g transform={`translate(${width / 2 + panOffset.x}, ${height / 2 + panOffset.y})`}>
+                    {allEdges}
+                    {allNodes}
+                </g>
+            </svg>
         </div>
     );
 };

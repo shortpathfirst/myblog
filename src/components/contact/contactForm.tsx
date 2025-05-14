@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import styles from './contacts.module.css';
 
 const ContactForm = () => {
@@ -13,7 +13,7 @@ const ContactForm = () => {
 
     const [submitted, setSubmitted] = useState(false);
 
-    const handleChange = (e:any) => {
+    const handleChange = (e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
@@ -21,7 +21,7 @@ const ContactForm = () => {
         }));
     };
 
-    const handleSubmit = (e:any) => {
+    const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSubmitted(true);
         console.log("Form submitted:", formData);
