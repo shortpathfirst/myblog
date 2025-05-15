@@ -6,9 +6,9 @@ import CodeTopBar from '../codeTopBar/codeTopBar'
 const Contacts = () => {
     return (
         <section>
-            <div>
-                <h3>Contact me</h3>
-                <h1>Reach out for a project or just say hello</h1>
+            <div className={styles.contactHeader}>
+                <h1>Contact me</h1>
+                <h3>Reach out for a project or just say hello</h3>
             </div>
             <div className={styles.contactContent}>
                 <CodeTopBar />

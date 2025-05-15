@@ -2,7 +2,7 @@
   position: relative;
   background: #3e3e3e;
   border-radius: 15px;
-  
+
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 1.4px;
@@ -21,6 +21,16 @@
   z-index: -1;
 }
 
+.contactHeader h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #111827;
+}
+.contactHeader h3 {
+ font-size: 1.2rem;
+  text-align: center;
+  color: #4d515a;
+}
 .contactBody {
   display: flex;
   flex-wrap: wrap;
@@ -69,10 +79,12 @@
 .formField:has(#contactMessage) {
   margin-top: 40px;
 }
-.formField:has(.submitButton){
+
+.formField:has(.submitButton) {
   margin-top: 2rem;
-    text-align: right;
+  text-align: right;
 }
+
 .submitButton {
   margin-bottom: 0;
   background: none;
@@ -96,6 +108,7 @@
   text-transform: uppercase;
   outline: none;
   transition: border-color 0.2s;
+  resize: vertical;
 }
 
 .formField>input::placeholder,
