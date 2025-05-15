@@ -10,7 +10,8 @@ const TechStack = () => {
                 <Dendrogram></Dendrogram>
             </div> */}
             <div className={styles.figure}>
-                <RadialDendrogram/>
+                <RadialDendrogram />
+                <div className={styles.poweredby}>Powered by <span>D3</span></div>
             </div>
 
         </section>
