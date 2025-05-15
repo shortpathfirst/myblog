@@ -25,15 +25,15 @@ const BlogPostCard = ({ imageSrc, title, href, description, tags }: CardProps) =
 				alt={title}
 				width={400}
 				height={250}
-				className={styles.img}
+				className={styles.cardImg}
 				priority={true}
 			/>
-			<div className={styles.title}>
+			<div className={styles.cardTitle}>
 				<h2>{title}</h2>
 			</div>
 			{
 				description &&
-				<div className={styles.description}>
+				<div className={styles.cardDescription}>
 					<p>{description}</p>
 				</div>
 			}

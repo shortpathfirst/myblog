@@ -17,10 +17,12 @@
     position: relative;
     width: 60vw;
 }
-.figure svg{
+
+.figure svg {
     max-height: 60vw;
 }
-.figure image:hover{
+
+.figure image:hover {
     opacity: 0.7;
     scale: 1.6;
 }
@@ -30,7 +32,8 @@
     bottom: 10px;
     right: 10px;
     font-weight: 700;
-    font-size: calc(1vw + 1rem); /* Scales based on viewport width */
+    font-size: calc(1vw + 1rem);
+    /* Scales based on viewport width */
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: black;
@@ -44,10 +47,27 @@
 }
 
 /* Adjustments for smaller screens */
+
 @media (max-width: 600px) {
     .poweredby {
         font-size: 0.7rem;
-        bottom: 5px;
-        right: -50px;
+        bottom: -5px;
+        right: 10vw;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .poweredby {
+
+        right: 10vw;
+    }
+
+    .figure {
+        width: 100vw;
+    }
+
+    .figure svg {
+        max-height: 100vw;
     }
 }
