@@ -84,12 +84,51 @@
 
 /* Blog header */
 .date {
-  font-size: 17px;
-  color: rgb(136, 136, 136);
-  margin-bottom: 25px;
+    font-size: 17px;
+    color: rgb(136, 136, 136);
+    margin-bottom: 25px;
 }
-.header{
+
+.description {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.herotitle {
+    position: relative;
+    background-image: url('/images/pastel-abstract.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        padding: 0 1rem;
+        max-width: 90%;
+    }
+}
+
+.taglist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.taglist li {
+    background-color: #e0e0e0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
 }

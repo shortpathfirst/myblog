@@ -14,15 +14,25 @@ type HeaderProps = {
 }
 const BlogPageHeader = ({ data }: HeaderProps) => {
     return (
-        <div className={styles.header}>
-            <div>
-            <h1>{data.title}</h1>
-            <p className={styles.date}>{getFormattedDate(data.date)}</p>
-            <p>{data.description}</p>
-            <ul>{data.tags.map((tag, i) => (<li key={i}>{tag.name}</li>))}</ul>
+        <section>
+            <div className={styles.herotitle}>
+                <h1>{data.title}</h1>
             </div>
-              <TechIcons items={data.tags} />
-        </div>
+
+            <div className={styles.description}>
+                <div>
+                    <p className={styles.date}>{getFormattedDate(data.date)}</p>
+                    <p>{data.description}</p>
+                    <ul  className={styles.taglist} >
+                        {data.tags.map((tag, i) => (
+                            <li key={i}>{tag.name}</li>
+                        ))}
+                    </ul>
+                </div>
+                <TechIcons items={data.tags} />
+            </div>
+            <hr/>
+        </section>
     )
 }
 
