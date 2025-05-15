@@ -5,8 +5,8 @@ export const Navbar = () => {
     const NAVLINKS = [
         { url: "/blog", label: "Blog" },
         { url: "/projects", label: "Projects" },
-        { url: "/experience", label: "Experience" },
-        { url: "/about", label: "About" },
+        { url: "/resume", label: "Experience" },
+        { url: "/#contacts", label: "About" },
     ]
     return (
         <nav className={styles.navbar}>

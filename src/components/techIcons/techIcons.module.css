@@ -1,9 +1,8 @@
-.avatarGroup {
+.iconsContainer {
   display: flex;
-  padding: 15px;
 }
 
-.avatarGroup>*:not(:first-child) {
+.iconsContainer>*:not(:first-child) {
   margin-left: -1rem;
 }
 

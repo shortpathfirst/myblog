@@ -23,17 +23,19 @@
     margin-left: 2rem;
     margin-right: 2rem;
     border-radius: 10px;
-    background-color: #bde4f3;
+    background: radial-gradient(circle, rgba(174, 238, 222, 1) 0%, rgba(150, 192, 255, 1) 100%);
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
     transition-duration: 300ms;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
 }
 
 .cardImg {
     object-fit: cover;
     width: 100%;
+    background-color: #fff;
 }
 
 .card:hover {
@@ -53,13 +55,6 @@
 
 }
 
-.description {
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-
-}
-
 .cardDescription>p {
     color: #4B5563;
     overflow: hidden;
@@ -71,6 +66,7 @@
     line-clamp: 3;
     /* Set the number of lines */
     -webkit-box-orient: vertical;
+
 }
 
 @media (min-width: 640px) {
@@ -130,8 +126,9 @@
     border-radius: 8px;
     font-size: 0.9rem;
 }
+
 /* Blog news */
-.newsSection{
+.newsSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,72 +136,76 @@
     gap: 2rem;
     padding: 1rem;
 }
-.newsSection h1{
+
+.newsSection h1 {
     font-size: 3rem;
     margin-bottom: 60px;
     margin-top: 80px;
 }
-.newsSection h1>span{
+
+.newsSection h1>span {
     color: #baacf9;
 }
 
 /* Button Base Style */
 .btn {
     position: relative;
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.15s ease;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #0070f3;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0070f3;
 }
 
 /* Hover State */
 .btn:hover {
-  background-color: #0059c1;
-  transform: translateY(-2px);
+    background-color: #0059c1;
+    transform: translateY(-2px);
 }
 
 /* Disabled State */
 .btn:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
-  opacity: 0.7;
+    background-color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 /* ::after pseudo-element for animation */
 .btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 130%;
-  background: radial-gradient(circle, rgba(0, 112, 243, 0.6) 0%, transparent 80%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  animation: pulse-glow 2s infinite ease-out;
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 130%;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.6) 0%, transparent 80%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite ease-out;
+    z-index: -1;
 }
 
 /* Animation Keyframes */
 @keyframes pulse-glow {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.7;
-  }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
 }

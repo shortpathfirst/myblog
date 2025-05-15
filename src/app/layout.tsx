@@ -48,9 +48,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh" }}>
+        <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh"}}>
           <Navbar></Navbar>
-          <main style={{ "flex": 1}}>
+          <main style={{ "flex": 1  ,scrollPaddingTop: '80px',}}>
             {children}
           </main>
           <Footer />

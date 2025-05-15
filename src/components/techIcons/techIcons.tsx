@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export const TechIcons = ({ items }: { items: Tag[] }) => {
     return (
-        <div className={styles.avatarGroup}>
+        <div className={styles.iconsContainer}>
             {items.map((item, i) => (
                 // View transition does not allow multiple TechIcons use
                 // <ViewTransition key={i} name={`tech-icon-${item.name}`} >
