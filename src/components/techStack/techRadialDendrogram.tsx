@@ -54,7 +54,7 @@ const RadialDendrogram = ({data}:{data:Tree}) => {
         };
     }, []);
 
-    const hierarchy = useMemo(() => d3.hierarchy<Tree>(data), []);
+    const hierarchy = useMemo(() => d3.hierarchy<Tree>(data), [data]);
 
     const dendrogram = useMemo(() => {
         const radius = Math.min(width, height) / 2 - MARGIN;

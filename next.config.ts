@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
-import { isProd } from "@/lib/constants";
-
 
 const nextConfig: NextConfig = {
-  basePath: isProd ? '/myblog' : '',
+  basePath: '',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
     viewTransition: true,

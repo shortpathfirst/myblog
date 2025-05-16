@@ -1,4 +1,4 @@
-import { ProjectsInfo, Tag } from "./interfaces";
+import { ProjectsInfo } from "./interfaces";
 import projectsData from "@/content/projects.json"
 
 export function getProjectsData(): ProjectsInfo[] {
