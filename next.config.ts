@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
+import { isProd } from "@/lib/constants";
 
-const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
   basePath: isProd ? '/myblog' : '',
