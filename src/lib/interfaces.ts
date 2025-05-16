@@ -1,4 +1,4 @@
-import {  ReactElement } from "react";
+import { ReactElement } from "react";
 
 type Author = {
     name: string,
@@ -6,9 +6,10 @@ type Author = {
     picture?: string;
 }
 export type Tag = {
-    name:string;
-    url:string;
+    name: string;
+    url: string;
 }
+// Blog posts
 export type MetadataBlog = {
     // id: string,
     title: string;
@@ -24,4 +25,21 @@ export type BlogPost = {
     metadata: MetadataBlog;
     slug: string; // File name
     content: ReactElement, // Parsed Content
+}
+
+// Project data
+export type ProjectsInfo = {
+    metadata: MetadataProject;
+    url: string; //External Url of the project
+}
+
+export type MetadataProject = {
+    // id: string,
+    title: string;
+    description: string;
+    date: string;
+    tags: Tag[],
+    ogImage?: {
+        url: string;
+    };
 }

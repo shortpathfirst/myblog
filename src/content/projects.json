@@ -1,0 +1,218 @@
+[
+  {
+    "metadata": {
+      "title": "Powerlifting Database",
+      "description": "React architecture with chartjs and chakraUI, express backend and sqlite database.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "React", "url": "/images/qgis-icon.png" },
+        { "name": "chartjs", "url": "/images/qgis-icon.png" },
+        { "name": "chakraUI", "url": "/images/qgis-icon.png" },
+        { "name": "Express", "url": "/images/qgis-icon.png" },
+        { "name": "SQLite", "url": "/images/qgis-icon.png" },
+        { "name": "Vite", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/powerlifting-database"
+  },
+  {
+    "metadata": {
+      "title": "Cripto React",
+      "description": "Cryptocurrency app using Express backend, Axios client and Create React App.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Express", "url": "/images/qgis-icon.png" },
+        { "name": "Axios", "url": "/images/qgis-icon.png" },
+        { "name": "React", "url": "/images/qgis-icon.png" },
+        { "name": "CRA", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/cripto-react"
+  },
+  {
+    "metadata": {
+      "title": "Grid Palline",
+      "description": "Web scraping with asyncio requests, Flask backend, Axios client with loading interceptors.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Python", "url": "/images/qgis-icon.png" },
+        { "name": "Flask", "url": "/images/qgis-icon.png" },
+        { "name": "Axios", "url": "/images/qgis-icon.png" },
+        { "name": "React", "url": "/images/qgis-icon.png" },
+        { "name": "Web Scraping", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/grid-palline"
+  },
+  {
+    "metadata": {
+      "title": "Pizza Store",
+      "description": "Full-stack app with Angular frontend, Express backend and MongoDB database.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Angular", "url": "/images/qgis-icon.png" },
+        { "name": "Express", "url": "/images/qgis-icon.png" },
+        { "name": "MongoDB", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/pizza-store"
+  },
+  {
+    "metadata": {
+      "title": "Search Visualizer",
+      "description": "React app visualizing search and tree algorithms using SVG.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "React", "url": "/images/qgis-icon.png" },
+        { "name": "Algorithms", "url": "/images/qgis-icon.png" },
+        { "name": "SVG", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/search-visualizer"
+  },
+  {
+    "metadata": {
+      "title": "Angular Pesi",
+      "description": "Angular and ElectronJS desktop application.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Angular", "url": "/images/qgis-icon.png" },
+        { "name": "ElectronJS", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/angular-pesi"
+  },
+  {
+    "metadata": {
+      "title": "Planarity Test",
+      "description": "Graph visualization using networkx, planarity testing algorithms with p5.js and Typescript.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "networkx", "url": "/images/qgis-icon.png" },
+        { "name": "p5.js", "url": "/images/qgis-icon.png" },
+        { "name": "Typescript", "url": "/images/qgis-icon.png" },
+        { "name": "Algorithms", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/planarity-test"
+  },
+  {
+    "metadata": {
+      "title": "Treemap",
+      "description": "Treemap visualization using design patterns, implemented in Java and Typescript.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Java", "url": "/images/qgis-icon.png" },
+        { "name": "Design Patterns", "url": "/images/qgis-icon.png" },
+        { "name": "Typescript", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/treemap"
+  },
+  {
+    "metadata": {
+      "title": "Suriyama",
+      "description": "Suriyama Algorithm visualized with D3 and Express server backend.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Suriyama", "url": "/images/qgis-icon.png" },
+        { "name": "d3", "url": "/images/qgis-icon.png" },
+        { "name": "Express", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/suriyama"
+  },
+  {
+    "metadata": {
+      "title": "CSS Explorer",
+      "description": "Syntax highlighter with React frontend and Express server serving CSS files.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "React", "url": "/images/qgis-icon.png" },
+        { "name": "Express", "url": "/images/qgis-icon.png" },
+        { "name": "Syntax Highlighting", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/css-explorer"
+  },
+  {
+    "metadata": {
+      "title": "JudoClub",
+      "description": "Static website built with Angular.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Angular", "url": "/images/qgis-icon.png" },
+        { "name": "Static Site", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/judoclub"
+  },
+  {
+    "metadata": {
+      "title": "ShapeHighlight",
+      "description": "Algorithms implemented in vanilla JavaScript.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Vanilla JS", "url": "/images/qgis-icon.png" },
+        { "name": "Algorithms", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/shapehighlight"
+  },
+  {
+    "metadata": {
+      "title": "Canvas Travel",
+      "description": "NP-hard problem visualization with 2-Approx and SOM algorithms using TensorFlow.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Vanilla JS", "url": "/images/qgis-icon.png" },
+        { "name": "Tensorflow", "url": "/images/qgis-icon.png" },
+        { "name": "Algorithms", "url": "/images/qgis-icon.png" },
+        { "name": "NP-Hard", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/canvas-travel"
+  },
+  {
+    "metadata": {
+      "title": "Geojson Map",
+      "description": "Interactive map visualization using D3 and GeoJSON.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "D3", "url": "/images/qgis-icon.png" },
+        { "name": "GeoJSON", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/geojson-map"
+  },
+  {
+    "metadata": {
+      "title": "D3 Others",
+      "description": "Visualizations with D3 including transitions, bubble charts, interactive trees and more.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "D3", "url": "/images/qgis-icon.png" },
+        { "name": "Bubble Chart", "url": "/images/qgis-icon.png" },
+        { "name": "Transition", "url": "/images/qgis-icon.png" },
+        { "name": "Interactive Tree", "url": "/images/qgis-icon.png" },
+        { "name": "Visualization", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/d3-others"
+  },
+  {
+    "metadata": {
+      "title": "Microservice with Spark VM",
+      "description": "Microservice architecture using Spark VM and Hadoop with JSP servlet backend.",
+      "date": "2025-01-01",
+      "tags": [
+        { "name": "Spark", "url": "/images/qgis-icon.png" },
+        { "name": "Hadoop", "url": "/images/qgis-icon.png" },
+        { "name": "Microservices", "url": "/images/qgis-icon.png" },
+        { "name": "JSP", "url": "/images/qgis-icon.png" },
+        { "name": "Servlet", "url": "/images/qgis-icon.png" }
+      ]
+    },
+    "url": "https://example.com/spark-hadoop"
+  }
+]
