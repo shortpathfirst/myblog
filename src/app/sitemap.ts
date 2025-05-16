@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import fs from "fs";
 import path from 'path';
 import { baseUrl } from '@/lib/constants';
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   
