@@ -2,7 +2,6 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import techHierarchy from "@/content/techStack_v2.json";
 import TechModal from './techModal';
 
 type Tree = {
@@ -25,7 +24,7 @@ const panOffset = 30;
 
 const degToRad = (deg: number) => (deg * 2 * Math.PI) / 360; // 360 → 2π
 
-const RadialDendrogram = () => {
+const RadialDendrogram = ({data}:{data:Tree}) => {
 
     const [modalDescription, setmodalDescription] = useState<modalData | null>(null);
 
@@ -55,7 +54,7 @@ const RadialDendrogram = () => {
         };
     }, []);
 
-    const hierarchy = useMemo(() => d3.hierarchy<Tree>(techHierarchy), []);
+    const hierarchy = useMemo(() => d3.hierarchy<Tree>(data), []);
 
     const dendrogram = useMemo(() => {
         const radius = Math.min(width, height) / 2 - MARGIN;
