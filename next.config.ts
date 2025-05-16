@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
-  basePath: '',
+  basePath: '/myblog',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
     viewTransition: true,

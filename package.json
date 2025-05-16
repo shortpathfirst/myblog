@@ -2,7 +2,7 @@
   "name": "myblog",
   "version": "0.1.0",
   "description": "My personal blog to showcase some project",
-  "homepage": "https://github.com/shortpathfirst/myblog/",
+  "homepage": "https://github.com/shortpathfirst/myblog",
   "repository": {
     "type": "git",
     "url": "https://github.com/shortpathfirst/myblog"
