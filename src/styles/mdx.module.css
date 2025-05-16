@@ -1,4 +1,8 @@
 /* styles/mdx.css */
+.mdxContent {
+  overflow-x: auto;
+  max-width: 100%;
+}
 
 .mdxContent h1,
 .mdxContent h2,
@@ -26,6 +30,7 @@
   font-size: 18px;
 
 }
+
 /* Code */
 .mdxContent pre {
   background-color: #0f172a;
@@ -33,6 +38,7 @@
   border-radius: 0.5rem;
   overflow-x: auto;
 }
+
 /* 
 .mdxContent code {
   font-family: monospace;
@@ -40,8 +46,10 @@
 } */
 /* Inline code */
 .mdxContent p code {
-  background-color: #b4b4b4; /* light gray background */
-  color: #1e293b; /* dark text for contrast */
+  background-color: #b4b4b4;
+  /* light gray background */
+  color: #1e293b;
+  /* dark text for contrast */
   padding: 0.2em 0.4em;
   border-radius: 4px;
   font-size: 0.95em;
@@ -70,16 +78,18 @@
 .mdxContent h3[id]:hover::before {
   color: #3d3d3d;
 }
+
 .mdxContent h1[id],
 .mdxContent h2[id],
 .mdxContent h3[id],
 .mdxContent h4[id],
 .mdxContent h5[id],
 .mdxContent h6[id] {
-  scroll-margin-top: 100px; 
+  scroll-margin-top: 100px;
 }
 
 @media (max-width: 640px) {
+
   .mdxContent h1[id],
   .mdxContent h2[id],
   .mdxContent h3[id],
@@ -88,12 +98,17 @@
   .mdxContent h6[id] {
     scroll-margin-top: 140px;
   }
+
+  .mdxContent th,
+  .mdxContent td {
+    padding: 0.2rem !important;
+  }
 }
 
 
 /* Table Styling */
 .mdxContent table {
-  width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
 }

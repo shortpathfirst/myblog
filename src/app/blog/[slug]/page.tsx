@@ -12,7 +12,7 @@ interface BlogParams {
 export async function generateStaticParams() {
   const posts = await getBlogPosts()
 
-  return posts.map( (post) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }))
 }
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: BlogParams) {
 }
 
 export default async function Blog({ params }: BlogParams) {
-  
+
   const { slug } = await params;
   const posts = await getBlogPosts();
   const post = posts.find((post) => post.slug === slug);
@@ -74,11 +74,9 @@ export default async function Blog({ params }: BlogParams) {
           date: post.metadata.date,
           description: post.metadata.description,
           tags: post.metadata.tags
-        }}/>
+        }} />
 
         <article className={styles.mdxContent} >
-          {/* <MDXRemote {...mdxSource} components={mdxComponents} /> */}
-          {/* <MDXRemote  source = {post.content}  components={mdxComponents}/> */}
           {post.content}
         </article>
 
