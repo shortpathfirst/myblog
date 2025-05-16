@@ -175,7 +175,7 @@ const RadialDendrogram = ({data}:{data:Tree}) => {
             setmodalDescription({
                 title: node.name,
                 description: node.description || "",
-                imageUrl: node.name,
+                imageUrl: node.imageUrl || "",
                 progress: node.level || 0,
             });
         }
