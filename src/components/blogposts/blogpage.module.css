@@ -137,14 +137,34 @@
     padding: 1rem;
 }
 
+.newsHeader {
+    width: 100%;
+    text-align: center;
+}
+
+.newsBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90%;
+    background-image: url('/images/headerbackground.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+}
+
 .newsSection h1 {
+    position: relative;
     font-size: 3rem;
     margin-bottom: 60px;
     margin-top: 80px;
 }
 
 .newsSection h1>span {
-    color: #baacf9;
+    /* color: #baacf9; */
+     color: #8169eb;
 }
 
 /* Button Base Style */

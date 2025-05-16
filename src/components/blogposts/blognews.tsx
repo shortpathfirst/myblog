@@ -8,7 +8,11 @@ const BlogNews = async () => {
     const blogdata = (await getBlogPosts()).slice(0, 3);
     return (
         <section className={styles.newsSection}>
-            <h1>A small section of <span>recent project</span></h1>
+            <div className={styles.newsHeader}>
+                <h1>A small section of <span>recent project</span></h1>
+                <div className={styles.newsBackground}></div>
+            </div>
+
             <BlogPosts blogData={blogdata}></BlogPosts>
             <Link href={"/blog"}><button className={styles.btn}>See my work</button></Link>
         </section>
