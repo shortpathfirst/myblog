@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
+import { baseUrl } from "@/lib/constants";
 
 
 const geistSans = Geist({
@@ -19,15 +20,15 @@ export const metadata: Metadata = {
   title: "My Portfolio Blog ",
   description: "Insights on Web Development, Data science & Personal Projects. Showcasing projects in data science, machine learning, and full-stack web development.",
   keywords: ["Data Science", "Web Development", "Machine Learning", "Python", "JavaScript", "Portfolio", "Next.js", "React"],
-  authors: [{ name: "Andrea Zcodingstudio", url: "https://shortpathfirst.github.io/myblog/" }],
+  authors: [{ name: "Andrea Zcodingstudio", url: baseUrl }],
   openGraph: {
     title: "My Portfolio Blog",
     description: "Explore real-world projects and blog posts in data science and web development.",
-    url: "https://shortpathfirst.github.io/myblog/",
+    url: baseUrl,
     siteName: "My Portfolio Blog",
     images: [
       {
-        url: "https://shortpathfirst.github.io/myblog/assets/preview.jpg",
+        url: `${baseUrl}images/preview.png`,
         width: 1200,
         height: 630,
         alt: "Portfolio Preview Image",
@@ -35,8 +36,6 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-  // tiktok
-  // twitter
 };
 
 
