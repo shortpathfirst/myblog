@@ -1,14 +1,15 @@
 import { FaLinkedin, FaGithub, FaMailBulk } from "react-icons/fa"
 import styles from './footer.module.css'
+import { contacts } from "@/content/contacts"
 
 
 export const FooterMinimal = () => {
   // const icon_size = '2x';
   const HOSTPLATFORM = 'Github'
   const LINKS = [
-    { url: "https://github.com/shortpathfirst", label: "GitHub", icon: FaGithub },
-    { url: "https://github.com/shortpathfirst", label: "LinkedIn", icon: FaLinkedin },
-    { url: "https://github.com/shortpathfirst", label: "Email", icon: FaMailBulk },
+    { url: contacts.github, label: "GitHub", icon: FaGithub },
+    { url: contacts.linkedin, label: "LinkedIn", icon: FaLinkedin },
+    { url: contacts.email, label: "Email", icon: FaMailBulk },
   ]
 
   return (

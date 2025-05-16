@@ -2,6 +2,7 @@ import React from 'react'
 import ContactForm from './contactForm'
 import styles from './contacts.module.css'
 import CodeTopBar from '../codeTopBar/codeTopBar'
+import { contacts } from '@/content/contacts'
 
 const Contacts = () => {
     return (
@@ -19,7 +20,7 @@ const Contacts = () => {
                             <span>ME</span>
                         </div>
                         <div className={styles.csinfo}>
-                            CONTACT INFO : myemail@gmail.com
+                            CONTACT INFO : {contacts.email}
                         </div>
 
                     </div>

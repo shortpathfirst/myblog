@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './footer.module.css'
+import { contacts, notebooks } from '@/content/contacts'
 
 export const FooterSection = () => {
   return (
@@ -37,20 +38,20 @@ const TopShape = () => {
 
 const FooterContent = () => {
   const codeSource = [
-    { link: "https://localhost:3000/link", name: "Kaggle" },
-    { link: "https://localhost:3000/link", name: "Observable" },
-    { link: "https://localhost:3000/link", name: "Linkedin" },
-    { link: "https://localhost:3000/link", name: "Github" },
+    { link: notebooks.kaggle, name: "Kaggle" },
+    { link: notebooks.observable, name: "Observable" },
+    { link: notebooks.github, name: "Github" },
   ]
   const tecnologyUsed = [
-    { link: "https://localhost:3000/link", name: "Next.js" },
-    { link: "https://localhost:3000/link", name: "MDX" },
-    { link: "https://localhost:3000/link", name: "i18 React" },
+    { link: "https://nextjs.org/", name: "Next.js" },
+    { link: "https://mdxjs.com/", name: "MDX" },
+    { link: "https://react.i18next.com/", name: "i18 React" },
   ]
   const contact = [
-    { link: "https://localhost:3000/link", name: "Email" },
-    { link: "https://localhost:3000/link", name: "Privacy Policy" },
-    { link: "https://localhost:3000/link", name: "Term of Use" },
+    { link: contacts.email, name: "Email" },
+    { link: contacts.linkedin, name: "Linkedin" },
+    // { link: "https://localhost:3000/link", name: "Privacy Policy" },
+    // { link: "https://localhost:3000/link", name: "Term of Use" },
   ]
   return (
     <div className={styles.row}>
