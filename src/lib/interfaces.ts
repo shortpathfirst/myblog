@@ -43,3 +43,11 @@ export type MetadataProject = {
         url: string;
     };
 }
+
+export type TechStackData = {
+    name: string;
+    level?: number;
+    description?: string;
+    imageUrl?: string;
+    children?: TechStackData[];
+}

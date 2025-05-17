@@ -1,7 +1,7 @@
 import React from 'react'
-import RadialDendrogram from './techRadialDendrogram';
 import styles from './techStack.module.css'
-import techHierarchy from "@/content/techStack_v2.json";
+import Bubbles from '../d3/Bubbles';
+import TechFigureRadial from './techFigureRadial';
 
 const TechStack = () => {
     return (
@@ -10,8 +10,12 @@ const TechStack = () => {
             {/* <div className={styles.figure}>
                 <Dendrogram></Dendrogram>
             </div> */}
-            <div className={styles.figure}>
-                <RadialDendrogram data={techHierarchy} />
+            <div className={`${styles.figure} ${styles.imageEffect}`}>
+                <TechFigureRadial/>
+                <div className={styles.poweredby}>Powered by <span>D3</span></div>
+            </div>
+           <div className={styles.figure}>
+                <Bubbles />
                 <div className={styles.poweredby}>Powered by <span>D3</span></div>
             </div>
 

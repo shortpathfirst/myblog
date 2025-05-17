@@ -47,6 +47,8 @@ const Bubbles = () => {
     const width = 600;
     const color = d3.scaleOrdinal(d3.range(m), d3.schemeCategory10);
 
+    const svgRef = useRef<SVGSVGElement | null>(null);
+
     const drag = (simulation: d3.Simulation<D3Node, undefined>) => {
         function dragstarted(event: d3.D3DragEvent<SVGCircleElement, D3Node, D3Node>, d: D3Node) {
             if (!event.active) simulation.alphaTarget(0.3).restart();
@@ -149,7 +151,7 @@ const Bubbles = () => {
 
         return force;
     }
-    const svgRef = useRef<SVGSVGElement | null>(null);
+
     useEffect(() => {
 
         if (!svgRef.current) return;
@@ -238,7 +240,7 @@ const Bubbles = () => {
             .attr("stroke-width", 4)
             .attr("paint-order", "stroke")
             .attr("fill", "black")
-            .style("user-select","none")
+            .style("user-select", "none")
             .text(d => d.groupName)
 
 
@@ -262,8 +264,6 @@ const Bubbles = () => {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
         });
-
-
 
     }, [techStack])
 
