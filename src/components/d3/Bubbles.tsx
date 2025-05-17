@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
-import { modalData } from '../techStack/techFigureRadial';
+import { modalData } from '../techStack/techFigure';
 
 export interface GroupNode {
     group?: number;
@@ -132,7 +132,6 @@ const Bubbles = ({ data, handleNodeClick }: BubblesProps) => {
     }
 
     useEffect(() => {
-
         if (!svgRef.current || !data)
             return;
         const svg = d3.select(svgRef.current);

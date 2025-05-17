@@ -22,10 +22,6 @@
     max-height: 60vw;
 }
 
-.figure.imageEffect image:hover {
-    scale: 1.6;
-}
-
 .poweredby {
     position: absolute;
     bottom: 10px;
@@ -69,4 +65,21 @@
     .figure svg {
         max-height: 100vw;
     }
+}
+
+
+/* Tech Figure */
+.techFigure {
+    position: relative;
+    border-radius: 80px;
+    cursor: grab;
+    background-color: #f4f4f4;
+}
+
+.figureSwitch {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 25px;
+    padding: 0.75rem 1.2rem;
 }

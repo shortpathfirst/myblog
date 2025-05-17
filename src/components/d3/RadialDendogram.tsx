@@ -3,7 +3,8 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import * as d3 from 'd3';
 import { TechStackData } from '@/lib/interfaces';
-import { modalData } from '../techStack/techFigureRadial';
+import { modalData } from '../techStack/techFigure';
+import styles from './d3styles.module.css'
 
 // type TreeData = {
 //     name: string;
@@ -156,15 +157,11 @@ const RadialDendrogram = ({ data, handleNodeClick }: RadialDendogramProps) => {
 
     return (
         <svg
+            className={styles.imageEffect}
             ref={svgRef}
             width="100%"
             height={height * 0.8}
             viewBox={`0 0 ${width} ${height}`}
-            style={{
-                borderRadius: "80px",
-                cursor: 'grab',
-                backgroundColor: "#f4f4f4",
-            }}
         >
             <defs>
                 {/* Linear gradient for rect */}
