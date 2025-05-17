@@ -3,15 +3,18 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import * as d3 from 'd3';
 import { TechStackData } from '@/lib/interfaces';
+import { modalData } from '../techStack/techFigureRadial';
 
-type TreeData = {
-    name: string;
-    imageUrl?: string;
-    children?: TreeData[];
-};
+// type TreeData = {
+//     name: string;
+//     imageUrl?: string;
+//     children?: TreeData[];
+// };
+type TreeData = TechStackData
+
 type RadialDendogramProps = {
     data: TechStackData,
-    handleNodeClick: (node: TreeData) => void
+    handleNodeClick: (node: modalData) => void
 }
 const width = 950;
 const height = 950;
@@ -86,13 +89,19 @@ const RadialDendrogram = ({ data, handleNodeClick }: RadialDendogramProps) => {
 
     const allNodes = dendrogram.descendants().map((node, key) => {
         const turnLabelUpsideDown = node.x > 180;
-        console.log(node)
+
         return (
             <g
                 key={node.id + `_${key}`}
                 transform={`rotate(${node.x - 90}) translate(${node.y})`}
                 style={{ cursor: "pointer" }}
-                onClick={() => !node.children && handleNodeClick(node.data)}
+                onClick={() => !node.children && handleNodeClick(
+                    {
+                        title: node.data.name || "",
+                        description: node.data.description || "",
+                        imageUrl: node.data.imageUrl || "",
+                        progress: node.data.level || 0,
+                    })}
             >
                 {node.children ?
                     <rect

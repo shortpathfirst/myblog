@@ -44,7 +44,7 @@ export type MetadataProject = {
     };
 }
 
-export type TechStackData = {
+export interface TechStackData  {
     name: string;
     level?: number;
     description?: string;

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './techStack.module.css'
-import Bubbles from '../d3/Bubbles';
 import TechFigureRadial from './techFigureRadial';
 
 const TechStack = () => {
@@ -14,11 +13,6 @@ const TechStack = () => {
                 <TechFigureRadial/>
                 <div className={styles.poweredby}>Powered by <span>D3</span></div>
             </div>
-           <div className={styles.figure}>
-                <Bubbles />
-                <div className={styles.poweredby}>Powered by <span>D3</span></div>
-            </div>
-
         </section>
     )
 }

@@ -5,19 +5,19 @@ const useScrollDirection = () => {
     const [scrollUp, setScrollUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const updateScrollDirection = () => {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            setScrollUp(false); // Scrolling down
-        } else if (currentScrollY < lastScrollY) {
-            setScrollUp(true); // Scrolling up
-        }
-
-        setLastScrollY(currentScrollY);
-    };
-
     useEffect(() => {
+        const updateScrollDirection = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                setScrollUp(false); // Scrolling down
+            } else if (currentScrollY < lastScrollY) {
+                setScrollUp(true); // Scrolling up
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
         window.addEventListener('scroll', updateScrollDirection);
 
         return () => {

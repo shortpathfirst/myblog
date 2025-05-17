@@ -1,47 +1,26 @@
 "use client";
 import React, { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
-import techStack from '@/content/techStack_v2.json'
+import { modalData } from '../techStack/techFigureRadial';
 
-export type GroupNode = {
+export interface GroupNode {
     group?: number;
     groupName?: string;
+    name?: string;
     imageUrl?: string;
+    description?: string;
     value: number;
     children?: GroupNode[];
-};
+}
+
 type D3Node = d3.HierarchyCircularNode<GroupNode> & d3.SimulationNodeDatum;
 
-type InputNode = {
-    name: string;
-    children: {
-        name: string;
-        level: number;
-        description: string;
-        imageUrl: string;
-    }[];
-};
+type BubblesProps = {
+    data: GroupNode,
+    handleNodeClick: (node: modalData) => void
 
-type RootInput = {
-    name: string;
-    children: InputNode[];
-};
-
-export function mapToGroupNode(input: RootInput): GroupNode {
-    return {
-        value: 0,
-        children: input.children.map((group, groupIndex) => ({
-            value: 0,
-            children: group.children.map(child => ({
-                group: groupIndex,
-                groupName: group.name,
-                imageUrl: child.imageUrl,
-                value: child.level
-            }))
-        }))
-    };
 }
-const Bubbles = () => {
+const Bubbles = ({ data, handleNodeClick }: BubblesProps) => {
     const m = 10; //Number of groups
     const height = 600;
     const width = 600;
@@ -78,7 +57,7 @@ const Bubbles = () => {
         let y = 0;
         let z = 0;
         for (const d of nodes) {
-            let k = d.r ** 2;
+            const k = d.r ** 2;
             x += d.x * k;
             y += d.y * k;
             z += k;
@@ -154,13 +133,14 @@ const Bubbles = () => {
 
     useEffect(() => {
 
-        if (!svgRef.current) return;
+        if (!svgRef.current || !data)
+            return;
         const svg = d3.select(svgRef.current);
 
         const nodes = d3.pack<GroupNode>()
             .size([width, height])
             .padding(1)(
-                d3.hierarchy(mapToGroupNode(techStack) as GroupNode)
+                d3.hierarchy(data)
                     .sum(d => d.value)
             ).leaves();
 
@@ -186,8 +166,16 @@ const Bubbles = () => {
             .data(nodes)
             .join("g")
             .attr("transform", d => `translate(${d.x},${d.y})`)
-            // @ts-ignore
-            .call(drag(simulation));  // drag applied to the group
+            // @ts-expect-error D3 Type error with call and drag
+            .call(drag(simulation))  // drag applied to the group
+            .on('click', (_, { data }) => handleNodeClick(
+                {
+                    title: data.name || "No name",
+                    description: data.description || "",
+                    imageUrl: data.imageUrl || "",
+                    progress: data.value || 0
+                }
+            ))
 
         node.append("circle")
             .attr("r", d => d.r)
@@ -204,7 +192,7 @@ const Bubbles = () => {
             .attr("clip-path", "circle()");
 
         node.transition()
-            .delay((d, i) => Math.random() * 500)
+            .delay(Math.random() * 500)
             .duration(750)
             .attrTween("r", d => {
                 const i = d3.interpolate(0, d.r);
@@ -264,8 +252,8 @@ const Bubbles = () => {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
         });
-
-    }, [techStack])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 
     return (
