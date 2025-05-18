@@ -5,13 +5,18 @@
     align-items: center;
 }
 
-.figure {
-    position: relative;
-    width: 60vw;
+.titleBand {
+    background-color: #dfeaf8;
+    border-top: 15px double var(--background);
+    border-bottom: 15px double var(--background);
+    overflow: hidden;
+    width: 95vw;
+    vertical-align: middle;
 }
 
-.figure svg {
-    max-height: 60vw;
+.figure {
+    position: relative;
+    max-width: 100%;
 }
 
 .poweredby {
