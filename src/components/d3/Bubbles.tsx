@@ -17,13 +17,17 @@ type D3Node = d3.HierarchyCircularNode<GroupNode> & d3.SimulationNodeDatum;
 
 type BubblesProps = {
     data: GroupNode,
+    radialPositions: Map<string, {
+        x: number;
+        y: number;
+    }>,
     handleNodeClick: (node: modalData) => void
 
 }
-const Bubbles = ({ data, handleNodeClick }: BubblesProps) => {
+const Bubbles = ({ data, handleNodeClick, radialPositions }: BubblesProps) => {
     const m = 10; //Number of groups
-    const height = 600;
-    const width = 600;
+    const height = 950;
+    const width = 950;
     const color = d3.scaleOrdinal(d3.range(m), d3.schemeCategory10);
 
     const svgRef = useRef<SVGSVGElement | null>(null);
@@ -143,9 +147,18 @@ const Bubbles = ({ data, handleNodeClick }: BubblesProps) => {
                     .sum(d => d.value)
             ).leaves();
 
+        // Initialize each node's x, y from radial chart (if available)
+        nodes.forEach(node => {
+            const startPos = node.data.name ? radialPositions.get(node.data.name) : undefined;
+            if (startPos) {
+                node.x = startPos.x + width / 2;
+                node.y = startPos.y + height / 2;
+            }
+        });
+
         const simulation = d3.forceSimulation(nodes)
-            .force("x", d3.forceX(width / 2).strength(0.01))
-            .force("y", d3.forceY(height / 2).strength(0.01))
+            .force("x", d3.forceX(width / 2).strength(0.03))
+            .force("y", d3.forceY(height / 2).strength(0.03))
             .force("cluster", forceCluster())
             .force("collide", forceCollide());
 
@@ -223,7 +236,7 @@ const Bubbles = ({ data, handleNodeClick }: BubblesProps) => {
             .style("font-size", "24px")
             .style("font-weight", "600")
             .style("fill", "#333")
-            .attr("stroke", "white")//Add stroke to make it visible
+            .attr("stroke", "white")    //Add stroke to make it visible
             .attr("stroke-width", 4)
             .attr("paint-order", "stroke")
             .attr("fill", "black")

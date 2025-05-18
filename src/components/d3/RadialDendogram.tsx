@@ -15,7 +15,8 @@ type TreeData = TechStackData
 
 type RadialDendogramProps = {
     data: TechStackData,
-    handleNodeClick: (node: modalData) => void
+    handleNodeClick: (node: modalData) => void,
+    setRadialPositions: (React.Dispatch<React.SetStateAction<Map<string, {x: number;y: number;}>>>),
 }
 const width = 950;
 const height = 950;
@@ -24,7 +25,7 @@ const panOffset = 30;
 
 const degToRad = (deg: number) => (deg * 2 * Math.PI) / 360; // 360 → 2π
 
-const RadialDendrogram = ({ data, handleNodeClick }: RadialDendogramProps) => {
+const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions }: RadialDendogramProps) => {
 
     const svgRef = useRef<SVGSVGElement | null>(null);
     const groupRef = useRef<SVGGElement | null>(null);
@@ -60,6 +61,22 @@ const RadialDendrogram = ({ data, handleNodeClick }: RadialDendogramProps) => {
         const dendrogramGenerator = d3.cluster<TreeData>().size([360, radius]);
         return dendrogramGenerator(hierarchy);
     }, [hierarchy]);
+
+    useEffect(() => {
+        if (!dendrogram) return;
+
+        const newRadialPositions = new Map();
+
+        dendrogram.descendants().forEach(node => {
+            const angle = (node.x - 90) * (Math.PI / 180);
+            const radius = node.y;
+            const x = radius * Math.cos(angle);
+            const y = radius * Math.sin(angle);
+            newRadialPositions.set(node.data.name, { x, y });
+        });
+
+        setRadialPositions(newRadialPositions);
+    }, [dendrogram,setRadialPositions]);
 
     const linksGenerator = d3
         .linkRadial<d3.HierarchyPointLink<TreeData>, d3.HierarchyPointNode<TreeData>>()
