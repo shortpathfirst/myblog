@@ -75,7 +75,7 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
         const radius = Math.min(width, height) / 2 - MARGIN;
         const dendrogramGenerator = d3.cluster<TreeData>().size([360, radius]);
         return dendrogramGenerator(hierarchy);
-    }, [hierarchy]);
+    }, [hierarchy, width, height]);
 
 
     useEffect(() => {
