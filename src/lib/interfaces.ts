@@ -17,6 +17,7 @@ export type MetadataBlog = {
     date: string;
     tags: Tag[],
     author?: Author;
+    imageUrl?: string;
     ogImage?: {
         url: string;
     };
@@ -28,23 +29,24 @@ export type BlogPost = {
 }
 
 // Project data
-export type ProjectsInfo = {
-    metadata: MetadataProject;
-    url: string; //External Url of the project
-}
 
 export type MetadataProject = {
     // id: string,
     title: string;
     description: string;
     date: string;
+    imageUrl?: string;
     tags: Tag[],
     ogImage?: {
         url: string;
     };
 }
+export type ProjectsInfo = {
+    metadata: MetadataProject;
+    url: string; //External Url of the project
+}
 
-export interface TechStackData  {
+export interface TechStackData {
     name: string;
     level?: number;
     description?: string;

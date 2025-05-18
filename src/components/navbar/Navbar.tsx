@@ -17,7 +17,7 @@ export const Navbar = () => {
             <div className={styles.container}>
                 <h1 className={styles.title}>
                     <Link href="/" className={styles.link}>
-                        Homepage
+                        PORTFOLIO BLOG
                     </Link>
                 </h1>
                 <div className={styles.iconGroup}>

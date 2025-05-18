@@ -8,13 +8,13 @@ const Page = async () => {
 
     return (
         // <ViewTransition>
-            <div className='container'>
-                <section>
-                    <h1>Blog page</h1>
-                    <BlogPosts blogData={blogdata}></BlogPosts>
-                </section>
-            </div>
-       
+        <div className='container'>
+            <section>
+                <h1>Blog page</h1>
+                <BlogPosts blogData={blogdata}></BlogPosts>
+            </section>
+        </div>
+
     )
 }
 

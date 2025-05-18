@@ -1,0 +1,12 @@
+.h1Title {
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    margin-top: 80px;
+}
+
+.h1Title>span {
+    /* color: #baacf9; */
+    color: #8169eb;
+}

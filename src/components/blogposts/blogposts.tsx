@@ -18,7 +18,7 @@ const BlogPosts = ({ blogData }: {
                     .map((post, i) => (
                         <BlogPostCard
                             key={i}
-                            imageSrc={"file.svg"}
+                            imageSrc={post.metadata.imageUrl ?? "file.svg"}
                             title={post.metadata.title}
                             href={`/blog/${post.slug}`}
                             description={post.metadata.description}
