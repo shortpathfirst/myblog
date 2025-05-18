@@ -4,11 +4,13 @@ import { isProd } from "@/lib/constants";
 
 const nextConfig: NextConfig = {
   basePath: isProd ? '/myblog' : '',
+  assetPrefix: isProd ? '/myblog' : '',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
     viewTransition: true,
     mdxRs: false, // <-- HERE
-  }
+  },
+  reactStrictMode:false
 };
 
 const withMDX = createMDX({
