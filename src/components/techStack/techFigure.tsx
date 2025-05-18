@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import TechModal from './techModal';
 import RadialDendrogram from '../d3/RadialDendogram';
-import techHierarchy from "@/content/techStack_v2.json";
+import techHierarchy from "@/content/techStack.json";
 import { mapToGroupNode } from '@/lib/mapTechToGroupNode';
 import Bubbles from '../d3/Bubbles';
 import styles from './techStack.module.css'

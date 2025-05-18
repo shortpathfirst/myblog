@@ -16,6 +16,8 @@ export interface GroupNode {
 type D3Node = d3.HierarchyCircularNode<GroupNode> & d3.SimulationNodeDatum;
 
 type BubblesProps = {
+    width?: number;
+    height?: number;
     data: GroupNode,
     radialPositions: Map<string, {
         x: number;
@@ -24,12 +26,9 @@ type BubblesProps = {
     handleNodeClick: (node: modalData) => void
 
 }
-const Bubbles = ({ data, handleNodeClick, radialPositions }: BubblesProps) => {
+const Bubbles = ({ data, handleNodeClick, radialPositions, width = 950, height = 950 }: BubblesProps) => {
     const m = 10; //Number of groups
-    const height = 950;
-    const width = 950;
     const color = d3.scaleOrdinal(d3.range(m), d3.schemeCategory10);
-
     const svgRef = useRef<SVGSVGElement | null>(null);
 
     const drag = (simulation: d3.Simulation<D3Node, undefined>) => {
@@ -170,7 +169,7 @@ const Bubbles = ({ data, handleNodeClick, radialPositions }: BubblesProps) => {
         //     .attr("cx", d => d.x)
         //     .attr("cy", d => d.y)
         //     .attr("fill", d => color(d.data.group ?? 0))
-        //     // @ts-ignore
+        //  // @ts-expect-error D3 Type error with call and drag
         //     .call(drag(simulation));
 
         const node = svg.append("g")
@@ -264,6 +263,9 @@ const Bubbles = ({ data, handleNodeClick, radialPositions }: BubblesProps) => {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
         });
+        return () => {
+            simulation.stop();
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

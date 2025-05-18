@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo, useState } from 'react';
 import * as d3 from 'd3';
-import techHierarchy from "@/content/techStack_v2.json";
+import techHierarchy from "@/content/techStack.json";
 import TechModal from './techModal';
 
 type Tree = {
