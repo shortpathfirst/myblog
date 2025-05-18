@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
-import { isProd } from "@/lib/constants";
+
+const isProd = true;
 
 const nextConfig: NextConfig = {
   basePath: isProd ? '/myblog' : '',
@@ -10,7 +11,6 @@ const nextConfig: NextConfig = {
     viewTransition: true,
     mdxRs: false, // <-- HERE
   },
-  reactStrictMode:false
 };
 
 const withMDX = createMDX({
