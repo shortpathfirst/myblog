@@ -5,12 +5,12 @@
       "description": "React architecture with chartjs and chakraUI, express backend and sqlite database.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "React", "url": "/images/qgis-icon.png" },
-        { "name": "chartjs", "url": "/images/qgis-icon.png" },
-        { "name": "chakraUI", "url": "/images/qgis-icon.png" },
-        { "name": "Express", "url": "/images/qgis-icon.png" },
-        { "name": "SQLite", "url": "/images/qgis-icon.png" },
-        { "name": "Vite", "url": "/images/qgis-icon.png" }
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "chartjs", "url": "" },
+        { "name": "chakraUI", "url": "" },
+        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { "name": "SQLite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
       ]
     },
     "url": "https://example.com/powerlifting-database"
@@ -21,10 +21,10 @@
       "description": "Cryptocurrency app using Express backend, Axios client and Create React App.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Express", "url": "/images/qgis-icon.png" },
-        { "name": "Axios", "url": "/images/qgis-icon.png" },
-        { "name": "React", "url": "/images/qgis-icon.png" },
-        { "name": "CRA", "url": "/images/qgis-icon.png" }
+        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { "name": "Axios", "url": "https://axios-http.com/assets/logo.svg" },
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "CRA", "url": "" }
       ]
     },
     "url": "https://example.com/cripto-react"
@@ -35,11 +35,11 @@
       "description": "Web scraping with asyncio requests, Flask backend, Axios client with loading interceptors.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Python", "url": "/images/qgis-icon.png" },
-        { "name": "Flask", "url": "/images/qgis-icon.png" },
-        { "name": "Axios", "url": "/images/qgis-icon.png" },
-        { "name": "React", "url": "/images/qgis-icon.png" },
-        { "name": "Web Scraping", "url": "/images/qgis-icon.png" }
+        { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { "name": "Flask", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+        { "name": "Axios", "url": "https://axios-http.com/assets/logo.svg" },
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "Web Scraping", "url": "" }
       ]
     },
     "url": "https://example.com/grid-palline"
@@ -50,9 +50,9 @@
       "description": "Full-stack app with Angular frontend, Express backend and MongoDB database.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Angular", "url": "/images/qgis-icon.png" },
-        { "name": "Express", "url": "/images/qgis-icon.png" },
-        { "name": "MongoDB", "url": "/images/qgis-icon.png" }
+        { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { "name": "MongoDB", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
       ]
     },
     "url": "https://example.com/pizza-store"
@@ -63,9 +63,9 @@
       "description": "React app visualizing search and tree algorithms using SVG.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "React", "url": "/images/qgis-icon.png" },
-        { "name": "Algorithms", "url": "/images/qgis-icon.png" },
-        { "name": "SVG", "url": "/images/qgis-icon.png" }
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "Algorithms", "url": "" },
+        { "name": "SVG", "url": "" }
       ]
     },
     "url": "https://example.com/search-visualizer"
@@ -76,8 +76,8 @@
       "description": "Angular and ElectronJS desktop application.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Angular", "url": "/images/qgis-icon.png" },
-        { "name": "ElectronJS", "url": "/images/qgis-icon.png" }
+        { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+        { "name": "ElectronJS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" }
       ]
     },
     "url": "https://example.com/angular-pesi"
@@ -88,10 +88,10 @@
       "description": "Graph visualization using networkx, planarity testing algorithms with p5.js and Typescript.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "networkx", "url": "/images/qgis-icon.png" },
-        { "name": "p5.js", "url": "/images/qgis-icon.png" },
-        { "name": "Typescript", "url": "/images/qgis-icon.png" },
-        { "name": "Algorithms", "url": "/images/qgis-icon.png" }
+        { "name": "networkx", "url": "" },
+        { "name": "p5.js", "url": "https://raw.githubusercontent.com/processing/p5.js/main/logo.svg" },
+        { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { "name": "Algorithms", "url": "" }
       ]
     },
     "url": "https://example.com/planarity-test"
@@ -102,9 +102,9 @@
       "description": "Treemap visualization using design patterns, implemented in Java and Typescript.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Java", "url": "/images/qgis-icon.png" },
-        { "name": "Design Patterns", "url": "/images/qgis-icon.png" },
-        { "name": "Typescript", "url": "/images/qgis-icon.png" }
+        { "name": "Java", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+        { "name": "Design Patterns", "url": "" },
+        { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
       ]
     },
     "url": "https://example.com/treemap"
@@ -115,9 +115,9 @@
       "description": "Suriyama Algorithm visualized with D3 and Express server backend.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Suriyama", "url": "/images/qgis-icon.png" },
-        { "name": "d3", "url": "/images/qgis-icon.png" },
-        { "name": "Express", "url": "/images/qgis-icon.png" }
+        { "name": "Suriyama", "url": "" },
+        { "name": "d3", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg" },
+        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" }
       ]
     },
     "url": "https://example.com/suriyama"
@@ -128,9 +128,9 @@
       "description": "Syntax highlighter with React frontend and Express server serving CSS files.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "React", "url": "/images/qgis-icon.png" },
-        { "name": "Express", "url": "/images/qgis-icon.png" },
-        { "name": "Syntax Highlighting", "url": "/images/qgis-icon.png" }
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { "name": "Syntax Highlighting", "url": "" }
       ]
     },
     "url": "https://example.com/css-explorer"
@@ -141,8 +141,8 @@
       "description": "Static website built with Angular.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Angular", "url": "/images/qgis-icon.png" },
-        { "name": "Static Site", "url": "/images/qgis-icon.png" }
+        { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+        { "name": "Static Site", "url": "" }
       ]
     },
     "url": "https://example.com/judoclub"
@@ -153,8 +153,8 @@
       "description": "Algorithms implemented in vanilla JavaScript.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Vanilla JS", "url": "/images/qgis-icon.png" },
-        { "name": "Algorithms", "url": "/images/qgis-icon.png" }
+        { "name": "Vanilla JS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { "name": "Algorithms", "url": "" }
       ]
     },
     "url": "https://example.com/shapehighlight"
@@ -165,10 +165,10 @@
       "description": "NP-hard problem visualization with 2-Approx and SOM algorithms using TensorFlow.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Vanilla JS", "url": "/images/qgis-icon.png" },
-        { "name": "Tensorflow", "url": "/images/qgis-icon.png" },
-        { "name": "Algorithms", "url": "/images/qgis-icon.png" },
-        { "name": "NP-Hard", "url": "/images/qgis-icon.png" }
+        { "name": "Vanilla JS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { "name": "Tensorflow", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+        { "name": "Algorithms", "url": "" },
+        { "name": "NP-Hard", "url": "" }
       ]
     },
     "url": "https://example.com/canvas-travel"
@@ -179,8 +179,8 @@
       "description": "Interactive map visualization using D3 and GeoJSON.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "D3", "url": "/images/qgis-icon.png" },
-        { "name": "GeoJSON", "url": "/images/qgis-icon.png" }
+        { "name": "D3", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg" },
+        { "name": "GeoJSON", "url": "" }
       ]
     },
     "url": "https://example.com/geojson-map"
@@ -191,11 +191,11 @@
       "description": "Visualizations with D3 including transitions, bubble charts, interactive trees and more.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "D3", "url": "/images/qgis-icon.png" },
-        { "name": "Bubble Chart", "url": "/images/qgis-icon.png" },
-        { "name": "Transition", "url": "/images/qgis-icon.png" },
-        { "name": "Interactive Tree", "url": "/images/qgis-icon.png" },
-        { "name": "Visualization", "url": "/images/qgis-icon.png" }
+        { "name": "D3", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg" },
+        { "name": "Bubble Chart", "url": "" },
+        { "name": "Transition", "url": "" },
+        { "name": "Interactive Tree", "url": "" },
+        { "name": "Visualization", "url": "" }
       ]
     },
     "url": "https://example.com/d3-others"
@@ -206,11 +206,11 @@
       "description": "Microservice architecture using Spark VM and Hadoop with JSP servlet backend.",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Spark", "url": "/images/qgis-icon.png" },
-        { "name": "Hadoop", "url": "/images/qgis-icon.png" },
-        { "name": "Microservices", "url": "/images/qgis-icon.png" },
-        { "name": "JSP", "url": "/images/qgis-icon.png" },
-        { "name": "Servlet", "url": "/images/qgis-icon.png" }
+        { "name": "Spark", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
+        { "name": "Hadoop", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" },
+        { "name": "Microservices", "url": "" },
+        { "name": "JSP", "url": "" },
+        { "name": "Servlet", "url": "" }
       ]
     },
     "url": "https://example.com/spark-hadoop"
