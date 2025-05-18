@@ -25,11 +25,18 @@ const MARGIN = 60;
 const panOffset = 30;
 
 const degToRad = (deg: number) => (deg * 2 * Math.PI) / 360; // 360 → 2π
+const polarToCartesian = (angle: number, radius: number,) => {
+    const theta = (angle * Math.PI) / 180;
+    const x = radius * Math.cos(theta);
+    const y = radius * Math.sin(theta);
+    return { x, y };
+}
 
 const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 950, height = 950 }: RadialDendogramProps) => {
 
     const svgRef = useRef<SVGSVGElement | null>(null);
     const groupRef = useRef<SVGGElement | null>(null);
+    const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null);
 
     useEffect(() => {
         if (!svgRef.current || !groupRef.current)
@@ -40,20 +47,27 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
 
         const zoomBehavior = d3.zoom<SVGSVGElement, unknown>()
             .scaleExtent([0.8, 5])
-            .translateExtent([[-width / 2 - panOffset, -height / 2 - panOffset], [width / 2 + panOffset, height / 2 + panOffset]])
+            .translateExtent([
+                [-width / 2 - panOffset, -height / 2 - panOffset],
+                [width + panOffset, height / 2 + panOffset]]
+            )
             .on("zoom", (event) => {
                 group.attr("transform", event.transform);
             });
+
+        zoomRef.current = zoomBehavior;
 
         svg.call(zoomBehavior);
         svg.call(
             zoomBehavior.transform,
             d3.zoomIdentity.translate(width / 2, height / 2)
         );
+
         return () => {
-            svg.on(".zoom", null); // Clean up zoom event listener
+            // Clean up zoom event listener
+            svg.on(".zoom", null);
         };
-    }, [width,height]);
+    }, [width, height]);
 
     const hierarchy = useMemo(() => d3.hierarchy<TreeData>(data), [data]);
 
@@ -63,16 +77,14 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
         return dendrogramGenerator(hierarchy);
     }, [hierarchy]);
 
+
     useEffect(() => {
         if (!dendrogram) return;
 
         const newRadialPositions = new Map();
 
         dendrogram.descendants().forEach(node => {
-            const angle = (node.x - 90) * (Math.PI / 180);
-            const radius = node.y;
-            const x = radius * Math.cos(angle);
-            const y = radius * Math.sin(angle);
+            const { x, y } = polarToCartesian(node.x - 90, node.y); // subtract 90 to align with top
             newRadialPositions.set(node.data.name, { x, y });
         });
 
@@ -83,6 +95,22 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
         .linkRadial<d3.HierarchyPointLink<TreeData>, d3.HierarchyPointNode<TreeData>>()
         .angle((node) => degToRad(node.x))
         .radius((node) => node.y);
+
+    const zoomToNode = (x: number, y: number) => {
+        if (!zoomRef.current || !svgRef.current) return;
+
+        const scale = 2;
+
+        const transform = d3.zoomIdentity
+            .translate(width / 2, height / 2)
+            .scale(scale)
+            .translate(-x, -y);
+
+        d3.select(svgRef.current).transition()
+            .transition()
+            .duration(750)
+            .call(zoomRef.current.transform, transform);
+    };
 
     const allEdges = dendrogram.links().map((link, key) => {
         // For the very first level, draw lines instead of radial links that would look bad at the root
@@ -114,13 +142,21 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
                 key={node.id + `_${key}`}
                 transform={`rotate(${node.x - 90}) translate(${node.y})`}
                 style={{ cursor: "pointer" }}
-                onClick={() => !node.children && handleNodeClick(
-                    {
-                        title: node.data.name || "",
-                        description: node.data.description || "",
-                        imageUrl: node.data.imageUrl || "",
-                        progress: node.data.level || 0,
-                    })}
+                onClick={() => {
+                    if (!node.children) {
+
+                        const { x, y } = polarToCartesian(node.x - 90, node.y); // subtract 90 to align with top
+                        zoomToNode(x * 0.85, y);//Offset by 25%
+
+                        handleNodeClick({
+                            title: node.data.name || "",
+                            description: node.data.description || "",
+                            imageUrl: node.data.imageUrl || "",
+                            progress: node.data.level || 0,
+                        });
+                    }
+                }}
+
             >
                 {node.children ?
                     <rect

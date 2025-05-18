@@ -20,6 +20,7 @@ const TechFigure = () => {
     const [modalDescription, setmodalDescription] = useState<modalData | null>(null);
     const [figureType, setFigureType] = useState<"radial" | "bubble">("radial");
     const [radialPositions, setRadialPositions] = useState(new Map<string, { x: number, y: number }>())
+    const figureSize = 950;
 
     // Open drawer
     const handleOpendrawer = ({ title, description, imageUrl, progress }: modalData) => {
@@ -52,12 +53,16 @@ const TechFigure = () => {
             {
                 figureType === "radial" &&
                 <RadialDendrogram
+                    width={figureSize}
+                    height={figureSize}
                     setRadialPositions={setRadialPositions}
                     data={techHierarchy}
                     handleNodeClick={handleOpendrawer} />}
             {
                 figureType === "bubble" &&
                 <Bubbles
+                    width={figureSize}
+                    height={figureSize}
                     radialPositions={radialPositions}
                     data={mapToGroupNode(techHierarchy)}
                     handleNodeClick={handleOpendrawer} />
