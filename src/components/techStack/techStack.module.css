@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 5rem 0;
 }
 
 .titleBand {
@@ -12,6 +13,7 @@
     overflow: hidden;
     width: 95vw;
     vertical-align: middle;
+    margin-bottom: 3rem;
 }
 
 .figure {

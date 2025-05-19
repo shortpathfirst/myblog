@@ -38,6 +38,7 @@ const BlogPostCard = ({ imageSrc, title, href, description, tags, cardStyle = "p
 				className={styles.cardImg}
 				priority={true}
 			/>
+
 			<div className={styles.cardTitle}>
 				<h2>{title}</h2>
 			</div>
