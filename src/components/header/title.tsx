@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import styles from './title.module.css'
+import styles from './header.module.css'
 
 const Title = ({ children }: { children: ReactNode }) => {
     return (

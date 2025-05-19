@@ -3,17 +3,17 @@ import BlogPosts from './blogposts'
 import { getBlogPosts } from '@/lib/posts';
 import styles from './blogpage.module.css'
 import Link from 'next/link';
-import Title from '../header/title';
+import PageHeader from '../header/pageHeader';
 
 const BlogNews = async () => {
     const blogdata = (await getBlogPosts()).slice(0, 3);
     return (
         <section className={styles.newsSection}>
-            <div className={styles.newsHeader}>
-                <Title>A small section of <span>recent project</span></Title>
-                <div className={styles.newsBackground}></div>
-            </div>
-
+            <PageHeader
+                backgroundImage={`/images/headerbackground.png`}
+                spanColor='#8169eb'>
+                A small section of <span>recent project</span>
+            </PageHeader>
             <BlogPosts blogData={blogdata}></BlogPosts>
             <Link href={"/blog"}><button className={styles.btn}>See my work</button></Link>
         </section>

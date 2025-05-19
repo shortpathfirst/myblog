@@ -3,6 +3,8 @@ import React from 'react'
 import BlogPostCard from '@/components/blogposts/blogpostcard';
 import { ProjectsInfo } from '@/lib/interfaces';
 import { getProjectsData, } from '@/lib/projects';
+import styles from './page.module.css'
+import PageHeader from '@/components/header/pageHeader';
 
 const Projects = () => {
     const projectsData = getProjectsData();
@@ -10,7 +12,11 @@ const Projects = () => {
     return (
         <div className='container'>
             <section>
-                <h1>Blog page</h1>
+                <PageHeader
+                    backgroundImage={`/images/projectabstract.png`}
+                    spanColor='#cd3232'>
+                    <span>Project</span> page
+                </PageHeader>
                 <ProjectsCards projectsData={projectsData}></ProjectsCards>
             </section>
         </div>
@@ -19,8 +25,6 @@ const Projects = () => {
 
 export default Projects
 
-// From blogposts
-import styles from '@/components/blogposts/blogpage.module.css'
 
 const ProjectsCards = ({ projectsData }: { projectsData: ProjectsInfo[] }) => {
     return (

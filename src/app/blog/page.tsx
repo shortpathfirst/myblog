@@ -1,6 +1,7 @@
 import React from 'react'
 import { getBlogPosts } from '@/lib/posts'
 import BlogPosts from '@/components/blogposts/blogposts'
+import PageHeader from '@/components/header/pageHeader';
 // import { unstable_ViewTransition as ViewTransition } from 'react'
 
 const Page = async () => {
@@ -10,7 +11,11 @@ const Page = async () => {
         // <ViewTransition>
         <div className='container'>
             <section>
-                <h1>Blog page</h1>
+                <PageHeader
+                    backgroundImage={`/images/blogabstract.png`}
+                    spanColor='#588ef3'>
+                    <span>Blog</span> page
+                </PageHeader>
                 <BlogPosts blogData={blogdata}></BlogPosts>
             </section>
         </div>
