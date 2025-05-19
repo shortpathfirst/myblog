@@ -5,6 +5,7 @@ import { ProjectsInfo } from '@/lib/interfaces';
 import { getProjectsData, } from '@/lib/projects';
 import styles from './page.module.css'
 import PageHeader from '@/components/header/pageHeader';
+import { baseUrl } from '@/lib/constants';
 
 const Projects = () => {
     const projectsData = getProjectsData();
@@ -13,7 +14,7 @@ const Projects = () => {
         <div className='container'>
             <section>
                 <PageHeader
-                    backgroundImage={`/images/projectabstract.png`}
+                    backgroundImage={`${baseUrl}/images/projectabstract.png`}
                     spanColor='#cd3232'>
                     <span>Project</span> page
                 </PageHeader>
@@ -39,7 +40,7 @@ const ProjectsCards = ({ projectsData }: { projectsData: ProjectsInfo[] }) => {
                     .map((post, i) => (
                         <BlogPostCard
                             key={i}
-                            imageSrc={"file.svg"}
+                            imageSrc={"/myblog/file.svg"}
                             title={post.metadata.title}
                             href={post.url}
                             description={post.metadata.description}

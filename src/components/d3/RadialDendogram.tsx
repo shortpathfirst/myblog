@@ -5,6 +5,7 @@ import * as d3 from 'd3';
 import { TechStackData } from '@/lib/interfaces';
 import { modalData } from '../techStack/techFigure';
 import styles from './d3styles.module.css'
+import { baseUrl } from '@/lib/constants';
 
 // type TreeData = {
 //     name: string;
@@ -173,7 +174,7 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
 
                     /> :
                     <image
-                        href={node.data.imageUrl || "/images/qgis-icon.png"}
+                        href={node.data.imageUrl || `${baseUrl}/images/qgis-icon.png`}
                         x={-30}
                         y={-25}
                         width={60}

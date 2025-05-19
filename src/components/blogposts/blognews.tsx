@@ -4,13 +4,14 @@ import { getBlogPosts } from '@/lib/posts';
 import styles from './blogpage.module.css'
 import Link from 'next/link';
 import PageHeader from '../header/pageHeader';
+import { baseUrl } from '@/lib/constants';
 
 const BlogNews = async () => {
     const blogdata = (await getBlogPosts()).slice(0, 3);
     return (
         <section className={styles.newsSection}>
             <PageHeader
-                backgroundImage={`/images/headerbackground.png`}
+                backgroundImage={`${baseUrl}/images/headerbackground.png`}
                 spanColor='#8169eb'>
                 A small section of <span>recent project</span>
             </PageHeader>
