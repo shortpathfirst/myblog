@@ -3,13 +3,13 @@ import { getBlogPosts } from '@/lib/posts'
 import BlogPosts from '@/components/blogposts/blogposts'
 import PageHeader from '@/components/header/pageHeader';
 import { baseUrl } from '@/lib/constants';
-import { unstable_ViewTransition as ViewTransition } from 'react'
+// import { unstable_ViewTransition as ViewTransition } from 'react'
 
 const Page = async () => {
     const blogdata = await getBlogPosts();
 
     return (
-        <ViewTransition>
+        // <ViewTransition>
         <div className='container'>
             <section>
                 <PageHeader
@@ -20,7 +20,6 @@ const Page = async () => {
                 <BlogPosts blogData={blogdata}></BlogPosts>
             </section>
         </div>
-        </ViewTransition>
 
     )
 }
