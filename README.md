@@ -1,5 +1,3 @@
-
-
 ## Installation
 [![npm](https://img.shields.io/npm/v/@tsparticles/react)](https://www.npmjs.com/package/@tsparticles/react) 
 
@@ -98,3 +96,50 @@ npm install next-mdx-remote
 
 - **Code Highlight** using `react-syntax-highlighter`
 - **Frontmatter** using `remark`
+
+## SEO
+### Robot
+```ts
+// robot.ts
+import { baseUrl } from 'app/sitemap'
+
+export default function robots() {
+  return {
+    rules: [
+      {
+        userAgent: '*',
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
+  }
+}
+```
+### Sitemap 
+```ts
+export default function sitemap(): MetadataRoute.Sitemap {
+  
+const postsDirectory = path.join(process.cwd(), "src", "_posts");
+const mdxFiles = fs.readdirSync(postsDirectory).filter((file) => ['.md', '.mdx'].includes(path.extname(file)));
+const slugs = mdxFiles.map((file) => path.basename(file, path.extname(file)));
+
+  const notes = slugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    priority: 1,
+    lastModified: new Date().toISOString(),
+  }));
+
+  const routes = ['blog', 'projects', 'resume'].map((route) => ({
+    url: `${baseUrl}/${route}`,
+    priority: 0.8,
+    lastModified: new Date().toISOString(),
+  }));
+
+  return [
+    ...routes,
+    ...notes,
+  ];
+}
+
+```
+### Opengraph image
+![Preview image](/public/images/preview.png)
