@@ -46,23 +46,24 @@ const Resume = () => {
                     {
                         [
                             {
-                                "name": "Project 1",
-                                "date": "February 2022 - May 2022",
+                                "name": "Crimes Dashboard",
+                                "date": "December 2024 - February 2025",
                                 "isSite": true,
-                                "url": "blogopost",
+                                "url": "https://github.com/shortpathfirst/MapDashboard",
                                 "descriptionList": [
-                                    "Project description for my <strong>Important content</strong>.",
-                                    "<strong>Kafka</strong>-like distributed system architecture built from scratch in <strong>Java</strong>."
+                                    "A <strong>React</strong> dashboard with the use of  <strong>Chackra UI</strong>.",
+                                    "<strong>ExpressJS</strong> backend serving the crimes data to showcase",
+                                    "To navigate the crimes of the City of Belém - Brazil in a modern site"
                                 ]
                             },
                             {
-                                "name": "Project 1",
-                                "date": "February 2022 - May 2022",
+                                "name": "Judo Club",
+                                "date": "August 2024 - September 2024",
                                 "isSite": false,
-                                "url": "blogopost",
+                                "url": "https://github.com/shortpathfirst/judoclub",
                                 "descriptionList": [
-                                    "Project description for my <strong>Important content</strong>.",
-                                    "<strong>Kafka</strong>-like distributed system architecture built from scratch in <strong>Java</strong>."
+                                    "SPA application written in <strong>Angular</strong> for a judo club. ",
+                                    "<strong>Interactive learning</strong> using data visualization libray and angular features."
                                 ]
                             }
                         ].map((project, i) => (
@@ -91,7 +92,6 @@ const Resume = () => {
                         <code>Python</code> ·
                         <code>HTML</code> ·
                         <code>CSS</code> ·
-                        <code>Kotlin</code>
                     </p>
 
                     <h4>Frontend Development:</h4>
@@ -99,7 +99,6 @@ const Resume = () => {
                         <code>React</code> ·
                         <code>Next.js</code> ·
                         <code>Angular</code> ·
-                        <code>Electron.js</code>
                     </p>
 
                     <h4>Backend & APIs:</h4>
