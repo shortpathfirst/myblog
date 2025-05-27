@@ -10,7 +10,7 @@ tags: [
 ]
 ---
 # Image similarity on bracelet patterns
-![](/postimages/similarity/mixFolder.PNG)
+![](/myblog/postimages/similarity/mixFolder.PNG)
 
 The task of organizing pattern can be challengin, simple sorting by average color fail to capture similarities, patterns that distinguish the image and the general result is quite unpleasing.
 
@@ -18,9 +18,9 @@ The task of organizing pattern can be challengin, simple sorting by average colo
 Various method for sorting exist i gave it a try using this method:
 #### Sorting using PCA with average color
 
-<img src="/postimages/similarity/sort1.png" alt="sorting colors" width="400"/>
-<img src="/postimages/similarity/sort2.png" alt="sorting colors" width="400"/>
-<img src="/postimages/similarity/sort3.png" alt="sorting colors" width="800"/>
+<img src="/myblog/postimages/similarity/sort1.png" alt="sorting colors" width="400"/>
+<img src="/myblog/postimages/similarity/sort2.png" alt="sorting colors" width="400"/>
+<img src="/myblog/postimages/similarity/sort3.png" alt="sorting colors" width="800"/>
 
 As in this case there is no labels to train a classification algorithm we have to use **unsupervised learning** techniques.
 Recent approaches in image analysis increasingly use deep learning. Like for example [This paper](https://link.springer.com/article/10.1007/s11263-022-01664-y) for clustering  art paintings or artistic designs use methods such as `Deep Embedded Clustering (DEC)` for clustering other than commonly used, deep learning models for **feature extraction**.
@@ -44,7 +44,7 @@ The dataset consists by a reduced amount of images, around **10,000 bracelet pat
 The data can be fed to the clustering model before dimensionality reduction with PCA (linear) or T-SNE(non linear) to provide better performance reducing the space of features.
 However in this case **t-SNE** was used to have a **visual rappresentation**  of the clustering.
 
-<img src="/postimages/similarity/tsne.png" alt="tsne" width="300"/>
+<img src="/myblog/postimages/similarity/tsne.png" alt="tsne" width="300"/>
 
 ## Pre-trained models architectures
 The choise of the models is made by the most performant models of recent years.
@@ -139,11 +139,11 @@ labels = db.labels_
 **Elbow method**
 To find the optimal `epsilon`  a NN (nearest neighbour) algorithm is used to get an empirical range to the clustering through the **elbow method**. This approach work in the 2-dimensional space where the curve change in direction from one class to the other. However it is not interpretable as dimensionality increases especially after deep learning-based embedding.
 
-<img src="/postimages/similarity/dbscan.png" alt="clustering" width="800"/>
+<img src="/myblog/postimages/similarity/dbscan.png" alt="clustering" width="800"/>
 
 ## Result
 The result for a small portion of the dataset is quite pleasing. 
 - **Color groupings are preserved**, meaning similar color schemes tend to appear together.
 - Structural patterns (e.g., stripes, diamonds, zigzags) are often grouped, proving effectiveness of the feature used.
 
-![](/postimages/similarity/clustering.png)
+![](/myblog/postimages/similarity/clustering.png)
