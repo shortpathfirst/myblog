@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { getBlogPosts } from '@/lib/posts'
 import BlogPageHeader from '@/components/blogposts/blogpageHeader'
 import styles from '@/styles/mdx.module.css'
+import ProgressBar from '@/components/progressbar/progressBar'
+
 
 interface BlogParams {
 
@@ -69,6 +71,7 @@ export default async function Blog({ params }: BlogParams) {
             }),
           }}
         />
+        <ProgressBar />
         <BlogPageHeader data={{
           title: post.metadata.title,
           date: post.metadata.date,
