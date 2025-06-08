@@ -1,0 +1,109 @@
+---
+title: "Crimes Dashboard"
+date: "2025-01-01"
+description: "Exploring deep learning algorithms for bracelet images"
+tags: [
+    {name : "React", url : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"},
+    {name : "Sqlite", url : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"},
+    {name : "Chart.js", url : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg"},
+
+]
+---
+<img src="/myblog/postimages/crimepost/process.jpg" width="500"/>
+
+
+## Data cleaning
+
+### 1. Data collection
+The data is obtained through web scraping and comes in raw GeoJSON format, often including unnecessary or redundant information.
+
+<img src="/myblog/postimages/crimepost/process2.PNG" width="500"/>
+
+- [Openstreetmap](https://www.openstreetmap.org/)
+- [Consulta de Dados Estatísticos Criminais (CODEC)](https://codec.segup.pa.gov.br/)
+- [IBGE](https://www.ibge.gov.br/)
+### 2. Data Cleaning
+The raw data data gets cleaned:
+1. Character normalization: Special Portuguese characters are standardized to simplify further processing.
+2. Polygon correction: GeoJSON polygons are cleaned to fix inconsistencies.
+
+### 3. Data Transformation
+the data is transformed into a structured SQLite database using `csv_to_sqlite`. This format allows for efficient data access, quick querying, and seamless integration into the platform.
+
+# Data prediction
+## Crime prediction using raster grid from QGIS 
+>Each raster cell contains crime data and variable for the prediction
+
+QGIS Steps:
+
+1. Create fishnet for Belem
+2. Load Sector from PA_Setores2021.zip
+3. OSM Bus data
+4. Join attributes by Intersect Fishnet 
+5. Transform to raster
+6. Make prediction
+    - Raster Training file
+
+
+`KNN` and `Random Forest Classifier` outperformed the Logistic Regression with high precision suggesting fewer false alarms.
+
+
+# Logistic Regression
+Using 
+```py
+y = {
+    1, # Cell with accident,
+    0 # Cell without accident
+}
+```
+
+>LRM is used o to measure the relationships between the dependent variable and thepredictors. 
+ The logistic regression model’s output is a predicted transformed logistic (logit)probability map with continuous values ranging from 0 to 1
+
+The inspiration is from a well structured study analyzing traffic accident in iran.
+
+<img src="/myblog/postimages/crimepost/Probability-map-based-on-logistic-regression-model.jpg" width="500"/>
+
+## References
+<a id="1">[1]</a> (Pedestrian Road Traffic Accidents in Metropolitan Areas: GIS-Based Prediction Modelling of Cases in Mashhad, Iran)(https://www.researchgate.net/publication/372109711_Pedestrian_Road_Traffic_Accidents_in_Metropolitan_Areas_GIS-Based_Prediction_Modelling_of_Cases_in_Mashhad_Iran)
+
+
+
+
+## QGIS
+The geojsondata is loaded with qgis, a powerful tool to visualize, analyze geospatial data. Sectors data and a fishnet help to divide the problem to smaller section to then make a prediction.
+
+<img src='/myblog/postimages/crimepost/qgis/qgis3.PNG' height="400"/>
+
+A classiification output the most probable crime in each sector givin insight in how to resolve the crime problem.
+
+<img src='/myblog/postimages/crimepost/qgis/qgis2.PNG' height="400"/>
+
+
+## Python analysis
+### EDA
+>**Data exploration** is done with to have a first look at the data to find patterns and to check if the data has something to tell to us like area that form clusters indicading populated area with high crimes, dangerous streets or crime organizations.
+
+<div style={{display:'flex', gap:'2rem', flexWrap:'wrap'}}>
+<img src='/myblog/postimages/crimepost/datainsight/Figure_1.png' height="400" width="400"/>
+<img src='/myblog/postimages/crimepost/datainsight/Figure_2.png' height="400"  width="400"/>
+<img src='/myblog/postimages/crimepost/datainsight/Figure_3.png' height="400"  width="400"/>
+<img src='/myblog/postimages/crimepost/datainsight/Figure_4.png' height="400"  width="400"/>
+<img src='/myblog/postimages/crimepost/datainsight/Figure_5.png' height="400"  width="400"/>
+<img src='/myblog/postimages/crimepost/datainsight/Figure_6.png' height="400"  width="400"/>
+</div>
+
+### Data analysis
+With an accuracy of `83%` given also the high amount of data spannig 3 years is successful predicting the type of crime given the crime variables used.
+
+<img src='/myblog/postimages/crimepost/prediction.png' height="400"  width="400"/>
+
+## Web Dashboard 
+A web platform for navigating crime data, allowing users to explore `what` crimes occurred, `where` they happened, and `when` they took place. Users can filter and combine these parameters to view the data in a table or visualize patterns and relationships through interactive charts.
+
+<img src='/myblog/postimages/crimepost/dashboard/bel1.PNG' height="400"/>
+<img src='/myblog/postimages/crimepost/dashboard/bel2.PNG' height="400"/>
+<img src='/myblog/postimages/crimepost/dashboard/bel3.PNG' height="400"/>
+<img src='/myblog/postimages/crimepost/dashboard/bel4.PNG' height="400"/>
+
+

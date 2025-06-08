@@ -1,0 +1,137 @@
+---
+title: "Leaf segmentation"
+date: "2025-06-08"
+description: "Exploring deep learning algorithms for bracelet images"
+tags: [
+    { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { "name": "Tensorflow", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" }
+]
+---
+# Leaf segmentation
+
+<p align="center">
+<img src="/postimages/leafsegmentation/workflow.png" />
+</p>
+# Data labelling
+
+> First we **annotate the dataset** to train deep learning models useful for better processing
+
+### Labelbox 
+[![](/myblog/postimages/leafsegmentation/logo-v4.svg)](https://app.labelbox.com/)
+
+**Labelbox** is a very powerful platform for image annotation. It allows a simple labeling of custom image data sets. These can then be exported and used for the respective deep learning applications. 
+
+Labelbox use pre-trained models or model-assisted labeling to speed up data annotation.
+Like **[SAM](https://ai.meta.com/sam2/)** model from **MetaAI** to segment the selected image from bounding box or point.
+
+
+### Workflow
+### 1. **Image annotation and review on labelbox**
+<img src="/myblog/postimages/leafsegmentation/labelbox.jpg" width = "500"/>
+
+### 2. Download annotations and save them to a PNG-files
+    - Load Exported JSON file
+    - Save to a dictionary the masks urls of the original image
+    - Download Images using `requests` with proper `Cookies`
+
+
+### 3. Generate Trimaps
+![](/myblog/postimages/leafsegmentation/trimap.png)
+
+```python
+def generate_trimap(mask, kernel_size=5, fg_iter=5, bg_iter=5):
+    """
+    Generate a trimap from a binary mask.
+    Foreground = 255, Background = 0, Unknown = 128
+    """
+    kernel = np.ones((kernel_size, kernel_size), np.uint8)
+    
+    # Definite foreground by erosion
+    fg = cv2.erode(mask, kernel, iterations=fg_iter)
+
+    # Definite background by dilation and inversion
+    bg = cv2.dilate(mask, kernel, iterations=bg_iter)
+    bg = 255 - bg  # invert to get background region as white
+
+    trimap = np.full(mask.shape, 128, dtype=np.uint8)  # Initialize all as unknown
+    trimap[bg == 255] = 0        # Background
+    trimap[fg == 255] = 255      # Foreground
+
+    return trimap
+```
+###  3. B **Using deep learning to create the `alpha matte` with `image matting` deep algorithm**
+### 4. **Modelling the image segmentation network**
+>A neural network is used in the **deep learning image segmentation** to learn how to split a picture into segments. A dataset of annotated images is used to train the network, and each image is labeled with the proper segmentation. It then segment similar photos that the network has been trained for.
+
+### U-net Model
+```python
+def conv_block(inputs, filters):
+    x = tf.keras.layers.Conv2D(filters, 3, padding='same', activation='relu')(inputs)
+    x = tf.keras.layers.Conv2D(filters, 3, padding='same', activation='relu')(x)
+    return x
+
+def encoder_block(inputs, filters):
+    x = conv_block(inputs, filters)
+    p = tf.keras.layers.MaxPooling2D((2, 2))(x)
+    return x, p
+
+def decoder_block(inputs, skip, filters):
+    x = tf.keras.layers.Conv2DTranspose(filters, (2, 2), strides=(2, 2), padding='same')(inputs)
+    x = tf.keras.layers.concatenate([x, skip])
+    x = conv_block(x, filters)
+    return x
+
+def build_unet(input_shape):
+    inputs = tf.keras.Input(shape=input_shape)
+
+    # Encoder
+    s1, p1 = encoder_block(inputs, 64)
+    s2, p2 = encoder_block(p1, 128)
+    s3, p3 = encoder_block(p2, 256)
+    s4, p4 = encoder_block(p3, 512)
+
+    # Bridge
+    b1 = conv_block(p4, 1024)
+
+    # Decoder
+    d1 = decoder_block(b1, s4, 512)
+    d2 = decoder_block(d1, s3, 256)
+    d3 = decoder_block(d2, s2, 128)
+    d4 = decoder_block(d3, s1, 64)
+
+    outputs = tf.keras.layers.Conv2D(1, (1, 1), activation='sigmoid')(d4)
+
+    model = tf.keras.Model(inputs, outputs)
+    return model
+
+model = build_unet((*IMAGE_SIZE, 3))
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+The number of the grapevine image has been increased using different **data augmentation** techniques.
+
+### Evaluation
+
+```python
+Epoch 1/20
+13/13 [==============================] - 408s 31s/step - loss: 0.6447 - accuracy: 0.6999 - val_loss: 0.5751 - val_accuracy: 0.7656
+Epoch 2/20
+13/13 [==============================] - 406s 31s/step - loss: 0.5251 - accuracy: 0.7357 - val_loss: 0.4341 - val_accuracy: 0.7656
+Epoch 3/20
+13/13 [==============================] - 407s 31s/step - loss: 0.4555 - accuracy: 0.7570 - val_loss: 0.4054 - val_accuracy: 0.8160
+Epoch 4/20
+13/13 [==============================] - 332s 27s/step - loss: 0.4353 - accuracy: 0.7903 - val_loss: 0.4098 - val_accuracy: 0.8055
+Epoch 5/20
+...
+Epoch 19/20
+13/13 [==============================] - 133s 10s/step - loss: 0.1488 - accuracy: 0.9428 - val_loss: 0.1318 - val_accuracy: 0.9470
+Epoch 20/20
+13/13 [==============================] - 124s 10s/step - loss: 0.1593 - accuracy: 0.9400 - val_loss: 0.1475 - val_accuracy: 0.9458
+```
+The network perform quite well for the amount of data used with a validation accuracy of **94%**
+- **IoU Metric** also knonw as Jaccard coefficient is evaluated:
+
+### Results
+
+<img src="/myblog/postimages/leafsegmentation/result1.png" width="500"/>
+<img src="/myblog/postimages/leafsegmentation/result2.png" width="500"/>

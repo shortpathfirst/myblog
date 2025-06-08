@@ -7,7 +7,10 @@ import PageHeader from '../header/pageHeader';
 import { baseUrl } from '@/lib/constants';
 
 const BlogNews = async () => {
-    const blogdata = (await getBlogPosts()).slice(0, 3);
+    const blogdata = (await getBlogPosts()).sort((a, b) => {
+        if (new Date(a.metadata.date) > new Date(b.metadata.date)) return -1
+        else return 1;
+    }).slice(0, 3);
     return (
         <section className={styles.newsSection}>
             <PageHeader

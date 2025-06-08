@@ -6,7 +6,10 @@ import { baseUrl } from '@/lib/constants';
 // import { unstable_ViewTransition as ViewTransition } from 'react'
 
 const Page = async () => {
-    const blogdata = await getBlogPosts();
+    const blogdata = (await getBlogPosts()).sort((a, b) => {
+        if (new Date(a.metadata.date) > new Date(b.metadata.date)) return -1
+        else return 1;
+    });
 
     return (
         // <ViewTransition>
