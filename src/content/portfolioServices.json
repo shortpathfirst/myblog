@@ -1,0 +1,44 @@
+[
+    {
+        "name": "architecture",
+        "url": "/myblog/images/svgServices/old-library-building-svgrepo-com.svg",
+        "description": "I design scalable, maintainable software using clean code principles, layered architecture, and modern design patterns.",
+        "points": []
+    },
+    {
+        "name": "Coding",
+        "url": "/myblog/images/svgServices/coding-svgrepo-com.svg",
+        "description": "I write clean, error-resistant code using design patterns, algorithms, typing and all best practices for a maintainable code",
+        "points": []
+    },
+    {
+        "name": "Web Design",
+        "url": "/myblog/images/svgServices/browser-design-svgrepo-com.svg",
+        "description": "I like to build aestetics sites with good user experience (UX) with the focus on the data and information to be displayed.",
+        "points": []
+    },
+    {
+        "name": "Data Mining",
+        "url": "/myblog/images/svgServices/coding-data-development-svgrepo-com.svg",
+        "description": "I extract, analyze, and model data using exploratory data analysis(EDA), machine learning, and data visualization techniques.",
+        "points": []
+    },
+    {
+        "name": "Visualization",
+        "url": "/myblog/images/svgServices/presentation-chart-svgrepo-com.svg",
+        "description": "I create clear exploratory and explanatory visuals using tools like D3 and Chart.js to make data insightful with good data visualization principles allowing data to speak for themself and tell us a story.",
+        "points": []
+    },
+    {
+        "name": "Security",
+        "url": "/myblog/images/svgServices/security-protection-key-svgrepo-com.svg",
+        "description": "I secure applications through authentication, encryption, input validation, and end-to-end data integrity.",
+        "points": []
+    },
+    {
+        "name": "Web scraping",
+        "url": "/myblog/images/svgServices/analytics-svgrepo-com.svg",
+        "description": "I scrape static and dynamic sites using Scrapy, Selenium, Playwright, and BeautifulSoup for custom data extraction.",
+        "points": []
+    }
+]

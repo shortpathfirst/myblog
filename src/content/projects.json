@@ -25,7 +25,7 @@
         { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
       ]
     },
-    "url": "https://example.com/powerlifting-database"
+    "url": "https://github.com/shortpathfirst/MapDashboard"
   },
   {
     "metadata": {
@@ -41,7 +41,21 @@
         { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
       ]
     },
-    "url": "https://example.com/powerlifting-database"
+    "url": "https://github.com/shortpathfirst/PowerliftingDatabase"
+  },
+  {
+    "metadata": {
+      "title": "Authorization app",
+      "description": "A login interface with secure api for login",
+      "date": "2025-02-01",
+      "tags": [
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { "name": "MongoDB", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+      ]
+    },
+    "url": "https://github.com/shortpathfirst/AuthenticationReact"
   },
   {
     "metadata": {
@@ -69,7 +83,7 @@
         { "name": "SVG", "url": "" }
       ]
     },
-    "url": "https://example.com/search-visualizer"
+    "url": "https://github.com/shortpathfirst/search-visualizer"
   },
   {
     "metadata": {

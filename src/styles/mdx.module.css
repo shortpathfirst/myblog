@@ -103,8 +103,13 @@
   .mdxContent td {
     padding: 0.2rem !important;
   }
-  .mdxContent{
+
+  .mdxContent {
     margin: 0 0.5rem;
+  }
+
+  .mdxContent figure {
+    margin: auto 5px;
   }
 }
 

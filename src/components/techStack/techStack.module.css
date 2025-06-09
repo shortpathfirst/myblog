@@ -11,7 +11,7 @@
     border-top: 15px double var(--background);
     border-bottom: 15px double var(--background);
     overflow: hidden;
-    width: 95vw;
+    width: 100%;
     vertical-align: middle;
     margin-bottom: 3rem;
 }
