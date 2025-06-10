@@ -68,7 +68,7 @@ const Resume = () => {
                             }
                         ].map((project, i) => (
                             <div className={styles.project} key={i}>
-                                <a href={`/blog/${project.url}`}>
+                                <a href={project.url}>
                                     <strong>{project.name}</strong></a>
                                 <p>{project.date}</p>
                                 <ul>

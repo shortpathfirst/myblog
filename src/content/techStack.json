@@ -154,13 +154,13 @@
           "name": "ObservableHQ",
           "level": 65,
           "description": "Platform for data visualization with JavaScript notebooks.",
-          "imageUrl": ""
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg"
         },
         {
           "name": "Kaggle",
           "level": 50,
           "description": "Platform for data science competitions and collaboration.",
-          "imageUrl": ""
+          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kaggle/kaggle-original.svg"
         }
       ]
     },

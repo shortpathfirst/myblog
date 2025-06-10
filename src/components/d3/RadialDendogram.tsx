@@ -174,7 +174,7 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
 
                     /> :
                     <image
-                        href={node.data.imageUrl || `${baseUrl}/images/qgis-icon.png`}
+                        href={node.data.imageUrl || `${baseUrl}/file.svg`}
                         x={-30}
                         y={-25}
                         width={60}
