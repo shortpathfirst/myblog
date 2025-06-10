@@ -40,11 +40,12 @@ const ProjectsCards = ({ projectsData }: { projectsData: ProjectsInfo[] }) => {
                     .map((post, i) => (
                         <BlogPostCard
                             key={i}
-                            imageSrc={"/myblog/file.svg"}
+                            imageSrc={post.metadata.thumbnail || `${baseUrl}/file.svg`}
                             title={post.metadata.title}
                             href={post.url}
                             description={post.metadata.description}
-                            tags={post.metadata.tags} cardStyle={'project'} />
+                            tags={post.metadata.tags} 
+                            cardStyle={'project'} />
                     ))
             }
         </div>

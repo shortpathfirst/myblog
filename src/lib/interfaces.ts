@@ -35,11 +35,8 @@ export type MetadataProject = {
     title: string;
     description: string;
     date: string;
-    imageUrl?: string;
-    tags: Tag[],
-    ogImage?: {
-        url: string;
-    };
+    thumbnail?: string;
+    tags: Tag[];
 }
 export type ProjectsInfo = {
     metadata: MetadataProject;

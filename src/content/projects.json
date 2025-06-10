@@ -3,6 +3,7 @@
     "metadata": {
       "title": "Wine Leaf Analysis",
       "description": "A machine learning project for image segmentation",
+      "thumbnail":"https://www.kaggle.com/static/images/logos/kaggle-logo-transparent.svg",
       "date": "2025-02-01",
       "tags": [
         { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -15,6 +16,7 @@
     "metadata": {
       "title": "Crimes Belem",
       "description": "An interactive react dashboard to display crimes data in the city of Belém Brasil",
+      "thumbnail":"",
       "date": "2025-02-01",
       "tags": [
         { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -31,6 +33,7 @@
     "metadata": {
       "title": "Powerlifting Database",
       "description": "React architecture with chartjs and chakraUI, express backend and sqlite database.",
+      "thumbnail":"/myblog/projectsthumbs/powerlifting_thumb.png",
       "date": "2025-01-01",
       "tags": [
         { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -47,6 +50,7 @@
     "metadata": {
       "title": "Authorization app",
       "description": "A login interface with secure api for login",
+      "thumbnail":"",
       "date": "2025-02-01",
       "tags": [
         { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -60,7 +64,8 @@
   {
     "metadata": {
       "title": "Grid Palline",
-      "description": "Web scraping with asyncio requests, Flask backend, Axios client with loading interceptors.",
+      "description": "A bracelet making application.",
+      "thumbnail":"/myblog/projectsthumbs/All_thumb.png",
       "date": "2025-01-01",
       "tags": [
         { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -76,6 +81,7 @@
     "metadata": {
       "title": "Search Visualizer",
       "description": "React app visualizing search and tree algorithms using SVG.",
+      "thumbnail":"/myblog/projectsthumbs/searchvisualizer_thumb.png",
       "date": "2025-01-01",
       "tags": [
         { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -89,6 +95,7 @@
     "metadata": {
       "title": "Angular Pesi",
       "description": "Angular and ElectronJS desktop application.",
+      "thumbnail":"",
       "date": "2025-01-01",
       "tags": [
         { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
@@ -101,6 +108,7 @@
     "metadata": {
       "title": "JudoClub",
       "description": "Static website built with Angular.",
+      "thumbnail":"",
       "date": "2025-01-01",
       "tags": [
         { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },

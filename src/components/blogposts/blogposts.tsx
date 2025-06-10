@@ -2,6 +2,7 @@ import { BlogPost } from '@/lib/interfaces'
 import React from 'react'
 import styles from './blogpage.module.css'
 import BlogPostCard from './blogpostcard'
+import { baseUrl } from '@/lib/constants'
 
 const BlogPosts = ({ blogData }: {
     blogData: BlogPost[]
@@ -12,7 +13,7 @@ const BlogPosts = ({ blogData }: {
                 blogData.map((post, i) => (
                     <BlogPostCard
                         key={i}
-                        imageSrc={post.metadata.imageUrl ?? "/myblog/file.svg"}
+                        imageSrc={post.metadata.imageUrl ?? `${baseUrl}/file.svg`}
                         title={post.metadata.title}
                         href={`/blog/${post.slug}`}
                         description={post.metadata.description}
