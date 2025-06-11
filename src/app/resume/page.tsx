@@ -8,7 +8,7 @@ const Resume = () => {
             {/* Download sidebar */}
             <div className={styles.sidebar}>
                 <h1>Resume</h1>
-                <a className={styles["download-btn"]} href="/resume.pdf" target="_blank">Download</a>
+                <a className={styles["download-btn"]}  href="/myblog/resume.pdf" target="_blank">Download</a>
             </div>
             {/* Content */}
             <div className={styles.resumeContent}>
