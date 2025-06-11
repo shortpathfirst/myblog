@@ -116,5 +116,17 @@
       ]
     },
     "url": "https://example.com/judoclub"
+  },
+    {
+    "metadata": {
+      "title": "Planarity Test",
+      "description": "Graph visualization using networkx, planarity testing algorithms with p5.js and Typescript.",
+      "thumbnail":"",
+      "date": "2024-08-01",
+      "tags": [
+        { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+      ]
+    },
+    "url": "https://github.com/shortpathfirst/Planarity"
   }
 ]

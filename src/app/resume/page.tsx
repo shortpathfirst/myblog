@@ -65,6 +65,16 @@ const Resume = () => {
                                     "SPA application written in <strong>Angular</strong> for a judo club. ",
                                     "<strong>Interactive learning</strong> using data visualization libray and angular features."
                                 ]
+                            },
+                            {
+                                "name": "Leaf Segmentation",
+                                "date": "May 2025",
+                                "isSite": false,
+                                "url": "https://www.kaggle.com/code/shortpathfirst/wineanalysis",
+                                "descriptionList": [
+                                    "Implementing image segmentation using U-Net implementation on a custom dataset ",
+                                    "<strong>Tools:</strong> Kaggle; Tensorflow; Labelbox;"
+                                ]
                             }
                         ].map((project, i) => (
                             <div className={styles.project} key={i}>
