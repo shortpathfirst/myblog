@@ -1,0 +1,348 @@
+---
+title: "Planarity test"
+date: "2024-06-08"
+description: "Implementing planarity testing algorithm"
+tags: [
+    { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+]
+---
+
+# Planarity Test
+
+## Kuratowski's Theorem
+A graph G is planar if and only if it does not contain a subdivision of \( K_(3,3) \) or \( K_5 \).
+
+## Reduction
+- A graph is planar if and only if its **connected components** are planar.
+    - DFS/BFS can determine whether G is connected.
+    - DFS/BFS can identify the connected components of G.
+- A connected graph is planar if and only if its **biconnected components** are planar.
+    - A graph is biconnected if there are two vertex-disjoint paths between every pair of vertices.
+
+[To detect cycles we use DFS](https://www.geeksforgeeks.org/detect-cycle-in-a-graph/)
+
+| Concept | Description |
+|--------|-------------|
+| Partition into classes | Partition of the edges of G not in a cycle C into classes |
+| | Edges are in the same class if there's a path between them that avoids the vertices of C |
+| Piece of G w.r.t. C | Subgraph induced by one of the above classes |
+| Attachment | Vertices of the piece that are also in C |
+| Separator Cycle | A cycle C is a separator if it has **at least two pieces** |
+| Interlacing | Two pieces are interlaced if they cannot be drawn on the same side of C without crossings (i.e., non-planar) |
+| Interlacement Graph | Graph where nodes are pieces and edges represent interlacing |
+
+>-  If G is planar, its interlacement graph is bipartite  
+>- In a biconnected graph, every piece has at least two attachments  
+>- **Separator Lemma**  
+A graph with a non-separator cycle (i.e., with only one piece) where that piece is not a simple path admits another separator cycle \( C' \) composed of a part of \( C \) and a path in the piece \( P' \).
+
+![Separator Lemma](/myblog/postimages/planarity/lemmaSeparatore.PNG)
+
+## Planarity Theorem
+> A biconnected graph G with a cycle C is planar if and only if:
+- For every piece P, the graph \( P \cup C \) is planar
+- The interlacement graph is bipartite
+
+## Planarity Algorithm
+
+1. Given a graph G and a separator cycle C:  
+   Calculate the pieces of G with respect to C.
+2. For each piece P:
+   1. If P is an edge or a path, then \( P \cup C \) is planar.
+   2. If P is not a path, define a new graph \( P' \) and a new cycle separator \( C' \) in \( P' \) using the separator lemma.
+   3. Recursively apply the algorithm to \( P' \) and \( C' \).
+3. If the recursive tests succeed for all pieces:
+   1. Build the interlacement graph.
+   2. Check if it is bipartite.
+
+```js
+Planarity_testing(Biconnected graph G, cycle C){
+    P_set <- Calculate the pieces of G w.r.t. C // O(n)
+    foreach(P in P_set){
+        if(P is not a path){
+            P_1 <- P union C
+            C_1 <- newCycle(C, P)
+            if(Planarity_Testing(P_1, C_1) == false)
+                return false // NOT PLANAR
+        }
+    }
+    I <- Compute interlacement graph // O(n^2)
+    if(I is bipartite){ // O(n^2)
+        return true // Planar
+    } else {
+        return false // NOT PLANAR
+    }
+}
+```
+
+**Complexity**: \( O(n^3) \) due to n times \( O(n^2) \)
+
+### Generate Interlacement Graph
+
+```js
+1. v0, ..., vk-1 are attachments of piece P ordered on C
+2. LABELS in [0, 2k-1]
+3. Attachment vi gets LABEL 2i
+4. Each vertex v on C between vi and v(i+1 mod k) gets label 2i+1
+
+A piece Q is **not interlaced** with P if and only if
+its attachments fall in [2i, 2i+2 mod 2k] for some i
+```
+
+## Implementation Details
+
+1. **Bipartite Check**  
+A bipartite graph's vertices can be split into two disjoint sets such that all edges connect vertices from different sets.
+    - Implemented using 2-coloring or DFS with coloring.
+
+2. **Cycle Detection**
+3. **Piece Identification**
+   - Edges of G not in cycle C; connected via paths that avoid C's vertices
+4. **Separator Cycle Detection** (At least 2 pieces required)
+5. **Path Check** (If a piece is not a path)
+6. **Recursive Cycle Construction**
+7. **Build Interlacement Graph and Check Bipartiteness**
+
+8. **Planar Embedding Construction**
+    - Fraysseix-Rosenstiehl Algorithm: Builds planar embedding using left-right strategy.
+    - Hopcroft-Tarjan Algorithm: Uses DFS to determine embeddability.
+
+9. **Planar Drawing via Shift Method**
+    - Triangulation
+    - Canonical ordering
+    - Shift method for coordinates
+
+## Graph Interfaces
+
+### IGraph, IVertex, and IEdge
+
+<table>
+<tbody>
+    <tr>
+        <td><strong>IGraph</strong></td>
+        <td><strong>IVerted & IEdge</strong></td>
+    </tr>
+     <tr>
+<td rowSpan="2">
+
+```ts
+interface IGraph{
+    getVertices():IVertex[];
+    getEdges():IEdge[];
+    getDegreeOf(v:IVertex):number;
+    getIncidentEdgesOf(v1:IVertex):IEdge[];
+    getEdgeOf(v1:IVertex,v2:IVertex):IEdge;
+    getAdjacentsOf(v1:IVertex):IVertex[];
+    areAdjacents(v1:IVertex, v2:IVertex):boolean;
+    addNode(v1:IVertex):void;
+    addEdge(e1:IEdge):void;
+    removeNode(v1:IVertex):void;
+    removeEdge(e1:IEdge):void;
+    bfsVisit(v1:IVertex):IVertex[];
+    dfsVisit(v1:IVertex):IVertex[];
+    isCyclic(root:IVertex):boolean;
+    //HELPERS
+    isPath(v:IVertex):boolean;
+    findPath(start:IVertex,end:IVertex,cycleGraph:IGraph):IGraph;
+    splitIntoPieces(cycle:IGraph):Set<IGraph>;
+
+}
+```
+</td>
+<td>
+
+```ts
+interface IEdge{
+    getId():number;
+    getSource():IVertex;
+    getTarget():IVertex;
+    getOpposite(v1:IVertex):IVertex;
+    getWeight():number;
+    setWeight(value:number):void;
+}
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+```ts
+interface IEdge{
+    getId():number;
+    getSource():IVertex;
+    getTarget():IVertex;
+    getOpposite(v1:IVertex):IVertex;
+    getWeight():number;
+    setWeight(value:number):void;
+}
+```
+</td>
+</tr>
+</tbody>
+</table>
+
+
+## Splitting Graph into Pieces
+
+<img src="/myblog/postimages/planarity/pieces.svg" width={600}/>
+
+```ts
+    public splitIntoPieces(cycle:IGraph):Set<IGraph>{
+        const visited = new Set<IVertex>(); 
+        const pieces = new Set<IGraph>();
+
+        const cycleVerteces  = cycle.getVertices();
+        // From every vertex of the cycle
+        for(let start of cycleVerteces){
+
+            visited.add(start);
+             // Adjacent of the graph verteces
+            const destinations = this.getAdjacentsOf(start); 
+                
+            for(const vertex of destinations){
+                if(!visited.has(vertex) && !cycle.areAdjacents(start,vertex)){
+                    let currentPiece = new Graph(); //make piece
+                    let currentEdge = this.getEdgeOf(start,vertex)!;
+                    currentPiece.addNode(start);
+                    currentPiece.addNode(vertex);
+                    currentPiece.addEdge(currentEdge);
+                    this.makePiece(cycle,vertex,visited,currentPiece);
+                    pieces.add(currentPiece);
+                }
+            }
+        }
+        return pieces;
+    }
+    /**
+     * Make the DFS to find the piece
+     * @param cycle 
+     * @param prevVertex
+     * @param visited 
+     * @param currentPiece 
+     * @returns 
+     */
+    private makePiece(cycle:IGraph,prevVertex:IVertex,visited:Set<IVertex>,currentPiece:IGraph):void{
+        if(cycle.getVertices().includes(prevVertex) || visited.has(prevVertex))
+            return;
+        visited.add(prevVertex);
+        const destinations = this.getAdjacentsOf(prevVertex);
+        for(const vertex of destinations){
+
+            if(!currentPiece.areAdjacents(prevVertex,vertex)){
+                let currentEdge = this.getEdgeOf(prevVertex,vertex)!;
+                currentPiece.addNode(prevVertex);
+                currentPiece.addNode(vertex);
+                currentPiece.addEdge(currentEdge);
+                this.makePiece(cycle,vertex,visited,currentPiece);
+            }
+        }
+
+    }
+
+```
+
+## Testing Each Piece
+
+```ts
+ //Traverse cycle in order starting from an attachment to the last one
+let start = attachments[0];
+let prev = start;
+let current = cycle.getAdjacentsOf(attachments[0])[0]; // TAKE RIGHT OR LEFT [0]
+
+cycleSecond.addNode(start);
+cycleSecond.addNode(current);
+cycleSecond.addEdge(cycle.getEdgeOf(start,current));
+
+let numAttachment = 0;
+while(numAttachment < attachments.length-1){
+    let next = cycle.getAdjacentsOf(current).find((v)=>v.getId()!=prev.getId())!;
+    
+    if(attachments.includes(next))
+        numAttachment++;
+    
+    cycleSecond.addNode(next);
+    cycleSecond.addEdge(cycle.getEdgeOf(current,next));
+
+    prev = current;
+    current = next;
+}
+
+// Find path in the piece
+let path = pieceGraph.findPath(start,current,cycle);
+
+//Merge path and cycleSecond
+this.mergeGraph(cycleSecond,path);
+
+//Merge cycle and Piece to recursive call Planarity
+let recursiveGraph = new Graph();
+this.mergeGraph(recursiveGraph,cycleSecond);
+this.mergeGraph(recursiveGraph,pieceGraph);
+
+let isPiecePlanar = this.testPlanarity(recursiveGraph,cycleSecond);
+
+if(!isPiecePlanar)
+    return false;
+
+```
+
+## Interlacement Check Between Pieces
+
+```ts
+
+let isInterlaced = false;
+let interlacedString = '';// Rapresentation of piece interlacement
+let lastChar = ' ';
+let bcount = 0;
+//Walk cycle in order
+for(let cycleVertex of orderedCycle ){
+    // Both Pieces
+    if(piecesArray[i].getVertices().includes(cycleVertex) && piecesArray[j].getVertices().includes(cycleVertex)){
+        interlacedString +='b';
+        bcount++;
+        lastChar = 'b';
+    //Piece i
+    }else if(piecesArray[i].getVertices().includes(cycleVertex) && lastChar!= 'i' ){
+        interlacedString +='i';
+        lastChar = 'i';
+    //Piece j
+    }else if(piecesArray[j].getVertices().includes(cycleVertex) && lastChar != 'j'){
+        interlacedString +='j';
+        lastChar = 'j';
+    }
+}
+
+let wrongStrings =["ibjb", "bjbi", "jbib", "bibj"];
+if(lastChar =='i' || lastChar =='j' && interlacedString.charAt(0)== lastChar){
+    interlacedString.substring(1);
+}
+if(interlacedString.length>4 || bcount >2){
+    isInterlaced = true;
+}else if(interlacedString.length===4 && !wrongStrings.includes(interlacedString)){
+    isInterlaced = true;
+}
+
+if(isInterlaced){
+    let source = interlacement.getVertices()[i];
+    let target = interlacement.getVertices()[j];
+    let e = new Edge(source,target);
+    interlacement.addEdge(e);
+}
+
+```
+
+## Run Planarity Test
+
+<img src="/myblog/postimages/planarity/input.svg" width={600}/>
+
+```ts
+console.log("Cyclic? ", cycle.isCyclic(v1));
+console.log("Is bipartite?", cycle.isBipartite(v1));
+
+let tester = new PlanarityTest();
+console.log("Planarity test:", tester.testPlanarity(graph, cycle));
+
+// True
+```
+
+<img src="/myblog/postimages/planarity/exampleOutput.svg" width={600}/>
