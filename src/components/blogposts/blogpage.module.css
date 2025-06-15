@@ -8,6 +8,7 @@
 @media (min-width: 640px) {
     .cardContainer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 0 auto;
     }
 }
 

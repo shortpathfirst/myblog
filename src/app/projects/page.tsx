@@ -8,7 +8,10 @@ import PageHeader from '@/components/header/pageHeader';
 import { baseUrl } from '@/lib/constants';
 
 const Projects = () => {
-    const projectsData = getProjectsData();
+    const projectsData = getProjectsData().sort((a, b) => {
+        if (new Date(a.metadata.date) > new Date(b.metadata.date)) return -1
+        else return 1;
+    });;
 
     return (
         <div className='container'>
@@ -31,13 +34,7 @@ const ProjectsCards = ({ projectsData }: { projectsData: ProjectsInfo[] }) => {
     return (
         <div className={styles.cardContainer}>
             {
-                projectsData.sort((a, b) => {
-                    if (new Date(a.metadata.date) > new Date(b.metadata.date))
-                        return -1
-                    else
-                        return 1;
-                })
-                    .map((post, i) => (
+                projectsData.map((post, i) => (
                         <BlogPostCard
                             key={i}
                             imageSrc={post.metadata.thumbnail || `${baseUrl}/file.svg`}

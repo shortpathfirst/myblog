@@ -42,7 +42,8 @@
 }
 
 .card:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
+    box-shadow: 12px 12px 12px rgba(0,0,0,0.1), -10px -10px 10px white; 
 }
 
 .card>h2 {
@@ -53,6 +54,7 @@
 
 .card>p {
     margin: 10px 0 18px;
+    color: oklch(50.5% .015 286.067);;
 }
 
 .logo {
@@ -85,6 +87,7 @@
 .modal {
     background: white;
     padding: 2rem;
+    margin: 0 2rem;
     border-radius: 1rem;
     max-width: 500px;
     width: 90%;

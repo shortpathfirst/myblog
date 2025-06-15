@@ -28,7 +28,7 @@ function ServiceStack() {
     return (
         <section className={styles.section}>
             <div className={styles.titleBand}>
-                <Title>Services</Title>
+                <Title>Expertise</Title>
             </div>
             <div className={styles.gridWrapper}>
                 {
