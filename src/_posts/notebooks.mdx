@@ -1,0 +1,46 @@
+---
+title: "Confronting notebooks"
+date: "2025-06-15"
+description: "Confronting kaggle notebook with observablehq notebook for a visualization task"
+imageUrl: "/myblog/postimages/notebooks/notebooklogo.jpg"
+tags: [
+    { "name": "Jupyter", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg" },
+    { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { "name": "Javascript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" }, 
+]
+---
+
+
+## Kaggle notebook
+<div style={{ maxHeight: "500px", overflowY: "auto", border: "1px solid #ccc" }}>
+  <img src="/myblog/postimages/notebooks/kagglenotebook.png" alt="Long Image" style={{ display: "block" }} />
+</div>
+
+## ObservableHQ notebook
+<div style={{ maxHeight: "500px", overflowY: "auto", border: "1px solid #ccc"}}>
+  <img src="/myblog/postimages/notebooks/observablehqnotebook.png" alt="Long Image" style={{ display: "block" }} />
+</div>
+
+| Notebook                      | Main use                                         | For |
+|-------------------------------|--------------------------------------------------|-----|
+|**Kaggle (Jupyter Notebooks)** |Data science, machine learning, competitions      | Data scientists, ML engineers|
+|**ObservableHQ**               |Data visualization, interactive documents         | Data journalists, analysts, visualization experts|
+
+### Differences
+
+| **Differences**          | **Kaggle (Jupyter Notebooks)**                | **ObservableHQ**                                 |
+| ------------------------ | --------------------------------------------- | ------------------------------------------------ |
+| **Environment Language** | Python                                        | JavaScript (with D3.js, Observable Plot, etc.)   |
+| **Runtime Location**     | Runs in a Python environment (cloud backend)  | Runs directly in modern web browsers             |
+| **Performance**          | Supports heavy computation, including GPU/TPU | Not suitable for large-scale computation         |
+| **Scalability**          | Can handle large datasets efficiently         | Best for small, in-browser datasets              |
+| **Interactivity**        | Manual execution needed for updates           | Real-time, reactive updates with UI interactions |
+
+### Calories Prediction datasets
+A Kaggle dataset used in a competition is explored using two popular and comparable notebook environments: **Kaggle Jupyter Notebooks** and **ObservableHQ Notebooks**.
+Two version of **Exploratory data analysis(EDA)** is done using the two platforms.
+
+# Result
+ObservableHQ with the ease of use of `Plot` command and its reactive programming model allow to quickly create visual charts with interactivity and where updates are instantly reflected. Kaggle notebook, in contrast, can create fast charts using libraries like `seaborn`  but customizing visuals tends to be more verbose and requires deeper familiarity with syntax.
+While observable notebook is designed for machine learning, it is a good alternative for going from **Exploratory Data Analysis** to the **Presentation**, it's browser enviroment allow visual rapresentation that can prove a point much quicker thanks to visual storytelling and interactivity. The point of creating a good visual representation is not also oriented to the data but for the team you are working or the client that you have to provide some documentation about it.
+It is also possible to combine the workflow from one notebook to the another for example when you made an analysis using kaggle notebook you can create a visualization of that result using `observablehq` and `d3` creating more unique visualization not necessary more complex but more visual appealing to the user.
