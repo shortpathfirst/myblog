@@ -3,6 +3,7 @@ import { Tag } from '@/lib/interfaces';
 import React from 'react'
 import styles from './blogpage.module.css'
 import { TechIcons } from '../techIcons/techIcons';
+import { baseUrl } from '@/lib/constants';
 
 type HeaderProps = {
     data: {
@@ -15,7 +16,7 @@ type HeaderProps = {
 const BlogPageHeader = ({ data }: HeaderProps) => {
     return (
         <section>
-            <div className={styles.herotitle}>
+            <div className={styles.herotitle} style={{backgroundImage:`url('${baseUrl}/images/pastel-abstract.jpg')`}}>
                 <h1>{data.title}</h1>
             </div>
 
