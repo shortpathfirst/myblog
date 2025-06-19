@@ -16,7 +16,7 @@
     "metadata": {
       "title": "Crimes Belem",
       "description": "An interactive react dashboard to display crimes data in the city of Belém Brasil",
-      "thumbnail":"",
+      "thumbnail":"/myblog/projectsthumbs/crime_thumbnail.png",
       "date": "2025-02-01",
       "tags": [
         { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
