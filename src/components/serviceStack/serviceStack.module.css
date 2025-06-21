@@ -43,7 +43,7 @@
 
 .card:hover {
     transform: scale(1.03);
-    box-shadow: 12px 12px 12px rgba(0,0,0,0.1), -10px -10px 10px white; 
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px white;
 }
 
 .card>h2 {
@@ -54,7 +54,8 @@
 
 .card>p {
     margin: 10px 0 18px;
-    color: oklch(50.5% .015 286.067);;
+    color: oklch(50.5% .015 286.067);
+    ;
 }
 
 .logo {
@@ -108,4 +109,11 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.modal p img {
+    max-width: 200px;
+    height: auto;
+    float: left;
+    margin: 0 1em 1em 0;
 }

@@ -32,13 +32,45 @@
 }
 
 /* Code */
+
 .mdxContent pre {
-  background-color: #0f172a;
-  padding: 1rem;
+  position: relative;
+  padding: 36px 1rem 1rem 1rem;
   border-radius: 0.5rem;
+  overflow: hidden;
+  background: #2d2d2d;
   overflow-x: auto;
+
 }
 
+/* Code Header */
+.mdxContent pre::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 100%;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.mdxContent pre::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ed1c6f;
+  box-shadow:
+    12px 0 0 #e8e925,
+    24px 0 0 #74c54f;
+  z-index: 2;
+}
 /* 
 .mdxContent code {
   font-family: monospace;

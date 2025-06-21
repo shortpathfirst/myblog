@@ -72,8 +72,10 @@ function ModalServiceDescription({ closeModal, selectedService }: modalServicePr
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.closeButton} onClick={closeModal}>✕</button>
                 <h2>{selectedService.name}</h2>
-                <Image src={selectedService.url || '/myblog/file.svg'} alt={selectedService.name} width={60} height={60} />
-                <p>{selectedService.description}</p>
+                <p>
+                    <Image src={selectedService.url || '/myblog/file.svg'} alt={selectedService.name} width={60} height={60} />
+                    {selectedService.description}
+                </p>
                 <ul>
                     {selectedService.points.map((point, i) =>
                         <li key={i}>{point}</li>)}
