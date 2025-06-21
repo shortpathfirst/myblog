@@ -5,7 +5,6 @@ import { BlogPost, MetadataBlog } from "./interfaces";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { compileMDX } from 'next-mdx-remote/rsc'
-import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import { ReactElement } from "react";
 import remarkGfm from "remark-gfm";
@@ -36,7 +35,6 @@ async function readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; 
         rehypePlugins: [
           rehypeSlug,
           [rehypePrettyCode, { theme: 'github-dark' }],
-          rehypeHighlight,
           [rehypeAutolinkHeadings, {
             behavior: 'wrap'
           }],

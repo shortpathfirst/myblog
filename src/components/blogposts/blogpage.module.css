@@ -73,6 +73,9 @@
 }
 
 /* Blog header */
+.headerSection{
+    background-color: #BBDEFB;
+}
 .date {
     font-size: 17px;
     color: rgb(136, 136, 136);

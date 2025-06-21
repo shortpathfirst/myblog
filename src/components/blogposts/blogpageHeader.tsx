@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const BlogPageHeader = ({ data }: { data: MetadataBlog }) => {
     return (
-        <section>
+        <section className={styles.headerSection}>
             <div className={styles.herotitle} style={{ backgroundImage: `url('${baseUrl}/images/pastel-abstract.jpg')` }}>
                 <h1>{data.title}</h1>
             </div>

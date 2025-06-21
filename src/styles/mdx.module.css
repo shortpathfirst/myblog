@@ -40,7 +40,10 @@
   overflow: hidden;
   background: #2d2d2d;
   overflow-x: auto;
-
+  line-height: 1.5;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 /* Code Header */
@@ -71,6 +74,7 @@
     24px 0 0 #74c54f;
   z-index: 2;
 }
+
 /* 
 .mdxContent code {
   font-family: monospace;
@@ -87,6 +91,14 @@
   font-size: 0.95em;
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   white-space: nowrap;
+}
+
+.mdxContent pre [data-highlighted-line] {
+  background-color: rgba(116, 207, 116, .1);
+  ;
+  border-left: 4px solid #74cf74;
+  padding-left: 0.75rem;
+  margin-left: -1rem;
 }
 
 /* Anchor link styling */
