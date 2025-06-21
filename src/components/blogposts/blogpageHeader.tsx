@@ -1,5 +1,5 @@
 import getFormattedDate from '@/lib/getFormattedDate';
-import { MetadataBlog, Tag } from '@/lib/interfaces';
+import { MetadataBlog } from '@/lib/interfaces';
 import React from 'react'
 import styles from './blogpage.module.css'
 import { TechIcons } from '../techIcons/techIcons';
