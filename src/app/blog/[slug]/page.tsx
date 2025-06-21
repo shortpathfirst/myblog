@@ -72,13 +72,9 @@ export default async function Blog({ params }: BlogParams) {
           }}
         />
         <ProgressBar />
-        <BlogPageHeader data={{
-          title: post.metadata.title,
-          date: post.metadata.date,
-          description: post.metadata.description,
-          tags: post.metadata.tags
-        }} />
 
+        <BlogPageHeader data={post.metadata} />
+        
         <article className={styles.mdxContent} >
           {post.content}
         </article>

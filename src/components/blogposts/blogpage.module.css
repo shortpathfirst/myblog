@@ -117,10 +117,19 @@
 }
 
 .taglist li {
-    background-color: #e0e0e0;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dfeaf8;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+}
+
+.taglist img {
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-right: 0.5rem;
 }
 
 /* Blog news */
