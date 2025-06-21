@@ -9,7 +9,7 @@ export const Navbar = () => {
         { url: "/blog", label: "Blog" },
         { url: "/projects", label: "Projects" },
         { url: "/resume", label: "Resume" },
-        { url: "/#contacts", label: "Contacts" },
+        { url: "#contacts", label: "Contacts" },
     ]
     const isScrollingUp = useScrollDirection();
     return (

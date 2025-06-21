@@ -5,7 +5,7 @@ const isProd = true;
 
 const nextConfig: NextConfig = {
   basePath: isProd ? '/myblog' : '',
-  assetPrefix: isProd ? '/myblog' : '',
+  assetPrefix: isProd ? '/myblog/' : '',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
     viewTransition: true,
