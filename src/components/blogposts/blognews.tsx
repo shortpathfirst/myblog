@@ -14,7 +14,7 @@ const BlogNews = async () => {
     return (
         <section className={styles.newsSection}>
             <PageHeader
-                backgroundImage={'/images/headerbackground.png'}
+                backgroundImage={`${baseUrl}/images/headerbackground.png`}
                 spanColor='#8169eb'>
                 A small section of <span>recent project</span>
             </PageHeader>

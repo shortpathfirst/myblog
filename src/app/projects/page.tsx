@@ -17,7 +17,7 @@ const Projects = () => {
         <div className='container'>
             <section>
                 <PageHeader
-                    backgroundImage={'/images/projectabstract.png'}
+                    backgroundImage={`${baseUrl}/images/projectabstract.png`}
                     spanColor='#cd3232'>
                     <span>Project</span> page
                 </PageHeader>

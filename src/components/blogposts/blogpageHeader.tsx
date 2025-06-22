@@ -4,13 +4,14 @@ import React from 'react'
 import styles from './blogpage.module.css'
 import { TechIcons } from '../techIcons/techIcons';
 import Image from 'next/image'
+import { baseUrl } from '@/lib/constants';
 
 const BlogPageHeader = ({ data }: { data: MetadataBlog }) => {
     return (
         <section className={styles.headerSection}>
             <div className={styles.herotitle}>
                 <Image
-                    src={`/images/pastel-abstract.jpg`}
+                    src={`${baseUrl}/images/pastel-abstract.jpg`}
                     alt="Hero Background"
                     fill
                     priority
