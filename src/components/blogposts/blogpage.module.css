@@ -73,9 +73,10 @@
 }
 
 /* Blog header */
-.headerSection{
+.headerSection {
     background-color: #BBDEFB;
 }
+
 .date {
     font-size: 17px;
     color: rgb(136, 136, 136);
@@ -91,10 +92,8 @@
 
 .herotitle {
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    width: 100%;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,6 +106,7 @@
         text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         padding: 0 1rem;
         max-width: 90%;
+        z-index: 1;
     }
 }
 

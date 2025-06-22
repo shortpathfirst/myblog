@@ -3,13 +3,19 @@ import { MetadataBlog } from '@/lib/interfaces';
 import React from 'react'
 import styles from './blogpage.module.css'
 import { TechIcons } from '../techIcons/techIcons';
-import { baseUrl } from '@/lib/constants';
 import Image from 'next/image'
 
 const BlogPageHeader = ({ data }: { data: MetadataBlog }) => {
     return (
         <section className={styles.headerSection}>
-            <div className={styles.herotitle} style={{ backgroundImage: `url('${baseUrl}/images/pastel-abstract.jpg')` }}>
+            <div className={styles.herotitle}>
+                <Image
+                    src={`/images/pastel-abstract.jpg`}
+                    alt="Hero Background"
+                    fill
+                    priority
+                    style={{ objectFit: 'cover' }}
+                />
                 <h1>{data.title}</h1>
             </div>
 

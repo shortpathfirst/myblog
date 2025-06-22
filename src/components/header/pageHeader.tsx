@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./header.module.css";
+import Image from "next/image";
 
 type HeaderProps = {
     backgroundImage: string;
@@ -13,10 +14,9 @@ const PageHeader = ({ backgroundImage, spanColor = "#8169eb", children }: Header
             <h1 className={styles.h1Title} style={{ '--span-color': spanColor } as React.CSSProperties}>
                 {children}
             </h1>
-            <div
-                className={styles.background}
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-            />
+            <Image
+                className={styles.background} fill
+                src={backgroundImage} alt={"Abstract background"}/>
         </div>
     );
 };
