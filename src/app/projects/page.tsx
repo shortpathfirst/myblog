@@ -8,10 +8,7 @@ import PageHeader from '@/components/header/pageHeader';
 import { baseUrl } from '@/lib/constants';
 
 const Projects = () => {
-    const projectsData = getProjectsData().sort((a, b) => {
-        if (new Date(a.metadata.date) > new Date(b.metadata.date)) return -1
-        else return 1;
-    });;
+    const projectsData = getProjectsData();
 
     return (
         <div className='container'>

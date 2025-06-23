@@ -50,7 +50,7 @@ async function readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   const mdxFiles = getMDXFiles(postsDirectory);
 
-  const posts = Promise.all(
+  const posts = await Promise.all(
     mdxFiles.map(async (file) => {
       const { metadata, content } = await readMDXFile(path.join(postsDirectory, file));
       const slug = path.basename(file, path.extname(file));
@@ -58,10 +58,14 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       return {
         metadata,
         slug,
-        content: content,
+        content,
       };
     }))
 
+  posts.sort((a, b) => {
+    if (new Date(a.metadata.date) > new Date(b.metadata.date)) return -1
+    else return 1;
+  });
 
   return posts;
 }
