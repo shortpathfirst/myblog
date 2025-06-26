@@ -43,7 +43,7 @@ async function readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; 
   // const Demo = (await import(`@/_posts/`)).default
 
   const { frontmatter, content } = await compileMDX<MetadataBlog>({
-    source: rawContent.replace(/\/myblog/g, ''),
+    source: rawContent,
     components: await loadMDXComponents(),
     options: {
       parseFrontmatter: true,
