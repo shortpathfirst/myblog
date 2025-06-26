@@ -18,6 +18,9 @@ function getMDXFiles(dir: string): string[] {
 }
 // Get all .tsx components in a given directory
 function getComponentsFiles(dir: string): string[] {
+  if (!fs.existsSync(dir)) {
+    return [];
+  }
   return fs.readdirSync(dir).filter(file => file.endsWith('.tsx'));
 }
 // Dynamically load all components from the _components folder using import()
