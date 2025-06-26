@@ -23,13 +23,13 @@ function getComponentsFiles(dir: string): string[] {
 // Dynamically load all components from the _components folder using import()
 async function loadMDXComponents() {
   const componentFiles = getComponentsFiles(componentsDir);
-  const components: Record<string, any> = {};
+  const components: Record<string, React.ComponentType> = {};
 
   await Promise.all(
     componentFiles.map(async (file) => {
       const componentName = path.basename(file, '.tsx');
-      const module = await import(`@/_posts/_components/${file}`);
-      components[componentName] = module.default;
+      const imported_module = await import(`@/_posts/_components/${file}`);
+      components[componentName] = imported_module.default;
     })
   );
   return components;
