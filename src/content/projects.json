@@ -29,6 +29,19 @@
     },
     "url": "https://map-dashboard-27ze.vercel.app/"
   },
+    {
+    "metadata": {
+      "title": "Frutiger site",
+      "description": "A design site with chatbot to answer every question about it",
+      "thumbnail":"/myblog/projectsthumbs/frutiger_thumbnail.PNG",
+      "date": "2025-06-25",
+      "tags": [
+        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+      ]
+    },
+    "url": "https://frutiger-project.vercel.app/"
+  },
   {
     "metadata": {
       "title": "Powerlifting Database",
