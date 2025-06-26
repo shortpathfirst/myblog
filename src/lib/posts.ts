@@ -18,21 +18,24 @@ function getMDXFiles(dir: string): string[] {
 }
 // Get all .tsx components in a given directory
 function getComponentsFiles(dir: string): string[] {
-  return fs.readdirSync(componentsDir).filter(file => file.endsWith('.tsx'));
+  return fs.readdirSync(dir).filter(file => file.endsWith('.tsx'));
 }
 // Dynamically load all components from the _components folder using import()
 async function loadMDXComponents() {
   const componentFiles = getComponentsFiles(componentsDir);
   const components: Record<string, any> = {};
-
-  await Promise.all(
-    componentFiles.map(async (file) => {
-      const componentName = path.basename(file, '.tsx');
-      const module = await import(`@/_posts/_components/${file}`);
-      components[componentName] = module.default;
-    })
-  );
-  return components;
+  if (componentFiles.length) {
+    await Promise.all(
+      componentFiles.map(async (file) => {
+        const componentName = path.basename(file, '.tsx');
+        const module = await import(`@/_posts/_components/${file}`);
+        components[componentName] = module.default;
+      })
+    );
+    return components;
+  } else {
+    return {};
+  }
 }
 
 // Read and parse a single MDX file using next-mdx-remote instead of gray-matter
