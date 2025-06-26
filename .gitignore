@@ -44,3 +44,4 @@ next-env.d.ts
 
 src/_posts/blogopost.mdx
 src/_posts/importExample.mdx
+src/_posts/_components/*

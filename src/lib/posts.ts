@@ -10,10 +10,29 @@ import { ReactElement } from "react";
 import remarkGfm from "remark-gfm";
 
 const postsDirectory = join(process.cwd(), "src", "_posts");
+const componentsDir = join(process.cwd(), 'src', '_posts', '_components');
 
 // Get all .mdx files in a given directory
 function getMDXFiles(dir: string): string[] {
   return fs.readdirSync(dir).filter((file) => ['.md', '.mdx'].includes(path.extname(file)));
+}
+// Get all .tsx components in a given directory
+function getComponentsFiles(dir: string): string[] {
+  return fs.readdirSync(componentsDir).filter(file => file.endsWith('.tsx'));
+}
+// Dynamically load all components from the _components folder using import()
+async function loadMDXComponents() {
+  const componentFiles = getComponentsFiles(componentsDir);
+  const components: Record<string, any> = {};
+
+  await Promise.all(
+    componentFiles.map(async (file) => {
+      const componentName = path.basename(file, '.tsx');
+      const module = await import(`@/_posts/_components/${file}`);
+      components[componentName] = module.default;
+    })
+  );
+  return components;
 }
 
 // Read and parse a single MDX file using next-mdx-remote instead of gray-matter
@@ -24,10 +43,8 @@ async function readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; 
   // const Demo = (await import(`@/_posts/`)).default
 
   const { frontmatter, content } = await compileMDX<MetadataBlog>({
-    source: rawContent,
-    components: {
-      //Add components to use in MDX
-    },
+    source: rawContent.replace(/\/myblog/g, ''),
+    components: await loadMDXComponents(),
     options: {
       parseFrontmatter: true,
       mdxOptions: {
