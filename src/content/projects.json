@@ -45,14 +45,15 @@
   {
     "metadata": {
       "title": "Powerlifting Database",
-      "description": "React architecture with chartjs and chakraUI, express backend and sqlite database.",
+      "description": "React architecture with chartjs and chakraUI, Duplicate Backend with express and java springboot, Sqlite database.",
       "thumbnail":"/myblog/projectsthumbs/powerlifting_thumb.png",
-      "date": "2025-01-01",
+      "date": "2025-03-01",
       "tags": [
         { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { "name": "chartjs", "url": "" },
         { "name": "chakraUI", "url": "" },
         { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { "name": "Java", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
         { "name": "SQLite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
         { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
       ]
@@ -120,15 +121,17 @@
   {
     "metadata": {
       "title": "JudoClub",
-      "description": "Static website built with Angular.",
-      "thumbnail":"",
-      "date": "2025-01-01",
+      "description": "A modern NextJS website for a judo club designed as a landing page for the club and to navigate about tecnhical resources about judo.",
+      "thumbnail":"/myblog/projectsthumbs/logo_judo.svg",
+      "date": "2025-07-01",
       "tags": [
-        { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-        { "name": "Static Site", "url": "" }
+        { "name": "NextJS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { "name": "MDX", "url": "" },
+        { "name": "CSS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
       ]
     },
-    "url": "https://example.com/judoclub"
+    "url": "https://shortpathfirst.github.io/judo-club/"
   },
     {
     "metadata": {

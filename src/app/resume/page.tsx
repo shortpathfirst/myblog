@@ -8,7 +8,7 @@ const Resume = () => {
             {/* Download sidebar */}
             <div className={styles.sidebar}>
                 <h1>Resume</h1>
-                <a className={styles["download-btn"]}  href="/myblog/resume.pdf" target="_blank">Download</a>
+                <a className={styles["download-btn"]} href="/myblog/resume.pdf" target="_blank">Download</a>
             </div>
             {/* Content */}
             <div className={styles.resumeContent}>
@@ -19,7 +19,7 @@ const Resume = () => {
 
                 <h3>Education</h3>
                 <div className={styles.grid}>
-                    <p><strong>B.S. Computer Engineer</strong><br />Degree score: 90 | 110<br />Università degli studi di Perugia, PG <br />Aug 2014 – Dec 2018</p>
+                    <p><strong>B.S. Computer Engineer</strong><br />Degree score: 86 | 110<br />Università degli studi di Perugia, PG <br />Aug 2014 – Dec 2018</p>
                     <p><strong>M.S. Data Science</strong><br />-<br />Università degli studi di Perugia, PG<br />Aug 2019 – May 2022</p>
                 </div>
                 <hr />
@@ -29,12 +29,12 @@ const Resume = () => {
                 <div>
                     <p>
                         Computer Engineer with a passion for full-stack web development, machine learning, and data-driven applications.
-                        I like building responsive, user-friendly web interfaces using React, Angular and developing robust backend systems with Java, Express.js, and MongoDB/SQL databases.
+                        I like building responsive, user-friendly web interfaces using React and developing robust backend systems with Java, Express.js, and MongoDB/SQL databases.
                     </p>
                     <p>
                         I have good Understanding in designing scalable architectures, knowledge on the principale AWS services and the use of containerization with Docker for application deployment and management.
                     </p>
-                    <p> My main idea is writing clean and maintainable code and applying software engineering best practices including design patterns, type safety, respecting algorithmic complexity, applying version control. Strong foundation in algorithms, data structures, and system design, for providing a secure application development.</p>
+                    <p> My goal is to write clean and maintainable code and apply software engineering best practices including design patterns, type safety, respecting algorithmic complexity, applying version control. Strong foundation in algorithms, data structures, and system design, for providing a secure application development.</p>
                     <p>
                         Proficient in machine learning and data analysis using Python and libraries like TensorFlow. From creating a data foundation with web scraping data to performing EDA (Exploratory Data Analysis) and building predictive models. Creating insightful, interactive data visualizations transforming complex datasets into clear visual stories.
                     </p>
@@ -57,13 +57,15 @@ const Resume = () => {
                                 ]
                             },
                             {
-                                "name": "Judo Club",
-                                "date": "August 2024 - September 2024",
+                                "name": "Powerlifting Database",
+                                "date": "January 2025",
                                 "isSite": false,
-                                "url": "https://github.com/shortpathfirst/judoclub",
+                                "url": "https://github.com/shortpathfirst/PowerliftingDatabase",
                                 "descriptionList": [
-                                    "SPA application written in <strong>Angular</strong> for a judo club. ",
-                                    "<strong>Interactive learning</strong> using data visualization libray and angular features."
+                                    "SPA application written in <strong>React</strong>",
+                                    "<strong>Interactive data visualization</strong> using chart.js",
+                                    "<strong>Java Springboot</strong> backend",
+                                    "<strong>Unit and integration test for </strong> backend and for frontend",
                                 ]
                             },
                             {
@@ -74,6 +76,16 @@ const Resume = () => {
                                 "descriptionList": [
                                     "Implementing image segmentation using U-Net implementation on a custom dataset ",
                                     "<strong>Tools:</strong> Kaggle; Tensorflow; Labelbox;"
+                                ]
+                            },
+                            {
+                                "name": "Judo-club",
+                                "date": "May 2025",
+                                "isSite": false,
+                                "url": "https://shortpathfirst.github.io/judo-club/",
+                                "descriptionList": [
+                                    "A modern NextJS website for a judo club designed as a landing page for the club and to navigate about tecnhical resources about judo.",
+                                    "Using <strong>MDX</strong> content management"
                                 ]
                             }
                         ].map((project, i) => (
