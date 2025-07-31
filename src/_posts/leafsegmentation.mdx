@@ -113,23 +113,24 @@ The number of the grapevine image has been increased using different **data augm
 
 ### Evaluation
 
-```python {14}
-Epoch 1/20
-13/13 [==============================] - 408s 31s/step - loss: 0.6447 - accuracy: 0.6999 - val_loss: 0.5751 - val_accuracy: 0.7656
-Epoch 2/20
-13/13 [==============================] - 406s 31s/step - loss: 0.5251 - accuracy: 0.7357 - val_loss: 0.4341 - val_accuracy: 0.7656
-Epoch 3/20
-13/13 [==============================] - 407s 31s/step - loss: 0.4555 - accuracy: 0.7570 - val_loss: 0.4054 - val_accuracy: 0.8160
-Epoch 4/20
-13/13 [==============================] - 332s 27s/step - loss: 0.4353 - accuracy: 0.7903 - val_loss: 0.4098 - val_accuracy: 0.8055
-Epoch 5/20
+```python {15}
+Epoch 1/30
+26/26 [==============================] - 25s 888ms/step - loss: 0.7405 - accuracy: 0.7239 - val_loss: 0.6310 - val_accuracy: 0.7463
+Epoch 2/30
+26/26 [==============================] - 23s 855ms/step - loss: 0.5434 - accuracy: 0.7406 - val_loss: 0.4473 - val_accuracy: 0.7463
+Epoch 3/30
+26/26 [==============================] - 23s 856ms/step - loss: 0.4398 - accuracy: 0.7407 - val_loss: 0.4014 - val_accuracy: 0.7463
+Epoch 4/30
+26/26 [==============================] - 23s 859ms/step - loss: 0.4094 - accuracy: 0.8086 - val_loss: 0.3829 - val_accuracy: 0.8396
+Epoch 5/30
+26/26 [==============================] - 23s 858ms/step - loss: 0.3304 - accuracy: 0.8653 - val_loss: 0.1989 - val_accuracy: 0.9252
 ...
-Epoch 19/20
-13/13 [==============================] - 133s 10s/step - loss: 0.1488 - accuracy: 0.9428 - val_loss: 0.1318 - val_accuracy: 0.9470
-Epoch 20/20
-13/13 [==============================] - 124s 10s/step - loss: 0.1593 - accuracy: 0.9400 - val_loss: 0.1475 - val_accuracy: 0.9458
+Epoch 29/30
+26/26 [==============================] - 22s 837ms/step - loss: 0.0601 - accuracy: 0.9761 - val_loss: 0.0598 - val_accuracy: 0.9764
+Epoch 30/30
+26/26 [==============================] - 23s 863ms/step - loss: 0.0549 - accuracy: 0.9779 - val_loss: 0.0532 - val_accuracy: 0.9788
 ```
-The network perform quite well for the amount of data used with a validation accuracy of **94%**
+The network perform quite well for the amount of data used with a validation accuracy of **97%** reached with 30 Epochs.
 - **IoU Metric** also knonw as Jaccard coefficient is evaluated:
 
 ### Results
