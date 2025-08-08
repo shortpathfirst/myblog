@@ -74,7 +74,7 @@ function ModalExpertiseDescription({ closeModal, selectedService }: modalService
                 <button className={styles.closeButton} onClick={closeModal}>✕</button>
                 <h2>{selectedService.name}</h2>
                 <p>
-                    <Image src={getAssetPath(selectedService.url || defaultImage)} alt={selectedService.name} width={60} height={60} />
+                    <Image src={selectedService.url || defaultImage} alt={selectedService.name} width={60} height={60} />
                     {selectedService.description}
                 </p>
                 <ul>
