@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState } from 'react'
-import styles from './serviceStack.module.css'
+import styles from './expertiseSection.module.css'
 import Title from '../header/title'
 import Image from 'next/image'
 import serviceList from '@/content/portfolioServices.json'
+import { getAssetPath } from '@/lib/constants'
 
-function ServiceStack() {
+const defaultImage = '/myblog/file.svg';
+
+function ExpertiseSection() {
     const [modalOpen, setModalOpen] = useState(false)
     const [selectedService, setSelectedService] = useState<null | {
         name: string;
@@ -34,7 +37,7 @@ function ServiceStack() {
                 {
                     serviceList.map((service, i) => (
                         <div className={styles.card} key={i} onClick={() => openModal(service)}>
-                            <Image className={styles.logo} height={50} width={50} src={service.url || '/file.svg'} alt={service.name} />
+                            <Image className={styles.logo} height={50} width={50} src={getAssetPath(service.url || defaultImage)} alt={service.name} />
                             <h2>{service.name.toUpperCase()}</h2>
                         </div>
                     ))
@@ -42,13 +45,12 @@ function ServiceStack() {
             </div>
             {/* Modal */}
             {modalOpen && selectedService && (
-                <ModalServiceDescription openModal={openModal} selectedService={selectedService} closeModal={closeModal} />
-
+                <ModalExpertiseDescription openModal={openModal} selectedService={selectedService} closeModal={closeModal} />
             )}
         </section>
     )
 }
-export default ServiceStack
+export default ExpertiseSection
 
 type modalServiceProps = {
     openModal(service: {
@@ -66,14 +68,14 @@ type modalServiceProps = {
     closeModal(): void;
 }
 
-function ModalServiceDescription({ closeModal, selectedService }: modalServiceProps) {
+function ModalExpertiseDescription({ closeModal, selectedService }: modalServiceProps) {
     return (
         <div className={styles.modalBackdrop} onClick={closeModal}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.closeButton} onClick={closeModal}>✕</button>
                 <h2>{selectedService.name}</h2>
                 <p>
-                    <Image src={selectedService.url || '/myblog/file.svg'} alt={selectedService.name} width={60} height={60} />
+                    <Image src={getAssetPath(selectedService.url || defaultImage)} alt={selectedService.name} width={60} height={60} />
                     {selectedService.description}
                 </p>
                 <ul>

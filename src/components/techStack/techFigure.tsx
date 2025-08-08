@@ -70,7 +70,7 @@ const TechFigure = () => {
             <button
                 className={styles.figureSwitch}
                 onClick={() => setFigureType((figure) => figure === "bubble" ? 'radial' : 'bubble')}>
-                {figureType === "bubble" ? 'Radial Chart' : 'Bubble Chart'}
+                <span>{figureType === "bubble" ? 'Radial' : 'Bubble'}</span> Chart
             </button>
         </div>
     );

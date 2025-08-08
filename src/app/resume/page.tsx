@@ -1,6 +1,11 @@
 import React from 'react'
 import styles from './page.module.css'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+    title: 'Personal Resume',
+    description: 'Resume about my Education, Expertise area, Projects',
+}
 const Resume = () => {
 
     return (
@@ -19,8 +24,10 @@ const Resume = () => {
 
                 <h3>Education</h3>
                 <div className={styles.grid}>
-                    <p><strong>B.S. Computer Engineer</strong><br />Degree score: 86 | 110<br />Università degli studi di Perugia, PG <br />Aug 2014 – Dec 2018</p>
-                    <p><strong>M.S. Data Science</strong><br />-<br />Università degli studi di Perugia, PG<br />Aug 2019 – May 2022</p>
+                    <p><strong>B.S. Computer Engineer</strong><br />Degree score: 86 | 110<br />Università degli studi di
+                        Perugia, PG <br />Aug 2014 – Dec 2018</p>
+                    <p><strong>M.S. Data Science</strong><br />-<br />Università degli studi di Perugia, PG<br />Aug 2019 – May
+                        2022</p>
                 </div>
                 <hr />
 
@@ -28,15 +35,24 @@ const Resume = () => {
                 <h3>Expertise area</h3>
                 <div>
                     <p>
-                        Computer Engineer with a passion for full-stack web development, machine learning, and data-driven applications.
-                        I like building responsive, user-friendly web interfaces using React and developing robust backend systems with Java, Express.js, and MongoDB/SQL databases.
+                        Computer Engineer with a passion for full-stack web development, machine learning, and data-driven
+                        applications.
+                        I like building responsive, user-friendly web interfaces using React and developing robust backend
+                        systems with Java, Express.js, and MongoDB/SQL databases.
                     </p>
                     <p>
-                        I have good Understanding in designing scalable architectures, knowledge on the principale AWS services and the use of containerization with Docker for application deployment and management.
+                        I have good Understanding in designing scalable architectures, knowledge on the principale AWS services
+                        and the use of containerization with Docker for application deployment and management.
                     </p>
-                    <p> My goal is to write clean and maintainable code and apply software engineering best practices including design patterns, type safety, respecting algorithmic complexity, applying version control. Strong foundation in algorithms, data structures, and system design, for providing a secure application development.</p>
+                    <p> My goal is to write clean and maintainable code and apply software engineering best practices including
+                        design patterns, type safety, respecting algorithmic complexity, applying version control. Strong
+                        foundation in algorithms, data structures, and system design, for providing a secure application
+                        development.</p>
                     <p>
-                        Proficient in machine learning and data analysis using Python and libraries like TensorFlow. From creating a data foundation with web scraping data to performing EDA (Exploratory Data Analysis) and building predictive models. Creating insightful, interactive data visualizations transforming complex datasets into clear visual stories.
+                        Proficient in machine learning and data analysis using Python and libraries like TensorFlow. From
+                        creating a data foundation with web scraping data to performing EDA (Exploratory Data Analysis) and
+                        building predictive models. Creating insightful, interactive data visualizations transforming complex
+                        datasets into clear visual stories.
                     </p>
                 </div>
                 <hr />
@@ -51,7 +67,7 @@ const Resume = () => {
                                 "isSite": true,
                                 "url": "https://github.com/shortpathfirst/MapDashboard",
                                 "descriptionList": [
-                                    "A <strong>React</strong> dashboard with the use of  <strong>Chackra UI</strong>.",
+                                    "A <strong>React</strong> dashboard with the use of <strong>Chackra UI</strong>.",
                                     "<strong>ExpressJS</strong> backend serving the crimes data to showcase",
                                     "To navigate the crimes of the City of Belém - Brazil in a modern site"
                                 ]
@@ -163,7 +179,7 @@ const Resume = () => {
                     <li><strong>English:</strong>
                         <ul>
                             <li><strong>Reading:</strong> Strong comprehension of written texts</li>
-                            <li><strong>Speaking:</strong> Proficient in conversional comunication  </li>
+                            <li><strong>Speaking:</strong> Proficient in conversional comunication </li>
                             <li><strong>Listening:</strong> Full understanding of spoken language</li>
                         </ul>
                     </li>

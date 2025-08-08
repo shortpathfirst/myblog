@@ -3,7 +3,7 @@ import styles from './techStack.module.css'
 import TechFigure from './techFigure';
 import Title from '../header/title';
 
-const TechStack = () => {
+const TechStackSection = () => {
     return (
         <section className={styles.section}>
             <div className={styles.titleBand}>
@@ -11,9 +11,9 @@ const TechStack = () => {
             </div>
             <div className={styles.figure}>
                 <TechFigure />
-                <div className={styles.poweredby}>Powered by <span>D3</span></div>
+                <div className={styles.poweredby}><span>D3</span> Chart</div>
             </div>
         </section>
     )
 }
-export default TechStack
+export default TechStackSection

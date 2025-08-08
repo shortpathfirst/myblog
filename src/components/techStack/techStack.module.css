@@ -23,15 +23,14 @@
 
 .poweredby {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0;
+    right: 0;
     font-weight: 700;
-    font-size: calc(1vw + 1rem);
-    /* Scales based on viewport width */
+    font-size: calc(1vw + .4rem);
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: black;
-    background-color: #00000013;
+    background-color: #f4f4f4;
     border-radius: 25px;
     padding: 0 1rem;
 }
@@ -40,23 +39,14 @@
     color: orange;
 }
 
-/* Adjustments for smaller screens */
-
 @media (max-width: 600px) {
     .poweredby {
         font-size: 0.7rem;
-        bottom: -5px;
-        right: 10vw;
     }
 
 }
 
 @media (max-width: 1024px) {
-    .poweredby {
-
-        right: 10vw;
-    }
-
     .figure {
         width: 100vw;
     }
@@ -80,6 +70,7 @@
     bottom: 0;
     left: 0;
     color: white;
+    font-weight: 600;
     background-color: #000000;
     border-radius: 0 25px 0 0;
     padding: 0.75rem 1.2rem;
