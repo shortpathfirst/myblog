@@ -87,12 +87,6 @@
           "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
         },
         {
-          "name": "Angular",
-          "level": 80,
-          "description": "TypeScript-based web application framework.",
-          "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
-        },
-        {
           "name": "NextJS",
           "level": 70,
           "description": "React-based framework for server-side rendering.",
