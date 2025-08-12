@@ -10,18 +10,21 @@
   color: #1e40af;
   margin-top: 2rem;
 }
-
-.mdxContent h1 {
-  font-size: 3rem;
+.mdxContent h1 a,
+.mdxContent h2 a,
+.mdxContent h3 a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.mdxContent h2 {
-  font-size: 2.5rem;
+.mdxContent h1 a:hover,
+.mdxContent h2 a:hover,
+.mdxContent h3 a:hover {
+  color: #1e40af;
 }
-
-.mdxContent h3 {
-  font-size: 1.75rem;
-}
+.mdxContent h1 { font-size: 2.25rem; /* ~36px */ }
+.mdxContent h2 { font-size: 1.875rem; /* ~30px */ }
+.mdxContent h3 { font-size: 1.5rem; /* ~24px */ }
 
 .mdxContent p {
   line-height: 1.7;
@@ -123,26 +126,8 @@
   color: #3d3d3d;
 }
 
-.mdxContent h1[id],
-.mdxContent h2[id],
-.mdxContent h3[id],
-.mdxContent h4[id],
-.mdxContent h5[id],
-.mdxContent h6[id] {
-  scroll-margin-top: 100px;
-}
 
 @media (max-width: 640px) {
-
-  .mdxContent h1[id],
-  .mdxContent h2[id],
-  .mdxContent h3[id],
-  .mdxContent h4[id],
-  .mdxContent h5[id],
-  .mdxContent h6[id] {
-    scroll-margin-top: 140px;
-  }
-
   .mdxContent th,
   .mdxContent td {
     padding: 0.2rem !important;
@@ -213,9 +198,53 @@
 /* Links */
 .mdxContent a {
   color: #2563eb;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .mdxContent a:hover {
   color: #1d4ed8;
+}
+
+/* Details and summary */
+.mdxContent details {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5em;
+  margin: 1em 0;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.mdxContent details[open] {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mdxContent summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.3em;
+  outline: none;
+  list-style: none;
+}
+
+.mdxContent details a {
+  color: inherit;
+  text-decoration: none;
+
+}
+
+.mdxContent summary::-webkit-details-marker {
+  display: none;
+}
+
+.mdxContent summary::before {
+  content: "▶ ";
+  margin-right: 1rem;
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.mdxContent details[open] summary::before {
+  transform: rotate(90deg);
 }
