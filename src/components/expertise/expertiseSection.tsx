@@ -5,7 +5,6 @@ import styles from './expertiseSection.module.css'
 import Title from '../header/title'
 import Image from 'next/image'
 import serviceList from '@/content/portfolioServices.json'
-import { getAssetPath } from '@/lib/constants'
 
 const defaultImage = '/myblog/file.svg';
 
@@ -37,7 +36,7 @@ function ExpertiseSection() {
                 {
                     serviceList.map((service, i) => (
                         <div className={styles.card} key={i} onClick={() => openModal(service)}>
-                            <Image className={styles.logo} height={50} width={50} src={getAssetPath(service.url || defaultImage)} alt={service.name} />
+                            <Image className={styles.logo} height={50} width={50} src={service.url || defaultImage} alt={service.name} />
                             <h2>{service.name.toUpperCase()}</h2>
                         </div>
                     ))
@@ -75,7 +74,7 @@ function ModalExpertiseDescription({ closeModal, selectedService }: modalService
                 <button className={styles.closeButton} onClick={closeModal}>✕</button>
                 <h2>{selectedService.name}</h2>
                 <p>
-                    <Image src={getAssetPath(selectedService.url || defaultImage)} alt={selectedService.name} width={60} height={60} />
+                    <Image src={selectedService.url || defaultImage} alt={selectedService.name} width={60} height={60} />
                     {selectedService.description}
                 </p>
                 <ul>
