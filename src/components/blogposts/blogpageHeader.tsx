@@ -11,7 +11,7 @@ const BlogPageHeader = ({ data }: { data: MetadataBlog }) => {
         <section className={styles.headerSection}>
             <div className={styles.herotitle}>
                 <Image
-                    src={`${baseUrl}/images/pastel-abstract.jpg`}
+                    src={`${baseUrl}/images/pastel-abstract.png`}
                     alt="Hero Background"
                     fill
                     priority
