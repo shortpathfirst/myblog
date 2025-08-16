@@ -1,30 +1,35 @@
 [
     {
-        "name": "architecture",
+        "name": "System Design",
         "url": "/myblog/images/svgServices/old-library-building-svgrepo-com.svg",
-        "description": "I design scalable, maintainable software using clean code principles, layered architecture, and modern design patterns.",
+        "description": "I design systems using clean code principles finding a balance between code readability, reusability, testability, maintainability, and simplicity.",
         "points": [
             "Knowledge in High-level architectures",
-            " API design",
+            "API design",
             "Database Design"
         ]
     },
     {
-        "name": "Coding",
-        "url": "/myblog/images/svgServices/coding-svgrepo-com.svg",
-        "description": "I write clean, error-resistant code using design patterns, algorithms, typing and all best practices for a maintainable code",
-        "points": []
+        "name": "Architecture",
+        "url": "/myblog/images/svgServices/analytics-svgrepo-com.svg",
+        "description": "I write code following the best practices taking advantage of good design patterns to ensure maintainable code. Using algorithms with reduced complexity to produce error-resistant, clean and readable code.",
+        "points": [
+            "Get the data foundation for data analysis.",
+            "Automated data extraction"
+        ]
     },
     {
         "name": "Web Design",
         "url": "/myblog/images/svgServices/browser-design-svgrepo-com.svg",
         "description": "I like to build aestetics sites with good user experience (UX) with the focus on the data and information to be displayed.",
-        "points": []
+        "points": [
+            "The data is the protagonist"
+        ]
     },
     {
-        "name": "Data Mining",
+        "name": "Data Analysis",
         "url": "/myblog/images/svgServices/coding-data-development-svgrepo-com.svg",
-        "description": "I extract, analyze, and model data using exploratory data analysis(EDA), machine learning, and data visualization techniques.",
+        "description": "I prioritize deep understanding of the data through exploratory data analysis (EDA), data cleaning, and visualization techniques before applying machine learning or deep learning algorithms. This ensures that models are built on solid, well-understood foundations",
         "points": []
     },
     {
@@ -42,15 +47,6 @@
             "Integrity",
             "Availability",
             "Autenticity"
-        ]
-    },
-    {
-        "name": "Web scraping",
-        "url": "/myblog/images/svgServices/analytics-svgrepo-com.svg",
-        "description": "I scrape static and dynamic sites using Scrapy, Selenium, Playwright, and BeautifulSoup for custom data extraction.",
-        "points": [
-            "Get the data foundation for data analysis.",
-            "Automated data extraction"
         ]
     }
 ]
