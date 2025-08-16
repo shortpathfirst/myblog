@@ -1,0 +1,58 @@
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #262626;
+  background: rgba(197, 220, 255, 0.4);
+  padding: 2rem;
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease;
+  will-change: transform;
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #3f3f46;
+}
+
+/* Spotlight layer (driven by CSS variables set in TS) */
+.spotlight {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 200ms ease;
+
+  background: radial-gradient(circle at var(--spot-x, -9999px) var(--spot-y, -9999px), rgba(193, 218, 255, 0.5) 0%, rgba(255, 255, 255, 0) 30%);
+}
+
+.card:hover .spotlight {
+  opacity: 1;
+}
+
+
+.title {
+  font-weight: 600;
+  color: #141458;
+  font-size: clamp(0.95rem, 1vw + 0.6rem, 1.25rem);
+  margin-bottom: 0.25rem;
+}
+
+.description {
+  color: #4B5563;
+  font-size: clamp(0.85rem, 0.8vw + 0.6rem, 1rem);
+  line-height: 1.5;
+  flex-grow: 1;
+}
