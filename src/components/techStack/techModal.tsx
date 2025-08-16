@@ -27,8 +27,10 @@ const TechModal = ({ data, handleCloseModal }: techModalProps) => {
                 }
                 <h2>{data.title}</h2>
             </div>
-            <div className={styles.divisor}></div>
+            <div className={styles.divisor}/>
+            <h3>Proficiency</h3>
             <ProgressBar progress={data.progress}></ProgressBar>
+            <h3>What is it?</h3>
             <p>
                 {data.description}
             </p>

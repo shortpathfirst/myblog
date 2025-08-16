@@ -101,11 +101,15 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
         if (!zoomRef.current || !svgRef.current) return;
 
         const scale = 2;
+        // Shift left the zoom
+        const focusX = width / 4;   // 25% from the left
+        const focusY = height / 2;  // still center vertically
 
         const transform = d3.zoomIdentity
-            .translate(width / 2, height / 2)
+            .translate(focusX, focusY)
             .scale(scale)
             .translate(-x, -y);
+
 
         d3.select(svgRef.current).transition()
             .transition()
@@ -147,7 +151,7 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
                     if (!node.children) {
 
                         const { x, y } = polarToCartesian(node.x - 90, node.y); // subtract 90 to align with top
-                        zoomToNode(x * 0.85, y);//Offset by 25%
+                        zoomToNode(x, y);
 
                         handleNodeClick({
                             title: node.data.name || "",
