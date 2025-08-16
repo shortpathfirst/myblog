@@ -3,13 +3,13 @@ import ContactForm from './contactForm'
 import styles from './contacts.module.css'
 import CodeTopBar from '../codeTopBar/codeTopBar'
 import { contacts } from '@/content/contacts'
-import Title from '../header/title'
+import TitleBand from '../header/titleBand'
 
 const Contacts = () => {
     return (
         <section id='contacts'>
             <div className={styles.contactHeader}>
-                <Title>Contact me</Title>
+                <TitleBand>Contacts</TitleBand>
                 <h3>Reach out for a project or just say hello</h3>
             </div>
             <div className={styles.contactContent}>

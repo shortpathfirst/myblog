@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from './techStack.module.css'
 import TechFigure from './techFigure';
-import Title from '../header/title';
+import TitleBand from '../header/titleBand';
 
 const TechStackSection = () => {
     return (
-        <section className={styles.section}>
-            <div className={styles.titleBand}>
-                <Title>🛠 My Tech Stack</Title>
-            </div>
+        <section className={styles.section} id='mytechstack'>
+            <TitleBand>🛠 My Tech Stack</TitleBand>
             <div className={styles.figure}>
                 <TechFigure />
                 <div className={styles.poweredby}><span>D3</span> Chart</div>

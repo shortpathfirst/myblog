@@ -6,16 +6,6 @@
     margin: 5rem 0;
 }
 
-.titleBand {
-    background-color: #dfeaf8;
-    border-top: 15px double var(--background);
-    border-bottom: 15px double var(--background);
-    overflow: hidden;
-    width: 100%;
-    vertical-align: middle;
-    margin-bottom: 3rem;
-}
-
 .figure {
     position: relative;
     max-width: 100%;

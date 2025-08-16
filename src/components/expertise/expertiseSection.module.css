@@ -6,22 +6,13 @@
     margin: 5rem 0;
 }
 
-.titleBand {
-    background-color: #dfeaf8;
-    border-top: 15px double var(--background);
-    border-bottom: 15px double var(--background);
-    overflow: hidden;
-    width: 100%;
-    vertical-align: middle;
-    margin-bottom: 3rem;
-}
-
 .gridWrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    width: 80%;
+    gap: 30px;
+    width: 90%;
 }
+
 
 .card {
     margin: 5px;
@@ -128,10 +119,8 @@
 .modal p img {
     max-width: 150px;
     height: auto;
-    border-radius: 0.5rem;
     float: left;
     margin: 0 1em 1em 0;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .modal ul {
