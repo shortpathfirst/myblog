@@ -229,12 +229,8 @@ with open('gesture.names', 'r') as f:
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    if 'frame' not in request.files:
-        return jsonify({'error': 'No frame uploaded'}), 400
-
-    # Read image from request
-    file = request.files['frame']
-    npimg = np.frombuffer(file.read(), np.uint8)
+    # Read raw JPEG bytes from request
+    npimg = np.frombuffer(request.data, np.uint8)
     frame = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
 
     if frame is None:
@@ -273,61 +269,55 @@ if __name__ == '__main__':
 ### Esp32 code
 #### Step 1: Import Necessary Packages
 ```cpp
+#include "esp_camera.h"
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <LiquidCrystal_I2C.h>
-#include "esp_camera.h"
 
-// Your Wi-Fi credentials
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASS";
+// ==== Wi-Fi config ====
+const char *ssid = "YOUR_WIFI_SSID";
+const char *password = "YOUR_WIFI_PASS";
 
-// Flask server URL
-String serverUrl = "http://<SERVER_IP>:5000/predict";
+// ==== Flask server URL ====
+String serverUrl = "http://<SERVER_IP>:5000/predict"; // replace with your server IP
 
-// LCD setup (adjust address and dimensions)
+// ===== LCD setup =====
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-// Camera config (for ESP32-CAM)
-#define PWDN_GPIO_NUM     -1
-#define RESET_GPIO_NUM    -1
-#define XCLK_GPIO_NUM      0
-#define SIOD_GPIO_NUM     26
-#define SIOC_GPIO_NUM     27
-#define Y9_GPIO_NUM       35
-#define Y8_GPIO_NUM       34
-#define Y7_GPIO_NUM       39
-#define Y6_GPIO_NUM       36
-#define Y5_GPIO_NUM       21
-#define Y4_GPIO_NUM       19
-#define Y3_GPIO_NUM       18
-#define Y2_GPIO_NUM        5
-#define VSYNC_GPIO_NUM    25
-#define HREF_GPIO_NUM     23
-#define PCLK_GPIO_NUM     22
+// ==== Camera pins (WROVER Kit) ====
+#define CAMERA_MODEL_WROVER_KIT
+#include "camera_pins.h"
 
-void startCameraServer() {} // Not needed for this case
 ```
 #### Step 2: Initialize
 ```cpp
-void setup() {
+void setup()
+{
   Serial.begin(115200);
+
+  // LCD init
+  Wire.begin(13, 14); // SDA = 13, SCL = 14
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Connecting...");
 
   // Connect Wi-Fi
   WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
+  Serial.print("Connecting to WiFi");
+  while (WiFi.status() != WL_CONNECTED)
+  {
     delay(500);
     Serial.print(".");
   }
-  Serial.println("\nWiFi connected");
+  Serial.println("\nWiFi connected!");
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("WiFi Connected");
+  lcd.setCursor(0, 1);
+  lcd.print(WiFi.localIP());
 
-  // LCD init
-  lcd.init();
-  lcd.backlight();
-  lcd.setCursor(0,0);
-  lcd.print("Connecting...");
-
-  // Camera config
+  // Camera configuration
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -343,70 +333,84 @@ void setup() {
   config.pin_pclk = PCLK_GPIO_NUM;
   config.pin_vsync = VSYNC_GPIO_NUM;
   config.pin_href = HREF_GPIO_NUM;
-  config.pin_sscb_sda = SIOD_GPIO_NUM;
-  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
+  config.pin_sccb_scl = SIOC_GPIO_NUM;
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
-  config.frame_size = FRAMESIZE_QVGA;
-  config.jpeg_quality = 10;
+  config.frame_size = FRAMESIZE_VGA;
+  config.jpeg_quality = 30;
   config.fb_count = 1;
+  config.fb_location = CAMERA_FB_IN_PSRAM;
 
-  if (esp_camera_init(&config) != ESP_OK) {
+  if (esp_camera_init(&config) != ESP_OK)
+  {
     Serial.println("Camera init failed");
-    lcd.setCursor(0,0);
-    lcd.print("Cam Fail");
-    while (true);
+    while (true)
+    {
+      delay(1000);
+    }
   }
+
+  // Sensor configuration to fix color and orientation
+  sensor_t *s = esp_camera_sensor_get();
+  s->set_quality(s, 10);
+  s->set_vflip(s, 1);      // Flip vertically if needed
+  s->set_hmirror(s, 1);    // Mirror horizontally if needed
+  s->set_brightness(s, 0); // Adjust brightness (-2 to 2)
+  s->set_contrast(s, 1);   // Improve contrast (-2 to 2)
+  s->set_saturation(s, 2); // Boost color saturation (-2 to 2)
+  s->set_awb_gain(s, 1);   // Enable auto white balance
+  Serial.println("Camera ready!");
 }
 ```
 #### Step 3: Send Frames from Webcam with http
 ```cpp
-void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    camera_fb_t * fb = esp_camera_fb_get();
-    if (!fb) {
-      Serial.println("Camera capture failed");
-      return;
-    }
+void loop()
+{
+  if (WiFi.status() != WL_CONNECTED)
+    return;
 
-    HTTPClient http;
-    http.begin(serverUrl);
-    http.addHeader("Content-Type", "multipart/form-data");
-
-    String boundary = "----ESP32Boundary";
-    String start_request = "--" + boundary + "\r\nContent-Disposition: form-data; name=\"frame\"; filename=\"frame.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n";
-    String end_request = "\r\n--" + boundary + "--\r\n";
-
-    int contentLength = start_request.length() + fb->len + end_request.length();
-    http.addHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
-    http.addHeader("Content-Length", String(contentLength));
-
-    WiFiClient *stream = http.getStreamPtr();
-    stream->print(start_request);
-    stream->write(fb->buf, fb->len);
-    stream->print(end_request);
-
-    int httpCode = http.POST(*stream);
-    if (httpCode > 0) {
-      String payload = http.getString();
-      Serial.println(payload);
-
-      // Display gesture on LCD
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("Gesture:");
-      lcd.setCursor(0, 1);
-      lcd.print(payload);
-    } else {
-      Serial.println("Error sending request");
-    }
-
-    esp_camera_fb_return(fb);
-    http.end();
+  camera_fb_t *fb = esp_camera_fb_get();
+  if (!fb)
+  {
+    Serial.println("Camera capture failed");
+    delay(1000);
+    return;
   }
-  delay(1000); // Send every 1 second
+
+  HTTPClient http;
+  http.begin(serverUrl);
+  http.addHeader("Content-Type", "image/jpeg");
+
+  int httpCode = http.POST(fb->buf, fb->len); // Send JPEG buffer
+
+  esp_camera_fb_return(fb);
+
+  if (httpCode > 0)
+  {
+    String payload = http.getString();
+
+    // Get gesture
+    int start = payload.indexOf(":\"") + 2;
+    int end = payload.indexOf("\"", start);
+    String gesture = payload.substring(start, end);
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Gesture:");
+    lcd.setCursor(0, 1);
+    lcd.print(gesture);
+    Serial.println("Server response: " + gesture);
+  }
+  else
+  {
+    Serial.printf("Error sending request: %d\n", httpCode);
+  }
+
+  http.end();
+  delay(1000); // send every 1 second
 }
 
 ```
