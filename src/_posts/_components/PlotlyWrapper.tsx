@@ -2,25 +2,24 @@
 
 import { useEffect, useRef } from "react";
 
-declare global {
-  interface Window {
-    Plotly: any;
-  }
-}
-
 export default function PlotlyWrapper({ src }: { src: string }) {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ensurePlotly = () =>
-      new Promise<any>((resolve) => {
+      new Promise((resolve) => {
+        // @ts-ignore
         if (window.Plotly) {
+          // @ts-ignore
           resolve(window.Plotly);
         } else {
           const script = document.createElement("script");
           script.src = "https://cdn.plot.ly/plotly-3.1.0.min.js";
           script.async = true;
-          script.onload = () => resolve(window.Plotly);
+          script.onload = () => {
+            // @ts-ignore
+            resolve(window.Plotly);
+          };
           document.body.appendChild(script);
         }
       });
@@ -31,14 +30,22 @@ export default function PlotlyWrapper({ src }: { src: string }) {
       const res = await fetch(src);
       const fig = await res.json();
 
-      Plotly.newPlot(chartRef.current, fig.data, fig.layout);
+      if (chartRef.current) {
+        // @ts-ignore
+        Plotly.newPlot(chartRef.current, fig.data, fig.layout);
+      }
     };
 
     load();
   }, [src]);
 
-  return <div ref={chartRef} style={{
+  return (
+    <div
+      ref={chartRef}
+      style={{
         width: "100%",
         height: "400px",
-      }} />;
+      }}
+    />
+  );
 }
