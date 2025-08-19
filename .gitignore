@@ -45,4 +45,4 @@ next-env.d.ts
 src/_posts/blogopost.mdx
 src/_posts/importExample.mdx
 src/_posts/_components/*
-!src/_posts/_components/HelloWorld.tsx
+!src/_posts/_components/PlotlyWrapper.tsx

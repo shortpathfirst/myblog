@@ -1,0 +1,100 @@
+---
+title: "A Look at Climate Data using plotly"
+date: "2026-08-15"
+description: "Inspired by Robert Kosara's analysis of global climate data. This version incorporates tools like Plotly and Datashader for large datasets."
+imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg"
+tags: [
+    { "name": "Plotly", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg" },
+    { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" }
+]
+---
+
+# 🌍 A Look at Climate Data: Visualizing 300 Years of Global Temperature Trends
+
+In 2009, Robert Kosara analyzed a comprehensive climate dataset released by the UK's Met Office, covering monthly temperature averages from 1,718 weather stations worldwide between 1701 and 2009[^1]. This dataset, comprising over 1.6 million data points, offers a rich foundation for exploring long-term climate trends.
+
+For this blog post, i've remade Kosara's charts using alternative visualization tools, providing interactive charts for mdx content to facilitate deeper insights into the data.
+
+
+# 📈 Integrating Plotly Charts in MDX Using JSON
+
+One of the advantages of using Plotly for data visualization in modern web frameworks is the ability to **save charts as JSON files** and load them interactively in your MDX blog or documentation. This approach separates your visualization logic from your page layout and allows you to reuse the same chart across multiple posts.
+
+## How It Works
+
+1. **Create the Plotly Chart in Python or JavaScript**  
+   You can create a chart using `plotly.express` or `plotly.graph_objects` in Python.  
+
+```python
+import plotly.express as px
+import pandas as pd
+
+# Example: simple temperature data
+df = pd.DataFrame({
+    'Year': [1980, 1990, 2000, 2010, 2020],
+    'Temperature': [14.1, 14.3, 14.5, 14.7, 14.9]
+})
+
+fig = px.line(df, x='Year', y='Temperature', title='Average Temperature Over Time')
+
+# Save the chart as JSON
+fig.write_json('average_temp.json')
+
+# Save chart as html
+fig.write_html('average_temp.html')
+```
+
+## 📊 Visualizing Global Temperature Trends
+
+### 1. Global Average Temperature Over Time
+
+This chart illustrates the global average temperature from 1701 to 2009, highlighting significant fluctuations and trends[^1].
+
+<PlotlyWrapper src="/myblog/postimages/plotlyclimate/average_temp.json" />
+
+### 2. Average Temperature by Continent (Post-1980)
+
+Focusing on the period after 1980, this visualization breaks down the average temperature by continent, showcasing regional variations and trends.
+
+<PlotlyWrapper src="/myblog/postimages/plotlyclimate/average_temp2.json" />
+
+### 3. Station Distribution Map
+
+This map displays the geographical distribution of weather stations, with color coding to indicate the continent of each station.
+
+<PlotlyWrapper src="/myblog/postimages/plotlyclimate/average_temp3.json" />
+
+### 4. Distinct Stations Over the Years
+
+This chart tracks the number of distinct weather stations reporting data over time, providing insight into the expansion of global climate monitoring.
+
+<PlotlyWrapper src="/myblog/postimages/plotlyclimate/stations.json" />
+
+## Data Visualization 
+
+Effective data visualization serves three primary purposes:
+
+- **Clarity**: Presenting data in a way that is easy to understand.
+- **Context**: Providing background information to interpret the data accurately.
+- **Comparison**: Allowing users to compare different datasets or time periods.
+
+In our visualizations, we've employed color coding to differentiate continents, used interactive features to explore data over time, and provided contextual information to aid interpretation. These design choices align with best practices in data visualization, ensuring that the charts are not only informative but also engaging[^2].
+
+## ⚙️ Why Plotly and Datashader Are Ideal for Large Climate Datasets
+
+Handling datasets with over a million data points requires tools that can efficiently process and visualize large volumes of data. Plotly offers interactive charts that can handle substantial datasets, providing users with the ability to explore data dynamically.
+
+Datashader, on the other hand, excels at rendering large datasets by intelligently aggregating data points, ensuring that visualizations remain responsive and informative even with massive datasets.
+
+Together, these tools enable the creation of interactive and scalable visualizations, making them ideal for analyzing extensive climate data like the one discussed here[^2].
+
+## 🔍 Conclusion
+
+The visualizations presented in this post offer a modern perspective on the climate data analyzed by Kosara in 2009. By leveraging advanced visualization tools and adhering to data visualization principles, we've created interactive charts that facilitate a deeper understanding of global temperature trends over the past three centuries[^1].
+
+As we continue to monitor and analyze climate data, such visualizations will play a crucial role in communicating complex information and informing decision-making processes.
+
+---
+
+[^1]: Kosara, R. *A Look at Climate Data*. EagerEyes.org, 2009. [https://eagereyes.org/blog/2009/a-look-at-climate-data](https://eagereyes.org/blog/2009/a-look-at-climate-data)  
+[^2]: Kosara, R. *Interactively Explore Climate Data*. EagerEyes.org, 2009. [https://eagereyes.org/blog/2009/interactively-explore-climate-data](https://eagereyes.org/blog/2009/interactively-explore-climate-data)
