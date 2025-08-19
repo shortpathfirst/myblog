@@ -5,38 +5,40 @@ import { useEffect, useRef } from "react";
 export default function PlotlyWrapper({ src }: { src: string }) {
   const chartRef = useRef<HTMLDivElement>(null);
 
+  const loadPlotly = () =>
+    new Promise((resolve) => {
+      // @ts-expect-error Plotly is loaded dynamically,
+      if (window.Plotly) return resolve(window.Plotly);
+
+      const script = document.createElement("script");
+      script.src = "https://cdn.plot.ly/plotly-3.1.0.min.js";
+      script.async = true;
+      script.onload = () => {
+        // @ts-expect-error Plotly is loaded dynamically
+        resolve(window.Plotly);
+      };
+      document.body.appendChild(script);
+    });
+
   useEffect(() => {
-    const ensurePlotly = () =>
-      new Promise((resolve) => {
-        // @ts-ignore
-        if (window.Plotly) {
-          // @ts-ignore
-          resolve(window.Plotly);
-        } else {
-          const script = document.createElement("script");
-          script.src = "https://cdn.plot.ly/plotly-3.1.0.min.js";
-          script.async = true;
-          script.onload = () => {
-            // @ts-ignore
-            resolve(window.Plotly);
-          };
-          document.body.appendChild(script);
-        }
-      });
+    let canceled = false;
 
-    const load = async () => {
-      const Plotly = await ensurePlotly();
+    const renderChart = async () => {
+      const Plotly = await loadPlotly();
+      const response = await fetch(src);
+      const fig = await response.json();
 
-      const res = await fetch(src);
-      const fig = await res.json();
-
-      if (chartRef.current) {
-        // @ts-ignore
+      if (!canceled && chartRef.current) {
+        // @ts-expect-error Plotly type not known
         Plotly.newPlot(chartRef.current, fig.data, fig.layout);
       }
     };
 
-    load();
+    renderChart();
+
+    return () => {
+      canceled = true;
+    };
   }, [src]);
 
   return (
