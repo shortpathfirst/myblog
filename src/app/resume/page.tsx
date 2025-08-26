@@ -35,25 +35,34 @@ const Resume = () => {
                 <h3>Expertise area</h3>
                 <div>
                     <p>
-                        Computer Engineer with a passion for full-stack web development, machine learning, and data-driven
-                        applications.
-                        I like building responsive, user-friendly web interfaces using React and developing robust backend
-                        systems with Java, Express.js, and MongoDB/SQL databases.
+                        Computer Engineer with a passion for web development, machine learning and data analysis.
+                        I like to transform complex information into clear, meaningful representations while maintaining application
+                        simple and intuitive.
+                        I prioritize clarity and usability, avoiding bloated code
+                        difficult to mantain.
                     </p>
                     <p>
-                        I have good Understanding in designing scalable architectures, knowledge on the principale AWS services
-                        and the use of containerization with Docker for application deployment and management.
+                        Through my studies i built knowledge on system design to achieve the desired functionality, performance, and
+                        reliability.
+                        I apply design patterns and evaluate algorithmic complexity to deliver efficient solutions while continuously
+                        learning and refining my skills through research and technical documentation.
                     </p>
-                    <p> My goal is to write clean and maintainable code and apply software engineering best practices including
-                        design patterns, type safety, respecting algorithmic complexity, applying version control. Strong
-                        foundation in algorithms, data structures, and system design, for providing a secure application
-                        development.</p>
                     <p>
-                        Proficient in machine learning and data analysis using Python and libraries like TensorFlow. From
-                        creating a data foundation with web scraping data to performing EDA (Exploratory Data Analysis) and
-                        building predictive models. Creating insightful, interactive data visualizations transforming complex
-                        datasets into clear visual stories.
+                        My approach is to develop robust code based on solid software design, emphasizing <strong>clean architecture,
+                            maintainability, and performance, </strong>
+                        qualities that really give value to the applications by following best practices to balance functionality with
+                        long-term sustainability.
                     </p>
+                    <p>
+                        Proficient in machine learning and data analysis from building a data foundation through collection/scraping and
+                        cleaning,
+                        to performing EDA (Exploratory Data Analysis) and building predictive models.
+                        Creating insightful, interactive data visualizations that reveal patterns, communicate insights, and let the
+                        data speak through compelling visuals.
+                        Some experience in deep learning for image analysis, CNNs including segmentation and pattern recognition.
+
+                    </p>
+
                 </div>
                 <hr />
                 <h3>Projects</h3>
@@ -128,15 +137,13 @@ const Resume = () => {
                         <code>TypeScript</code> ·
                         <code>Java</code> ·
                         <code>Python</code> ·
-                        <code>HTML</code> ·
-                        <code>CSS</code> ·
                     </p>
 
                     <h4>Frontend Development:</h4>
                     <p>
                         <code>React</code> ·
                         <code>Next.js</code> ·
-                        <code>Angular</code> ·
+                        {/* <code>Angular</code> · */}
                     </p>
 
                     <h4>Backend & APIs:</h4>
@@ -152,7 +159,7 @@ const Resume = () => {
                     <h4>Data Science & Machine Learning:</h4>
                     <p>
                         <code>Python</code> ·
-                        <code>PyTorch</code> ·
+                        {/* <code>PyTorch</code> · */}
                         <code>TensorFlow.js</code> ·
                         <code>Apache Spark</code>
                     </p>
@@ -161,6 +168,7 @@ const Resume = () => {
                     <p>
                         <code>D3.js</code> ·
                         <code>Chart.js</code>
+                        <code>Plotly</code>
                     </p>
 
                     <h4>DevOps & Tools:</h4>
