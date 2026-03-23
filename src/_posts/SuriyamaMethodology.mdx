@@ -11,6 +11,8 @@ tags: [
 
 
 # Suriyama Methodology
+<img src="/myblog/postimages/suriyama/Suriyama.PNG" />
+
 ### What is it
 > Layered graph drawing or hierarchical graph drawing is a type of graph drawing in which the vertices of a directed graph are drawn in horizontal rows or layers with the edges generally directed downwards. It is also known as Sugiyama-style graph drawing after Kozo Sugiyama, who first developed this drawing style.
 
@@ -97,20 +99,52 @@ let graphDummy =  this.createDummyVerteces(layers);
 ```
 ## 3. Crossing Removal
 ```ts
-    removeCrossings(layer:IVertex[][],graph:IGraph){
+ removeCrossings(
+        layers: IVertex[][],
+        graph: IGraph,
+        iterations = 4
+    ) {
 
-        let fixedLayer = layer[layer.length-1];
-        for(let i=layer.length-2; i>=0; i--){
-            if(layer[i].length > 1){
-                //Barycenter
-                let barycenters = this.computeBarycenter(fixedLayer,layer[i],graph);
-                //Sort barycenter
-                let sortedBarycenters = new Map([...barycenters.entries()].sort())
-                //Apply to the layer
-                layer[i] = Array.from(sortedBarycenters.keys());
+        for (let iter = 0; iter < iterations; iter++) {
+
+            // 🔽 Downward sweep
+            for (let i = 1; i < layers.length; i++) {
+                this.orderLayer(layers[i - 1], layers[i], graph, true);
             }
-            fixedLayer = layer[i];
+
+            // 🔼 Upward sweep
+            for (let i = layers.length - 2; i >= 0; i--) {
+                this.orderLayer(layers[i + 1], layers[i], graph, false);
+            }
         }
+    }
+    
+ private orderLayer(
+        fixedLayer: IVertex[],
+        freeLayer: IVertex[],
+        graph: IGraph,
+        useIncoming: boolean
+    ) {
+
+        const pos = new Map<IVertex, number>();
+        fixedLayer.forEach((v, i) => pos.set(v, i));
+
+        const originalIndex = new Map<IVertex, number>();
+        freeLayer.forEach((v, i) => originalIndex.set(v, i));
+        // Compute Barycenter
+        const bary = this.computeBarycenter(
+            pos,
+            freeLayer,
+            graph,
+            useIncoming
+        );
+        // Order Barycenter
+        freeLayer.sort((a, b) => {
+            const diff = bary.get(a)! - bary.get(b)!;
+            return diff !== 0
+                ? diff
+                : originalIndex.get(a)! - originalIndex.get(b)!;
+        });
     }
 ```
 ## 4. Coordinates Assignment
