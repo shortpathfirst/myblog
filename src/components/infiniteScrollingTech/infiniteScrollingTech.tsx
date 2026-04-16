@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './infiniteScrolling.module.css'
 import Image from 'next/image'
 import qgisIcon from '@/assets/images/qgis-icon.png'
-import { getAssetPath } from '@/lib/constants'
+
 
 const techStack = [
     { "name": "HTML", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },

@@ -4,7 +4,6 @@ import React from 'react'
 import styles from './expertiseSection.module.css'
 import Image from 'next/image'
 import serviceList from '@/content/expertises.json'
-import { getAssetPath } from '@/lib/constants';
 import TitleBand from '../header/titleBand';
 import ExpertiseCard from './expertiseCard/expertiseCard';
 import filesvg from '@/assets/file.svg'
