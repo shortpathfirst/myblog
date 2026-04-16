@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./header.module.css";
-import Image from "next/image";
+import Image, {type StaticImageData } from "next/image";
 
 type HeaderProps = {
-    backgroundImage: string;
+    backgroundImage: string | StaticImageData;
     spanColor?: string;
     children: React.ReactNode;
 }

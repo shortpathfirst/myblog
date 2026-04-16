@@ -3,8 +3,9 @@ import { getBlogPosts } from '@/lib/posts';
 import styles from './blogpage.module.css'
 import Link from 'next/link';
 import PageHeader from '../header/pageHeader';
-import { baseUrl } from '@/lib/constants';
 import BlogPostCard from './blogpostcard';
+import headerbackground from '@/assets/images/headerbackground.png'
+import filesvg from '@/assets/file.svg'
 
 const BlogNews = async () => {
     const blogdata = (await getBlogPosts()).slice(0, 3);
@@ -12,7 +13,7 @@ const BlogNews = async () => {
     return (
         <section className={styles.newsSection}>
             <PageHeader
-                backgroundImage={`${baseUrl}/images/headerbackground.png`}
+                backgroundImage={headerbackground}
                 spanColor='#8169eb'>
                 A small section of <span>recent project</span>
             </PageHeader>
@@ -21,7 +22,7 @@ const BlogNews = async () => {
                     blogdata.map((post, i) => (
                         <BlogPostCard
                             key={i}
-                            imageSrc={post.metadata.imageUrl ?? `${baseUrl}/file.svg`}
+                            imageSrc={post.metadata.imageUrl ?? filesvg}
                             title={post.metadata.title}
                             href={`/blog/${post.slug}`}
                             description={post.metadata.description}

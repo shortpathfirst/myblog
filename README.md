@@ -142,4 +142,4 @@ const slugs = mdxFiles.map((file) => path.basename(file, path.extname(file)));
 
 ```
 ### Opengraph image
-![Preview image](/public/images/preview.png)
+![Preview image](/public/preview.png)

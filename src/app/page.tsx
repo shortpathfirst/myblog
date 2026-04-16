@@ -2,7 +2,6 @@ import InfiniteScrollingTech from "@/components/infiniteScrollingTech/infiniteSc
 import Contacts from "@/components/contact/contacts";
 import TechStackSection from "@/components/techStack/techStackSection";
 import BlogNews from "@/components/blogposts/blognews";
-import techStackScroll from '@/content/techStackScroll.json'
 import ExpertiseSection from "@/components/expertise/expertiseSection";
 
 
@@ -13,7 +12,7 @@ export default function Home() {
       <BlogNews />
       <ExpertiseSection />
       <TechStackSection />
-      <InfiniteScrollingTech techStack={techStackScroll} />
+      <InfiniteScrollingTech/>
       <Contacts />
     </div>
   );

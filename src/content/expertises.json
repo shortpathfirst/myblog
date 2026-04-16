@@ -1,7 +1,7 @@
 [
     {
         "name": "System Design",
-        "url": "/myblog/images/svgServices/old-library-building-svgrepo-com.svg",
+        "url": "/myblog/expertiseImages/old-library-building-svgrepo-com.svg",
         "description": "I design systems using clean code principles finding a balance between code readability, reusability, testability, maintainability, and simplicity.",
         "points": [
             "Knowledge in High-level architectures",
@@ -11,7 +11,7 @@
     },
     {
         "name": "Architecture",
-        "url": "/myblog/images/svgServices/analytics-svgrepo-com.svg",
+        "url": "/myblog/expertiseImages/analytics-svgrepo-com.svg",
         "description": "I write code following the best practices taking advantage of good design patterns to ensure maintainable code. Using algorithms with reduced complexity to produce error-resistant, clean and readable code.",
         "points": [
             "Get the data foundation for data analysis.",
@@ -20,7 +20,7 @@
     },
     {
         "name": "Web Design",
-        "url": "/myblog/images/svgServices/browser-design-svgrepo-com.svg",
+        "url": "/myblog/expertiseImages/browser-design-svgrepo-com.svg",
         "description": "I like to build aestetics sites with good user experience (UX) with the focus on the data and information to be displayed.",
         "points": [
             "The data is the protagonist"
@@ -28,19 +28,19 @@
     },
     {
         "name": "Data Analysis",
-        "url": "/myblog/images/svgServices/coding-data-development-svgrepo-com.svg",
+        "url": "/myblog/expertiseImages/coding-data-development-svgrepo-com.svg",
         "description": "I prioritize deep understanding of the data through exploratory data analysis (EDA), data cleaning, and visualization techniques before applying machine learning or deep learning algorithms. This ensures that models are built on solid, well-understood foundations",
         "points": []
     },
     {
         "name": "Visualization",
-        "url": "/myblog/images/svgServices/presentation-chart-svgrepo-com.svg",
+        "url": "/myblog/expertiseImages/presentation-chart-svgrepo-com.svg",
         "description": "I create clear exploratory and explanatory visuals using tools like D3 to make data insightful with good data visualization principles allowing data to speak for themself and tell us a story.",
         "points": []
     },
     {
         "name": "Security",
-        "url": "/myblog/images/svgServices/security-protection-key-svgrepo-com.svg",
+        "url": "/myblog/expertiseImages/security-protection-key-svgrepo-com.svg",
         "description": "I secure applications through authentication, encryption, input validation, and end-to-end data integrity. Making sure to respect security principles",
         "points": [
             "Confidenzialty",

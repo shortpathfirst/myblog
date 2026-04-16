@@ -4,9 +4,10 @@ import BlogPostCard from '@/components/blogposts/blogpostcard';
 import { getProjectsData, } from '@/lib/projects';
 import styles from './page.module.css'
 import PageHeader from '@/components/header/pageHeader';
-import { baseUrl } from '@/lib/constants';
 import { Metadata } from 'next';
 import { ProjectsInfo } from '@/lib/interfaces';
+import projectabstract from '@/assets/images/projectabstract.png'
+import filesvg from '@/assets/file.svg'
 
 export const metadata: Metadata = {
     title: 'Projects page',
@@ -19,7 +20,7 @@ const Projects = () => {
     return (
         <section className='container'>
             <PageHeader
-                backgroundImage={`${baseUrl}/images/projectabstract.png`}
+                backgroundImage={projectabstract}
                 spanColor='#cd3232'>
                 <span>Project</span> page
             </PageHeader>
@@ -29,7 +30,7 @@ const Projects = () => {
                     projectsData.map((post, i) => (
                         <BlogPostCard
                             key={i}
-                            imageSrc={post.metadata.thumbnail || `${baseUrl}/file.svg`}
+                            imageSrc={post.metadata.thumbnail || filesvg}
                             title={post.metadata.title}
                             href={post.url}
                             description={post.metadata.description}

@@ -5,7 +5,6 @@ import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
 import { baseUrl } from "@/lib/constants";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "My Portfolio Blog",
     images: [
       {
-        url: `${baseUrl}/images/preview.png`,
+        url: `${baseUrl}/preview.png`,
         width: 1200,
         height: 630,
         alt: "Portfolio Preview Image",

@@ -1,11 +1,12 @@
-import React from 'react'
-import { getBlogPosts } from '@/lib/posts'
-import styles from '@/components/blogposts/blogpage.module.css'
-import PageHeader from '@/components/header/pageHeader';
-import { baseUrl } from '@/lib/constants';
-import { Metadata } from 'next';
+import filesvg from '@/assets/file.svg';
+import blogabstract from '@/assets/images/blogabstract.png';
+import styles from '@/components/blogposts/blogpage.module.css';
 import BlogPostCard from '@/components/blogposts/blogpostcard';
+import PageHeader from '@/components/header/pageHeader';
+import { getBlogPosts } from '@/lib/posts';
+import { Metadata } from 'next';
 // import { unstable_ViewTransition as ViewTransition } from 'react'
+
 
 export const metadata: Metadata = {
     title: 'Blog posts page',
@@ -19,7 +20,7 @@ const Page = async () => {
         // <ViewTransition>
         <section className='container'>
             <PageHeader
-                backgroundImage={`${baseUrl}/images/blogabstract.png`}
+                backgroundImage={blogabstract}
                 spanColor='#588ef3'>
                 <span>Blog</span> page
             </PageHeader>
@@ -28,7 +29,7 @@ const Page = async () => {
                     blogdata.map((post, i) => (
                         <BlogPostCard
                             key={i}
-                            imageSrc={post.metadata.imageUrl ?? `${baseUrl}/file.svg`}
+                            imageSrc={post.metadata.imageUrl ?? filesvg}
                             title={post.metadata.title}
                             href={`/blog/${post.slug}`}
                             description={post.metadata.description}
