@@ -15,7 +15,7 @@ const PageHeader = ({ backgroundImage, spanColor = "#8169eb", children }: Header
                 {children}
             </h1>
             <Image
-                className={styles.background} fill
+                className={styles.background} priority
                 src={backgroundImage} alt={"Abstract background"}/>
         </div>
     );

@@ -178,7 +178,7 @@ const RadialDendrogram = ({ data, handleNodeClick, setRadialPositions, width = 9
 
                     /> :
                     <image
-                        href={node.data.imageUrl || filesvg}
+                        href={node.data.imageUrl || filesvg.src}
                         x={-30}
                         y={-25}
                         width={60}
