@@ -3,11 +3,17 @@
     "metadata": {
       "title": "Wine Leaf Analysis",
       "description": "A machine learning project for image segmentation",
-      "thumbnail":"https://www.kaggle.com/static/images/logos/kaggle-logo-transparent.svg",
+      "thumbnail": "https://www.kaggle.com/static/images/logos/kaggle-logo-transparent.svg",
       "date": "2025-02-01",
       "tags": [
-        { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { "name": "Tensorflow", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" }
+        {
+          "name": "Python",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          "name": "Tensorflow",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+        }
       ]
     },
     "url": "https://www.kaggle.com/code/shortpathfirst/wineanalysis/"
@@ -16,28 +22,52 @@
     "metadata": {
       "title": "Crimes Belem",
       "description": "An interactive react dashboard to display crimes data in the city of Belém Brasil",
-      "thumbnail":"/myblog/projectsthumbs/crime_thumbnail.png",
+      "thumbnail": "/myblog/projectsthumbs/crime_thumbnail.png",
       "date": "2025-02-01",
       "tags": [
-        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { "name": "chartjs", "url": "" },
-        { "name": "chakraUI", "url": "" },
-        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { "name": "SQLite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
-        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+        {
+          "name": "React",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "chartjs",
+          "url": ""
+        },
+        {
+          "name": "chakraUI",
+          "url": ""
+        },
+        {
+          "name": "Express",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+        },
+        {
+          "name": "SQLite",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+        },
+        {
+          "name": "Vite",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"
+        }
       ]
     },
     "url": "https://map-dashboard-27ze.vercel.app/"
   },
-    {
+  {
     "metadata": {
       "title": "Frutiger site",
       "description": "A design site with chatbot to answer every question about it",
-      "thumbnail":"/myblog/projectsthumbs/frutiger_thumbnail.PNG",
+      "thumbnail": "/myblog/projectsthumbs/frutiger_thumbnail.PNG",
       "date": "2025-06-25",
       "tags": [
-        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+        {
+          "name": "React",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "Vite",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"
+        }
       ]
     },
     "url": "https://frutiger-project.vercel.app/"
@@ -46,16 +76,37 @@
     "metadata": {
       "title": "Powerlifting Database",
       "description": "React architecture with chartjs and chakraUI, Duplicate Backend with express and java springboot, Sqlite database.",
-      "thumbnail":"/myblog/projectsthumbs/powerlifting_thumb.png",
+      "thumbnail": "/myblog/projectsthumbs/powerlifting_thumb.png",
       "date": "2025-03-01",
       "tags": [
-        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { "name": "chartjs", "url": "" },
-        { "name": "chakraUI", "url": "" },
-        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { "name": "Java", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
-        { "name": "SQLite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
-        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+        {
+          "name": "React",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "chartjs",
+          "url": ""
+        },
+        {
+          "name": "chakraUI",
+          "url": ""
+        },
+        {
+          "name": "Express",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+        },
+        {
+          "name": "Java",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+        },
+        {
+          "name": "SQLite",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+        },
+        {
+          "name": "Vite",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"
+        }
       ]
     },
     "url": "https://github.com/shortpathfirst/PowerliftingDatabase"
@@ -64,13 +115,25 @@
     "metadata": {
       "title": "Authorization app",
       "description": "A login interface with secure api for login",
-      "thumbnail":"",
+      "thumbnail": "",
       "date": "2025-02-01",
       "tags": [
-        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { "name": "Express", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { "name": "MongoDB", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-        { "name": "Vite", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+        {
+          "name": "React",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "Express",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+        },
+        {
+          "name": "MongoDB",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+        },
+        {
+          "name": "Vite",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"
+        }
       ]
     },
     "url": "https://github.com/shortpathfirst/AuthenticationReact"
@@ -79,14 +142,29 @@
     "metadata": {
       "title": "Grid Palline",
       "description": "A bracelet making application.",
-      "thumbnail":"/myblog/projectsthumbs/All_thumb.png",
+      "thumbnail": "/myblog/projectsthumbs/All_thumb.png",
       "date": "2025-01-01",
       "tags": [
-        { "name": "Python", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { "name": "Flask", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
-        { "name": "Axios", "url": "https://axios-http.com/assets/logo.svg" },
-        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { "name": "Web Scraping", "url": "" }
+        {
+          "name": "Python",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          "name": "Flask",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+        },
+        {
+          "name": "Axios",
+          "url": "https://axios-http.com/assets/logo.svg"
+        },
+        {
+          "name": "React",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "Web Scraping",
+          "url": ""
+        }
       ]
     },
     "url": "https://shortpathfirst.github.io/grid-palline/"
@@ -95,52 +173,63 @@
     "metadata": {
       "title": "Search Visualizer",
       "description": "React app visualizing search and tree algorithms using SVG.",
-      "thumbnail":"/myblog/projectsthumbs/searchvisualizer_thumb.png",
+      "thumbnail": "/myblog/projectsthumbs/searchvisualizer_thumb.png",
       "date": "2025-01-01",
       "tags": [
-        { "name": "React", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { "name": "Algorithms", "url": "" },
-        { "name": "SVG", "url": "" }
+        {
+          "name": "React",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "Algorithms",
+          "url": ""
+        },
+        {
+          "name": "SVG",
+          "url": ""
+        }
       ]
     },
     "url": "https://github.com/shortpathfirst/search-visualizer"
   },
   {
     "metadata": {
-      "title": "Angular Pesi",
-      "description": "Angular and ElectronJS desktop application.",
-      "thumbnail":"",
-      "date": "2025-01-01",
-      "tags": [
-        { "name": "Angular", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-        { "name": "ElectronJS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" }
-      ]
-    },
-    "url": "https://shortpathfirst.github.io/AngularPesi/"
-  },
-  {
-    "metadata": {
       "title": "JudoClub",
       "description": "A modern NextJS website for a judo club designed as a landing page for the club and to navigate about tecnhical resources about judo.",
-      "thumbnail":"/myblog/projectsthumbs/logo_judo.svg",
+      "thumbnail": "/myblog/projectsthumbs/logo_judo.svg",
       "date": "2025-07-01",
       "tags": [
-        { "name": "NextJS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { "name": "MDX", "url": "" },
-        { "name": "CSS", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+        {
+          "name": "NextJS",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+        },
+        {
+          "name": "MDX",
+          "url": ""
+        },
+        {
+          "name": "CSS",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+        },
+        {
+          "name": "Typescript",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        }
       ]
     },
     "url": "https://shortpathfirst.github.io/judo-club/"
   },
-    {
+  {
     "metadata": {
       "title": "Planarity Test",
       "description": "Graph visualization using networkx, planarity testing algorithms with p5.js and Typescript.",
-      "thumbnail":"",
+      "thumbnail": "",
       "date": "2024-08-01",
       "tags": [
-        { "name": "Typescript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+        {
+          "name": "Typescript",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        }
       ]
     },
     "url": "https://github.com/shortpathfirst/Planarity"

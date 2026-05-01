@@ -107,3 +107,10 @@
 .tecnicalskill{
   line-height: 1;
 }
+.tags code {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #334155;
+}

@@ -30,6 +30,7 @@ const Bubbles = ({ data, handleNodeClick, radialPositions, width = 950, height =
     const m = 10; //Number of groups
     const color = d3.scaleOrdinal(d3.range(m), d3.schemeCategory10);
     const svgRef = useRef<SVGSVGElement | null>(null);
+    const initialized = useRef(false);
 
     const drag = (simulation: d3.Simulation<D3Node, undefined>) => {
         function dragstarted(event: d3.D3DragEvent<SVGCircleElement, D3Node, D3Node>, d: D3Node) {
@@ -135,8 +136,10 @@ const Bubbles = ({ data, handleNodeClick, radialPositions, width = 950, height =
     }
 
     useEffect(() => {
-        if (!svgRef.current || !data)
+        if (!svgRef.current || !data || initialized.current)
             return;
+        initialized.current = true;
+
         const svg = d3.select(svgRef.current);
 
         const nodes = d3.pack<GroupNode>()
@@ -265,8 +268,12 @@ const Bubbles = ({ data, handleNodeClick, radialPositions, width = 950, height =
         });
         return () => {
             simulation.stop();
+            // Clear the SVG content to prevent accumulation
+            if (svgRef.current) {
+                d3.select(svgRef.current).selectAll("*").remove();
+            }
+            initialized.current = false;
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

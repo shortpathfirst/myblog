@@ -38,8 +38,8 @@ const Resume = () => {
                         Computer Engineer with a passion for web development, machine learning and data analysis.
                         I like to transform complex information into clear, meaningful representations while maintaining application
                         simple and intuitive.
-                        I prioritize clarity and usability, avoiding bloated code
-                        difficult to mantain.
+                        I prioritize clarity and usability, avoiding bloated code, vibe coding caos and
+                        difficult to mantain projects.
                     </p>
                     <p>
                         Through my studies i built knowledge on system design to achieve the desired functionality, performance, and
@@ -130,56 +130,59 @@ const Resume = () => {
                 </div>
                 <hr />
                 <h3>💻 Technical Skills</h3>
+
                 <div className={styles.tecnicalskill}>
                     <h4>Languages:</h4>
-                    <p>
+                    <p className={styles.tags}>
                         <code>JavaScript</code> ·
                         <code>TypeScript</code> ·
                         <code>Java</code> ·
-                        <code>Python</code> ·
+                        <code>Python</code>
                     </p>
 
-                    <h4>Frontend Development:</h4>
-                    <p>
-                        <code>React</code> ·
-                        <code>Next.js</code> ·
-                        {/* <code>Angular</code> · */}
-                    </p>
+                    <h3>Web Development</h3>
+                    <div style={{ paddingLeft: "1rem" }}>
+                        <h4>Frontend Development:</h4>
+                        <p className={styles.tags}>
+                            <code>React</code> ·
+                            <code>Next.js</code>
+                        </p>
 
-                    <h4>Backend & APIs:</h4>
-                    <p>
-                        <code>Express.js</code> ·
-                        <code>MongoDB</code> ·
-                        <code>PostgreSQL</code> ·
-                        <code>SQLite</code> ·
-                        <code>Swagger</code> ·
-                        <code>Postman</code>
-                    </p>
+                        <h4>Backend & APIs:</h4>
+                        <p className={styles.tags}>
+                            <code>MongoDB</code> ·
+                            <code>PostgreSQL</code> ·
+                            <code>SQLite</code> ·
+                            <code>Express.js</code> ·
+                            <code>Swagger</code> ·
+                            <code>Postman</code>
+                        </p>
+                        <h4>Data Visualization:</h4>
+                        <p className={styles.tags}>
+                            <code>D3.js</code> ·
+                            <code>Chart.js</code> ·
+                            <code>Plotly</code>
+                        </p>
+                        <h4>DevOps & Tools:</h4>
+                        <p className={styles.tags}>
+                            <code>Git</code> ·
+                            <code>GitHub</code> ·
+                            <code>Docker</code> ·
+                            <code>Vite</code>
+                        </p>
+                    </div>
 
-                    <h4>Data Science & Machine Learning:</h4>
-                    <p>
-                        <code>Python</code> ·
-                        {/* <code>PyTorch</code> · */}
-                        <code>TensorFlow.js</code> ·
-                        <code>Apache Spark</code>
-                    </p>
-
-                    <h4>Data Visualization:</h4>
-                    <p>
-                        <code>D3.js</code> ·
-                        <code>Chart.js</code>
-                        <code>Plotly</code>
-                    </p>
-
-                    <h4>DevOps & Tools:</h4>
-                    <p>
-                        <code>Git</code> ·
-                        <code>GitHub</code> ·
-                        <code>Docker</code> ·
-                        <code>Vite</code> ·
-                        <code>QGIS</code>
-                    </p>
+                    <h3>Data Science & Machine Learning:</h3>
+                    <div style={{ paddingLeft: "1rem" }}>
+                        <p className={styles.tags}>
+                            <code>Python</code> ·
+                            <code>PyTorch</code> ·
+                            <code>TensorFlow</code> ·
+                            <code>TensorFlow.js</code>
+                        </p>
+                    </div>
                 </div>
+
                 <hr />
                 <h3>Languages</h3>
                 <ul>
@@ -194,8 +197,9 @@ const Resume = () => {
 
                     <li><strong>Portuguese:</strong>
                         <ul>
-                            <li><strong>Reading:</strong> Moderate ability to understand written content</li>
+                            <li><strong>Reading:</strong> Comprehension of written content</li>
                             <li><strong>Listening:</strong> Can follow dialogues with ease</li>
+                            <li><strong>Speaking:</strong> Basic to handle most social situations</li>
                         </ul>
                     </li>
                 </ul>
