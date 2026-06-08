@@ -46,3 +46,5 @@ src/_posts/blogopost.mdx
 src/_posts/importExample.mdx
 src/_posts/_components/*
 !src/_posts/_components/PlotlyWrapper.tsx
+!src/_posts/_components/DetectionCanvas.tsx
+!src/_posts/_components/SSDvsYOLOArchitecture.tsx

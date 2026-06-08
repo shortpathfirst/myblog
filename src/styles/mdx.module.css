@@ -1,7 +1,7 @@
 /* styles/mdx.css */
 .mdxContent {
-  overflow-x: auto;
   max-width: 100%;
+  font-size: clamp(1rem, 1.2vw + 0.75rem, 1.125rem);
 }
 
 .mdxContent h1,
@@ -22,16 +22,13 @@
 .mdxContent h3 a:hover {
   color: #1e40af;
 }
-.mdxContent h1 { font-size: 2.25rem; /* ~36px */ }
-.mdxContent h2 { font-size: 1.875rem; /* ~30px */ }
-.mdxContent h3 { font-size: 1.5rem; /* ~24px */ }
-
+.mdxContent h1 {font-size: clamp(1.75rem, 4vw, 2.25rem);}
+.mdxContent h2 {font-size: clamp(1.5rem, 3.5vw, 1.875rem);}
+.mdxContent h3 {font-size: clamp(1.25rem, 3vw, 1.5rem);}
 .mdxContent p {
   line-height: 1.7;
   color: #374151;
   margin: 1rem 0;
-  font-size: 18px;
-
 }
 
 /* Code */
@@ -191,7 +188,7 @@
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 1.5rem 0;
+  margin: 0.5rem 0;
   border-radius: 0.5rem;
 }
 
