@@ -42,7 +42,7 @@ style={{
     gap:"12px"
 }}
 >
-<img src="/myblog/postimages/ssdvsyolo/YOLOprocess.jpg" width={500} alt="YOLOprocess" />
+<img src="/myblog/postimages/ssdvsyolo/YOLOprocess.jpg" width={600} alt="YOLOprocess" />
 <sup><a href='https://www.geeksforgeeks.org/machine-learning/yolo-you-only-look-once-real-time-object-detection/'>Source</a></sup>
 </div>
 
@@ -56,7 +56,7 @@ YOLO algorithm works in three steps: residual block or gridding, bounding-box re
  Setting a threshold for the IOU is not always enough because an object can have multiple boxes with IOU beyond the threshold, and leaving all those boxes might include noise. Here is where we can use **Non-Max Suppression or NMS** to keep only the boxes with the highest probability detection score. 
 
 ### Understanding SSD
-<img src="/myblog/postimages/ssdvsyolo/ssdarchitecture.png" width={800} alt="ssdarchitecture" />
+<img src="/myblog/postimages/ssdvsyolo/ssdarchitecture.png" width={1000} alt="ssdarchitecture" />
 
 SSD processes an input image (typically 300×300) through the **base network**, usually a pre-trained convolutional neural network (e.g., VGG16) that **extracts feature maps** from the input image. It then appends a series of extra feature layers that progressively decrease in size.
 Each of these layers is used to make **object predictions**. SSD use **Multi-scale Feature Map** feature maps from different layers of the base network to make object prediction. It predict the **offsets** and **class scores**. 
@@ -96,26 +96,26 @@ style={{
 
 YOLO and SSD are both single-shot object detection models but they work differently
 
-### **Small Objects**
+### 1. **Small Objects**
 YOLO predicts objects using a single **grid-based view** of the image while SSD detects objects using **multiple feature maps at different scales** making it better for detecting small objects.
 
-### **Default boxes generation** 
+### 2. **Default boxes generation** 
 Another difference is on how the anchors are created.
 Since YOLO (v2, v3, etc.), it use uses **dataset-driven anchor** shapes obtained from the training dataset using k-means clustering on the ground-truth box widths and heights. This gives them the most dominant sizes of the bounding boxes from the dataset. These anchor shapes are then placed at every grid location.
 SSD instead use **default achor boxes** computed at different scales.
 
-### **IOU difference**
+### 3. **IOU difference**
 Both SSD and YOLO use IoU to determine which anchors correspond to which ground-truth boxes during training.
 
 * SSD usually marks all anchors above an IoU threshold (e.g., 0.5) as positive matches.
 * YOLO usually assigns each object to the best-matching anchor (or a small set of anchors in newer versions).
 
-### **Accuracy and Object Detection Performance**
+### 4. **Accuracy and Object Detection Performance**
 **YOLO generally outperforms SSD**, especially in complex scenes (with very cluttered environments) or with smaller objects, allows it to capture fine-grained details more effectively.
 YOLO's architecture, which divides the image into a grid and predicts bounding boxes and class probabilities directly. It is better suited for applications that require high precision and the ability to **detect many objects in a single image**.
 YOLO gets comparatively more **localization errors** and has **difficulty detecting close objects**.
 
-### **Speed and Real-Time Performance**
+### 5. **Speed and Real-Time Performance**
 
 YOLO becomes very fast and is ideal for situations where detection needs to happen instantly such as live video, obtaining **higher fps**.
 SSD work well for detecting objects of various sizes while staying fast enough for real-time use.
@@ -127,28 +127,28 @@ SSD work well for detecting objects of various sizes while staying fast enough f
 >YOLO reaches more than twice the mean Average Precision (mAP) compared to other real-time systems, which makes it a great candidate for real-time processing. 
 
 
-### **Low-power devices**
+### 6. **Low-power devices**
 SSD can use a lightweight backbone networks such as MobileNet which are optimized for low-compute environments.
 SSD is better if working with limited hardware resources and need a simpler and more efficient model, trading off some performance for small model size while still mantaining reliability.
 They achieve comparatively better performance in a limited resources use case. It has a very modest exactness trade-off. SSD recorded 59 FPS with mAP 74.3% on SSD300 and 22FPS with mAP 76.9% on SSD500.
 It makes SSD a common choice for embedded systems and mobile devices, with the combination of TensorFlow Lite conversion and quantization it is extremely fast to run.
 
-### **Deployment Ease**
-Ultralytics make it easy to train, deploy YOLO, giving superior development tools.
-
-
-# Examples
+# Example
 
 ### Model used
-> YOLO11 was released by Ultralytics on September 10, 2024, delivering excellent accuracy, speed, and efficiency.
+> **YOLO11** was released by Ultralytics on September 10, 2024, delivering excellent accuracy, speed, and efficiency.
 https://docs.ultralytics.com/models/yolo11#overview
 
 >**Yolo26**: Ultralytics YOLO26 is a unified family of real-time vision models described in the Ultralytics YOLO26 paper. It introduces native end-to-end inference, a lighter detection head, an updated training recipe, and task-specific heads for detection, segmentation, pose estimation, classification, and oriented detection
 https://docs.ultralytics.com/models/yolo26#overview
 YOLO26, released in January 2026 by Ultralytics, is an end-to-end, edge-optimized model supporting five core tasks: object detection, instance segmentation, pose estimation, oriented object detection (OBB), and image classification. It achieves the highest accuracy in the YOLO lineage while maintaining fast inference speeds.
 
+> **SSD300** implemented in PyTorch with a VGG16 backbone.
+https://docs.pytorch.org/vision/main/models/generated/torchvision.models.detection.ssd300_vgg16.html
+
 #### Benchmark
 <PlotlyWrapper src="/myblog/postimages/ssdvsyolo/yolo_latency_map.json" />
+
 
 ## Barbell and Plate Detection
 
@@ -179,7 +179,7 @@ metrics = model.val()
 
 print(metrics)
 ```
-while for the SSD i used the pytorch pretrained model **ssd300_vgg16**, ssd with images 300x300 using vgg16 backbone.
+while for the SSD i used the pytorch pretrained model **ssd300_vgg16**, ssd with input images of 300x300 using vgg16 backbone.
 
 ```python
 from torchvision.models.detection import ssd300_vgg16
@@ -212,9 +212,10 @@ Try yourself the result on this test image:
 
 
 ## Bar Path tracking
+
 <div style={{ textAlign: "center"}}>
   <h3 style={{ marginBottom: "16px" }}>
-    Comparison of Object Detection Results on the Same Video
+    Comparing prediction on Video Object Detection
   </h3>
  <div
     style={{
@@ -223,9 +224,7 @@ Try yourself the result on this test image:
       marginRight: "auto",
     }}
   >
-    Comparison of object detection predictions generated by YOLO and SSD on the
-    same video sequence. The examples highlight differences in object
-    localization and detection behavior between the two models.
+    Comparison of object detection predictions generated by YOLO and SSD on the same video sequence. The examples highlight differences in object localization and detection behavior between the two models.
   </div>
   <div
     style={{
@@ -248,8 +247,7 @@ Try yourself the result on this test image:
 </div>
 
 **Considerations**
-- ssd use default boxes that give **a stricter spatial assignment rule**
-- ssd prediction is better with small object 0.9 vs 0.7 of yolo
-- YOLO runs at higher FPS making the prediction smoother, evidencing less spikes in the bar path
-
+- SSD uses default anchor boxes with a stricter spatial assignment strategy, causing box shapes to vary across locations. This can reduce localization stability.
+- SSD prediction is better with the smaller barbell with 0.9 confidence vs 0.7 confidence for YOLO.
+- YOLO runs at higher FPS with better real-time performance.It produces smoother trajectory estimates, as evidenced by the reduced number of spikes in the predicted bar path.
 

@@ -195,6 +195,7 @@
 /* Links */
 .mdxContent a {
   color: #2563eb;
+  overflow-wrap: break-word;
   /* text-decoration: underline; */
 }
 
