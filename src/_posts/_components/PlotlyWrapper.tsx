@@ -6,7 +6,7 @@ export default function PlotlyWrapper({ src }: { src: string }) {
   const chartRef = useRef<HTMLDivElement>(null);
 
   const loadPlotly = () =>
-    new Promise<any>((resolve) => {
+    new Promise((resolve) => {
       // @ts-expect-error Plotly is loaded dynamically
       if (window.Plotly) return resolve(window.Plotly);
 
@@ -38,13 +38,14 @@ export default function PlotlyWrapper({ src }: { src: string }) {
         width: undefined,
         height: undefined,
       };
-
+      // @ts-expect-error Unknown type
       Plotly.newPlot(chartRef.current, fig.data, layout, {
         responsive: true,
       });
 
       observer = new ResizeObserver(() => {
         if (chartRef.current) {
+          // @ts-expect-error Unknown type
           Plotly.Plots.resize(chartRef.current);
         }
       });

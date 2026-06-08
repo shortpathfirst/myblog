@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import sampleImage from "/public/postimages/ssdvsyolo/Paul-Deadlift-Side-View-1082x1080.webp";
 
 type Box = {
@@ -60,30 +60,12 @@ export default function DetectionCanvas() {
     },
   ];
 
-  const getPredictions = () =>
-    mode === "ssd" ? ssdPredictions : yoloPredictions;
+  const getPredictions = useCallback(
+    () => (mode === "ssd" ? ssdPredictions : yoloPredictions),
+    [mode]
+  );
 
-  // Load image
-  useEffect(() => {
-    const img = new Image();
-    img.src = sampleImage.src;
-    img.onload = () => {
-      imageRef.current = img;
-      draw();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (showPredictions) {
-      setBoxes(getPredictions());
-    }
-  }, [mode, showPredictions]);
-
-  useEffect(() => {
-    draw();
-  }, [mode, hoveredBox, boxes]);
-
-  const draw = () => {
+  const draw = useCallback(() => {
     const canvas = canvasRef.current;
     const img = imageRef.current;
     if (!canvas || !img) return;
@@ -124,8 +106,27 @@ export default function DetectionCanvas() {
       ctx.textBaseline = "middle";
       ctx.fillText(box.label, box.x + 5, box.y);
     });
-  };
+  }, [boxes, hoveredBox]);
 
+  // Load image
+  useEffect(() => {
+    const img = new Image();
+    img.src = sampleImage.src;
+    img.onload = () => {
+      imageRef.current = img;
+      draw();
+    };
+  }, [draw]);
+
+  useEffect(() => {
+    if (showPredictions) {
+      setBoxes(getPredictions());
+    }
+  }, [mode, showPredictions, getPredictions]);
+
+  useEffect(() => {
+    draw();
+  }, [draw]);
 
   const togglePrediction = () => {
     setShowPredictions((prev) => {
