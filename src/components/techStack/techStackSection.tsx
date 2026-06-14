@@ -6,7 +6,7 @@ import TitleBand from '../header/titleBand';
 const TechStackSection = () => {
     return (
         <section className={styles.section} id='mytechstack'>
-            <TitleBand>🛠 My Tech Stack</TitleBand>
+            <TitleBand>Tech Stack</TitleBand>
             <div className={styles.figure}>
                 <TechFigure />
                 <div className={styles.poweredby}><span>D3</span> Chart</div>

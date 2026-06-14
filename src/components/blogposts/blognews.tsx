@@ -31,7 +31,7 @@ const BlogNews = async () => {
                     ))
                 }
             </div>
-            <Link href={"/blog"}><button className={styles.btn}>See my work</button></Link>
+            <Link href={"/blog"}><button className={styles.btn}>Explore more</button></Link>
         </section>
     )
 }

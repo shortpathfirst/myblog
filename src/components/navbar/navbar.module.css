@@ -33,7 +33,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     font-family: 'Segoe UI', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     background: linear-gradient(to right, #6c63ff, #4ea3f1);
     background-clip: text;
     -webkit-background-clip: text;
@@ -51,16 +51,16 @@
     height: 3px;
     background-color: #4ea3f1;
     border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-.link {
-    color: #111827;
+.title:hover::after {
+    transform: scaleX(1);
+}
+
+.title a {
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.link:hover {
-    color: #2563eb;
 }
 
 .iconGroup {
@@ -80,5 +80,16 @@
 }
 
 .iconLink:hover {
+    text-decoration: none;
     color: #3e434e;
+}
+
+@media (max-width: 655px) {
+    .iconGroup {
+        gap: 0.75rem;
+    }
+
+    .iconLink {
+        font-size: 1rem;
+    }
 }

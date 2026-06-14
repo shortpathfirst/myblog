@@ -16,7 +16,7 @@ export const Navbar = () => {
         <nav className={`${styles.navbar} ${!isScrollingUp ? styles.hidden : ''}`}>
             <div className={styles.container}>
                 <h1 className={styles.title}>
-                    <Link href="/" className={styles.link}>
+                    <Link href="/">
                         PORTFOLIO BLOG
                     </Link>
                 </h1>
