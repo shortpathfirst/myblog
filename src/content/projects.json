@@ -1,6 +1,21 @@
 [
   {
     "metadata": {
+      "title": "Powerlifting analysis",
+      "description": "A deep analysis on a powerlifting dataset",
+      "thumbnail": "https://www.kaggle.com/static/images/logos/kaggle-logo-transparent.svg",
+      "date": "2026-02-01",
+      "tags": [
+        {
+          "name": "Python",
+          "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }
+      ]
+    },
+    "url": "https://www.kaggle.com/code/shortpathfirst/powerliftinganalysis/"
+  },
+  {
+    "metadata": {
       "title": "Wine Leaf Analysis",
       "description": "A machine learning project for image segmentation",
       "thumbnail": "https://www.kaggle.com/static/images/logos/kaggle-logo-transparent.svg",
