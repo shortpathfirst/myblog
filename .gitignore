@@ -44,7 +44,8 @@ next-env.d.ts
 
 src/_posts/blogopost.mdx
 src/_posts/importExample.mdx
-src/_posts/_components/*
-!src/_posts/_components/PlotlyWrapper.tsx
-!src/_posts/_components/DetectionCanvas.tsx
-!src/_posts/_components/SSDvsYOLOArchitecture.tsx
+
+src/_posts/_components/AlertMessage.tsx
+src/_posts/_components/AnimatedBarChart.tsx
+src/_posts/_components/FancyBox.tsx
+src/_posts/_components/HelloWorld.tsx

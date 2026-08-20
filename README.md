@@ -1,5 +1,16 @@
+# myblog
+
+[![Next.js](https://img.shields.io/github/package-json/dependency-version/shortpathfirst/myblog/next?logo=next.js&label=Next.js)](https://nextjs.org)
+[![GitHub last commit](https://img.shields.io/github/last-commit/shortpathfirst/myblog?logo=github)](https://github.com/shortpathfirst/myblog/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/shortpathfirst/myblog?logo=github)](https://github.com/shortpathfirst/myblog)
+
+
+Personal blog & portfolio built with Next.js and MDX  — showcasing data science, web dev and ML projects.
+
+![Preview image](/public/preview.png)
+<sup>Open graph image</sup>
+
 ## Installation
-[![npm](https://img.shields.io/npm/v/@tsparticles/react)](https://www.npmjs.com/package/@tsparticles/react) 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -18,44 +29,35 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Color Palette
-<div style="display:flex; gap:0.5rem">
-<span style="color:#dfeaf8"> Background </span>
-<span style="color:#6c63ff"> Title </span>
-<span style="color:#4ea3f1"> Blog </span>
-<span style="color:#00a3ff"> Blog </span>
-<span style="color:#db9951"> Projects </span>
-<span style="color:#fc4152"> Projects </span>
-</div>
-<div style="display:flex">
-  <div style="background-color: #dfeaf8 ;width:2rem;height:2rem;"></div>
-  <div style="background-color: #6c63ff ;width:2rem;height:2rem;"></div>
-  <div style="background-color: #4ea3f1 ;width:2rem;height:2rem;"></div>
-    <div style="background-color: #00a3ff ;width:2rem;height:2rem;"></div>
-  <div style="background-color: #db9951 ;width:2rem;height:2rem;"></div>
-  <div style="background-color: #fc4152 ;width:2rem;height:2rem;"></div>
 
-</div>
+| Swatch | Role | Hex |
+| :---: | --- | --- |
+| ![#dfeaf8](https://img.shields.io/badge/-%20-dfeaf8?style=flat-square) | Background | `#dfeaf8` |
+| ![#6c63ff](https://img.shields.io/badge/-%20-6c63ff?style=flat-square) | Title | `#6c63ff` |
+| ![#4ea3f1](https://img.shields.io/badge/-%20-4ea3f1?style=flat-square) | Blog | `#4ea3f1` |
+| ![#00a3ff](https://img.shields.io/badge/-%20-00a3ff?style=flat-square) | Blog | `#00a3ff` |
+| ![#db9951](https://img.shields.io/badge/-%20-db9951?style=flat-square) | Projects | `#db9951` |
+| ![#fc4152](https://img.shields.io/badge/-%20-fc4152?style=flat-square) | Projects | `#fc4152` |
 
 ## Folder structure
 ```
 src/
-├── app/                  ← Pages
+├── app/                  ← Pages & routes
 │   ├── layout.tsx
 │   ├── page.tsx
 │   ├── blog/
-│       └── [slug].tsx    ← MDX blog posts
-│   ├── page.tsx
-│       └── page.tsx
-│   └── about/
-│       └── page.tsx
+│   │   └── [slug]/       ← MDX blog posts
+│   ├── projects/
+│   └── resume/
 ├── components/
 │   ├── Navbar.tsx
-│   ├── Chart.tsx         ← D3 chart component
+│   ├── Chart.tsx 
 │   └── Footer.tsx
-├── styles/
-│   └── globals.css       ← Design tokens & typography
-└── /lib
-    └── posts.ts        ← Fetching and helpers
+├── _posts/               ← MDX content + post components
+├── content/              ← Static JSON/TS content (projects, tech stack…)
+├── lib/                  ← Fetching & helpers (posts.ts, projects.ts…)
+└── styles/
+    └── globals.css       ← Design tokens & typography
 
 ```
 # MDX
@@ -94,8 +96,20 @@ npm install next-mdx-remote
 | `remark` | Parses & transforms Markdown    | Add support for GitHub-style tables         |
 | `rehype` | Transforms HTML (post-Markdown) | Syntax highlight code blocks, sanitize HTML |
 
-- **Code Highlight** using `react-syntax-highlighter`
-- **Frontmatter** using `remark`
+Plugins used in [posts.ts](src/lib/posts.ts):
+
+| Plugin | Type | Role |
+| ------ | ---- | ---- |
+| `remark-gfm` | remark | GitHub-flavored Markdown: tables, strikethrough, task lists, autolinks |
+| `remark-math` | remark | Parses `$…$` / `$$…$$` math syntax into mdast nodes |
+| `rehype-katex` | rehype | Renders parsed math nodes to KaTeX HTML |
+| `rehype-slug` | rehype | Adds `id` slugs to headings |
+| `rehype-pretty-code` | rehype | Syntax highlighting for code blocks (`github-dark` theme) |
+| `rehype-autolink-headings` | rehype | Wraps headings in anchor links (`behavior: 'wrap'`) |
+
+- **Code Highlight** using `rehype-pretty-code`
+- **Frontmatter** parsed via `next-mdx-remote`'s `parseFrontmatter: true`
+- **Math** rendering via `remark-math` + `rehype-katex`
 
 ## SEO
 ### Robot
@@ -141,5 +155,3 @@ const slugs = mdxFiles.map((file) => path.basename(file, path.extname(file)));
 }
 
 ```
-### Opengraph image
-![Preview image](/public/preview.png)
