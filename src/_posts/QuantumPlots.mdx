@@ -1,0 +1,463 @@
+---
+title: "Understanding Complex Concepts With Visualizations"
+date: "2026-08-15"
+description: "A post about how to learn mathematical concepts through visualization"
+imageUrl: "/myblog/postimages/quantumplots/thumbnail.png"
+tags: [
+    { "name": "D3", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/d3js/d3js-plain.svg" },
+    { "name": "Javascript", "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" }
+]
+---
+
+# Understanding Complex Concepts With Visualizations
+
+## Introduction
+In this post 
+ - We **Gather The essential Elements** to explain the physics concepts and matematical equation behind quantum equation. 
+ - We use a **Visual and Simple Rappresentation of each concept** using D3 Library.
+ - We show the power of mdx to present information in a simple and interactive format.
+ 
+
+The intuition to explain the Schrödinger equation is to start from **classical and harmonic oscillator**, understand **waves**, understand the quantum states and then we can comprehend the wavefunction and how to plot the orbitals of the simplest element the hydrogen.
+Conceptually, the harmonic oscillator is the simplest model of oscillatory motion around a stable equilibrium.
+
+# Part I — Classical Armonic oscillator
+
+A **harmonic oscillator** in classical mechanics is a system that, when displaced from its equilibrium position, experiences a **restoring force proportional to the displacement and directed toward equilibrium**.
+
+Explain Hooke’s law and Newton’s equation (Newton’s second law),
+
+$$
+F=-kx = m\frac{d^2x}{dt^2}
+$$
+
+
+Introduce the solution
+
+$$
+x(t)=A\cos(\omega t+\phi),
+\qquad
+\omega=\sqrt{\frac{k}{m}}.
+$$
+
+The important conceptual point is that **a physical law gives us a differential equation, and solving that equation tells us the possible behavior of the system.**
+
+---
+
+
+## Waves
+A wave describes how something varies from place to place and how that pattern evolves over time.
+>A wave is a pattern of oscillation that varies across space and time
+
+A wave is a generalization of the harmonic oscillator allowing the oscillation to depend on **position and time** in other words is *a pattern of oscillations distributed through space and evolving in time*
+
+$$
+y(x,t)=A\cos(kx-\omega t).
+$$
+<sup>Harmonic wave dependant to position and time</sup>
+
+if you choose one fixed position you obtain is a **harmonic oscillator in time**.So you can think of the wave as a spatially distributed collection of harmonic oscillations, with different phases at different positions.
+
+### **Quantum mechanics waves**
+In quantum mechanics, a wave function (or wavefunction) is a mathematical description of the quantum state of an isolated quantum system. 
+Wave functions are complex-valued, so only its relative phase and relative magnitude can be measured. For quantum waves we can measure quantum state or probability amplitude
+
+#### What is a eigenmode?
+>An eigenmode is a natural, self-consistent pattern of oscillation of a system. once excited it oscillates with its own characteristic frequency while keeping overall shape.
+
+
+A vibrating string has many possible shapes, but only certain special standing-wave patterns reproduce themselves as they oscillate.
+**Each of these natural patterns is an eigenmode.**
+
+### Example with EM waves : 
+Theory with Maxwell equation
+
+$$
+E(x,t)=E_0\sin(kx-\omega t)
+$$
+
+$$
+B(x,t)=B_0\sin(kx-\omega t)
+$$
+
+
+<QuantumEMWaves />
+
+<sup>Both fields share the same sinusoidal profile $\sin(kx - \omega t)$ and travel in phase along the propagation axis (black line). The **blue** curve ($E$) oscillates in the vertical plane; the **green** curve ($B$) oscillates in the horizontal plane — always perpendicular to each other and to the direction of travel. the axis to each curve show the instantaneous field amplitude at evenly spaced positions. As the animation runs you can observe the wavefronts advancing to the right. </sup>
+
+
+---
+
+# Part II — Introduce the quantum physics idea
+Classical mechanics is insufficient at explaining microscopic phenomena because it assumes that particles have definite positions and trajectories.
+At atomic scales experiments reveal that matter exhibits wave behaviour and particle behaviours. 
+- Louis de Broglie predicted the wave nature of matter theoretically and won the 1929 Nobel Prize for it.
+- J. J. Thomson discovered the electron as a particle, while his son G. P. Thomson later demonstrated the electron's wave nature experimentally.
+  
+Moreover, the **Heisenberg uncertainty principle** say that we cannot know position and momentum at the same time.
+These phenomena cannot be fully described by classical mechanics, motivating the development of quantum mechanics.
+
+This make us ask an important question:
+>**If an electron behaves like a wave, what equation describes that wave?**
+
+### Schrödinger equation
+Conceptually, the Schrödinger equation is the quantum counterpart of Newton's second law in classical mechanics. 
+
+Given a set of known initial conditions, **Newton's second law** makes a mathematical prediction as to what path a given physical system will take over time. The Schrödinger equation gives the evolution over time of the wave function, the quantum-mechanical characterization of an isolated physical system. 
+
+
+
+---
+
+# Part III — Wave function
+
+## Overview
+
+The **wave function** $\Psi(\mathbf{r}, t)$ is the central object of quantum mechanics. It encodes the complete information about a quantum system.
+
+$\psi$ is not directly interpreted as matter density.
+Instead $|\psi(x,t)|^2 $ represents probability density.
+
+- $|\Psi(\mathbf{r}, t)|^2$ is the **probability density** — the chance of finding the particle in a small volume around $\mathbf{r}$ at time $t$.
+  
+Because the particle must be somewhere in space we need a physically valid wavefunction.
+- The wave function must be **normalised**: 
+$$
+\int_{-\infty}^{\infty}|\psi(x,t)|^2dx=1.
+$$
+
+- For a particle in a time-independent potential, the solutions split into **stationary states** (energy eigenstates) whose time dependence is a pure phase factor $e^{-iE_n t/\hbar}$.
+
+---
+
+### Quantum numbers
+
+For the hydrogen atom, each stationary state is labelled by three integers:
+
+| Symbol | Name | Range | Physical meaning |
+|--------|------|-------|------------------|
+| $n$ | Principal | $1, 2, 3, \ldots$ | Energy level; larger $n$  higher energy, larger orbital |
+| $l$ | Azimuthal (orbital) | $0 \le l < n$ | Magnitude of orbital angular momentum $L = \hbar\sqrt{l(l+1)}$ |
+| $m$ | Magnetic | $-l \le m \le l$ | $z$-component of angular momentum $L_z = m\hbar$ |
+
+The letters s, p, d, f correspond to $l = 0, 1, 2, 3$. The number of radial nodes (concentric shells of zero density) equals $n - l - 1$, and the number of angular nodes equals $l$.
+The magnetic number explain that these different solutions describe different angular states/orientations.
+
+> References: 
+> - [Quantum number](https://en.wikipedia.org/wiki/Quantum_number)
+>- [Azimuthal quantum number](https://en.wikipedia.org/wiki/Azimuthal_quantum_number)
+>- [Principal quantum number](https://en.wikipedia.org/wiki/Principal_quantum_number)
+
+---
+## Part IV — Introduce the Schrödinger equation
+
+$${\displaystyle i\hbar {\frac {d}{dt}}\vert \Psi (t)\rangle ={\hat {H}}\vert \Psi (t)\rangle }$$
+
+$\Psi$ is the **quantum state** of the system, (m) is non-relativistic particle mass, (V) describes potential energy and
+
+$$
+-\frac{\hbar^2}{2m}\nabla^2
+$$
+
+represents kinetic energy operator.
+
+We used to define the equation in **compact form** using the Hamiltonian:
+
+$$
+\hat H=
+-\frac{\hbar^2}{2m}\nabla^2+V.
+$$
+>The Hamiltonian determines how the quantum state evolves in time.
+
+The Hamiltonian is the quantum-mechanical counterpart of the total energy of a classical system. For a particle in a potential $E=T+V$, in quantum mechanics, position and momentum become operators.
+
+#### The full equation
+$$
+i\hbar\frac{\partial\Psi}{\partial t}=
+\left[
+-\frac{\hbar^2}{2m}\nabla^2
++
+V
+\right]\Psi = \hat H\Psi.
+$$
+
+
+
+
+### Eigenstates
+
+As discussed earlier for oscillating systems, **eigenstates play the role of natural modes of oscillation**. Each energy eigenstate evolves with a characteristic angular frequency determined by its eigenvalue
+
+$$\omega_n=\frac{E_n}{\hbar}.$$
+
+
+For energy eigenstate,
+$$\hat H\psi_n=E_n\psi_n.$$
+
+Therefore:
+
+* $\psi_n$ = allowed quantum state, is an **energy eigenstate**, an allowed stationary mode of the system
+* $E_n$ = is the **energy eigenvalue** associated with that state.
+  
+For the Schrödinger equation, the Hamiltonian ($\hat H$) has two central roles:
+- **Energy**: Its eigenvalues give the possible energies of the system, the energy eigenstates are the natural modes of quantum evolution, each with it's own characteristic frequency.
+- **Time evolution**:The Hamiltonian determines how the quantum state evolves in time in the Schrodinger equation.
+
+
+# Part VI — Introduction to atomic orbitals
+
+###  Introduce the quantum harmonic oscillator
+
+$$
+V(x)=\frac12m\omega^2x^2.
+$$
+
+Now insert it into Schrödinger's equation:
+
+$$
+-\frac{\hbar^2}{2m}
+\frac{d^2\psi}{dx^2}
++
+\frac12m\omega^2x^2\psi=
+E\psi.
+$$
+
+The oscillator studied classically is now treated quantum mechanically.
+
+---
+
+## Example: Quantum mechanics oscillator
+The harmonic oscillator, like the particle in a box, illustrates the generic feature of the Schrödinger equation that the energies of bound eigenstates are discretized, meaning that only certain states are possible.
+
+The classical plot shows a spring-mass system. Change its amplitude $A$ between $1.5$ and $3.0$ to see the size of the motion change.
+
+The quantum plot shows one energy eigenstate at a time. Its number of nodes equals the selected quantum number $n$.
+
+<QuantumHarmonicOscillator />
+
+---
+
+ the wavefunction is a field over space:
+
+$$
+\psi(x,y,z).
+$$
+
+with the Laplacian
+
+$$
+\nabla^2=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
++
+\frac{\partial^2}{\partial z^2}.
+$$
+
+Then
+
+$$
+-\frac{\hbar^2}{2m}\nabla^2\psi
++
+V\psi=
+E\psi.
+$$
+but atoms have approximately spherical symmetry.
+
+Therefore introduce spherical coordinates:
+
+$$
+(r,\theta,\phi).
+$$
+
+* ($r$): distance from nucleus,
+* ($\theta$): polar angle,
+* ($\phi$): azimuthal angle.
+  
+# Part VII — Hydrogen Orbitals Visualization
+
+### Hydrogen Atom Wavefunctions
+The wavefunction for a hydrogen atom in spherical coordinates is:
+
+$$\psi_{n,l,m}(r, \theta, \phi) = R_{n,l}(r) \cdot Y_l^m(\theta, \phi)$$
+
+Where:
+- $n$ = principal quantum number (1, 2, 3, 4, ...)
+- $l$ = angular momentum quantum number (0 ≤ l < n)
+- $m$ = magnetic quantum number (-l ≤ m ≤ l)
+- $R_{n,l}(r)$ = radial wavefunction
+- $Y_l^m(\theta, \phi)$ = spherical harmonics
+
+The spherical harmonics determine the angular structure of orbitals.
+### Radial Wavefunctions
+The radial wavefunctions are:
+
+$$R_{n,l}(r) = \sqrt{\left(\frac{2}{n a_0}\right)^3 \frac{(n-l-1)!}{2n(n+l)!}} e^{-\rho/2} \rho^l L_{n-l-1}^{2l+1}(\rho)$$
+
+Where:
+- $a_0$ = Bohr radius (≈ 0.529 Å, set to 1 in atomic units)
+- $\rho = \frac{2r}{n a_0}$ = dimensionless radius
+- $L_{n-l-1}^{2l+1}(\rho)$ = Associated Laguerre polynomial
+
+---
+#### Another way to write it
+
+$$
+R_{nl}(r)=
+\left(\frac{2}{na}\right)^2
+\sqrt{
+\frac{a}{4}
+\frac{(n-l-1)!}{[(n+1)!]^3}
+}
+\cdot
+F_{nl}\left(\frac{2r}{na}\right)
+$$
+
+with
+
+$$
+F_{nl}(x)=x^l e^{-x/2}(n+1)!L_{n-l-1}^{2l+1}(x).
+$$
+
+For the **2D plot**, you set (y=0), so
+
+$$
+r=\sqrt{x^2+z^2},
+
+\theta=\cos^{-1}\left(\frac{z}{r}\right),
+
+\phi=\operatorname{atan2}(0,x).
+$$
+
+Therefore, the plotted function is simply
+
+$$
+
+f(x,z)
+= R_{nl}!\left(\sqrt{x^2+z^2}\right)
+\left|
+Y_l^m\left(
+\cos^{-1}\frac{z}{\sqrt{x^2+z^2}},
+\operatorname{atan2}(0,x)
+\right)
+\right|
+
+$$
+
+with (a=1) $|\Psi| = |R\cdot Y|$ **not** $|\Psi|^2$  which would be the probability density.
+
+---
+
+### Radial nodes
+$$
+\text{radial nodes}=n-l-1.
+$$
+
+Show examples such as 1s, 2s, 2p, 3s, 3p and 3d.
+
+Explain that radial nodes appear as spherical surfaces at which the wavefunction becomes zero.
+
+### Angular nodes
+For example, (s) states have no angular node, (p) states have one, and (d) states have two.
+
+
+### Common Orbitals (in Cartesian coordinates)
+
+#### 1s orbital
+$$\psi_{1s}(x,y,z) = \frac{1}{\sqrt{\pi}} \cdot 2 \cdot e^{-2r}$$
+where $r = \sqrt{x^2 + y^2 + z^2}$
+
+#### 2s orbital
+$$\psi_{2s}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \left(2 - r\right) e^{-r/2}$$
+
+#### 2p orbitals
+$$\psi_{2p_x}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \cdot x \cdot e^{-r/2}$$
+$$\psi_{2p_y}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \cdot y \cdot e^{-r/2}$$
+$$\psi_{2p_z}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \cdot z \cdot e^{-r/2}$$
+
+#### 3s orbital
+$$\psi_{3s}(x,y,z) = \frac{1}{9\sqrt{3\pi}} \left(6 - 6r + r^2\right) e^{-r/3}$$
+
+#### 3d orbitals (examples)
+$$\psi_{3d_{z^2}}(x,y,z) = \frac{1}{9\sqrt{30\pi}} \left(3z^2 - r^2\right) e^{-r/3}$$
+$$\psi_{3d_{xy}}(x,y,z) = \frac{1}{9\sqrt{30\pi}} xy \cdot e^{-r/3}$$
+
+### Associated Laguerre Polynomials
+Used in radial wavefunctions:
+- $L_1^1(x) = 2 - x$
+- $L_1^3(x) = 4 - x$
+- $L_1^5(x) = 6 - x$
+- $L_2^1(x) = 6 - 6x + x^2/2$
+- $L_2^3(x) = 20 - 10x + x^2/2$
+- etc.
+
+### Explain the meaning of color in orbital diagrams
+
+Typical orbital visualizations use two colors to show the **sign or phase of (\psi)**.
+
+For example:
+
+$$
+\psi>0
+$$
+
+versus
+
+$$
+\psi<0.
+$$
+
+The colors usually do **not** mean positive and negative electric charge.
+
+
+### Plane of view
+The default view is now ∣ψ∣
+2
+ on the x−z plane, which is the convention that reproduces the symmetry pattern in your reference chart.
+
+# Implementation Strategy
+
+>TODO Describe the algorithms used.
+
+The visualization renders a **2D cross-section** of the orbital density in the $xz$-plane ($y = 0$) using an HTML Canvas and D3.
+
+
+### 2. Wavefunction evaluation per pixel
+For each $(x_i, z_j)$:
+- Compute $r = \sqrt{x^2 + z^2}$, $\theta = \arccos(z/r)$, $\phi = \operatorname{atan2}(0, x)$
+- Evaluate the radial part $R_{n,l}(r)$ via the generalised Laguerre polynomial $L_{n-l-1}^{2l+1}$
+- Evaluate $|Y_l^m(\theta, \phi)|$ via the associated Legendre polynomial $P_l^m$
+- Store $|\psi| = R_{n,l} \cdot |Y_l^m|$ (note: **amplitude**, not probability density $|\psi|^2$)
+
+### 3. Colour mapping
+- Find $\max|\psi|$ over the grid for normalisation
+- Apply the **Magma** perceptually-uniform colormap (D3): black $\to$ purple $\to$ orange $\to$ yellow represents low $\to$ high amplitude
+- Write RGB triplets directly into a `Canvas ImageData` buffer for O(1) per-pixel cost
+
+### 4. Interactive controls
+- React `useState` tracks $(n, l, m)$; any change triggers a full re-render
+- Cascading validation keeps $l < n$ and $|m| \le l$ automatically
+
+
+## Plot — Hydrogen orbital density (interactive)
+
+Use the selectors to choose the quantum numbers and explore how the orbital shape changes:
+
+<QuantumHydrogenOrbitals2D />
+
+## Interpreting the orbital plot
+
+Each image is a **heat-map of the wavefunction amplitude** $|\psi_{n,l,m}(x, 0, z)|$ on the $y = 0$ cross-section, rendered with the **Magma** colormap:
+
+| Colour | Meaning |
+|--------|---------|
+| Black / dark purple | Near-zero amplitude — the electron is essentially never found here |
+| Orange / bright yellow | High amplitude — most probable region for the electron |
+
+**What to look for when changing quantum numbers:**
+
+- **Increasing $n$** makes the orbital larger and adds more radial nodes (dark concentric rings). The number of radial nodes equals $n - l - 1$.
+- **Increasing $l$** at fixed $n$ removes radial nodes and adds angular nodes (angular dark bands). An $s$-orbital ($l=0$) is spherically symmetric; a $p$-orbital ($l=1$) has a nodal plane; a $d$-orbital ($l=2$) has two nodal surfaces.
+- **Increasing $|m|$** at fixed $l$ rotates the angular distribution, concentrating density away from the $z$-axis (the cross-section becomes more ring-like).
+
+> The plot shows $|\psi|$ rather than $|\psi|^2$: the amplitude emphasises the overall lobe structure while the probability density $|\psi|^2$ would sharpen the bright regions and further suppress the dark ones.

@@ -8,6 +8,8 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypeSlug from "rehype-slug";
 import { ReactElement } from "react";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const postsDirectory = join(process.cwd(), "src", "_posts");
 const componentsDir = join(process.cwd(), 'src', '_posts', '_components');
@@ -48,8 +50,9 @@ async function readMDXFile(filePath: string): Promise<{ metadata: MetadataBlog; 
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [remarkGfm,remarkMath],
         rehypePlugins: [
+          rehypeKatex,
           rehypeSlug,
           [rehypePrettyCode, { theme: 'github-dark' }],
           [rehypeAutolinkHeadings, {
