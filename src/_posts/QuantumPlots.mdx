@@ -45,7 +45,7 @@ The important conceptual point is that **a physical law gives us a differential 
 ---
 
 
-## Waves
+## Part II — What is a wave
 A wave describes how something varies from place to place and how that pattern evolves over time.
 >A wave is a pattern of oscillation that varies across space and time
 
@@ -56,7 +56,7 @@ y(x,t)=A\cos(kx-\omega t).
 $$
 <sup>Harmonic wave dependant to position and time</sup>
 
-if you choose one fixed position you obtain is a **harmonic oscillator in time**.So you can think of the wave as a spatially distributed collection of harmonic oscillations, with different phases at different positions.
+if you choose one fixed position you obtain is a **harmonic oscillator in time**. So you can think of the wave as a spatially distributed collection of harmonic oscillations, with different phases at different positions.
 
 ### **Quantum mechanics waves**
 In quantum mechanics, a wave function (or wavefunction) is a mathematical description of the quantum state of an isolated quantum system. 
@@ -88,7 +88,7 @@ $$
 
 ---
 
-# Part II — Introduce the quantum physics idea
+# Part III — Introduce the quantum physics idea
 Classical mechanics is insufficient at explaining microscopic phenomena because it assumes that particles have definite positions and trajectories.
 At atomic scales experiments reveal that matter exhibits wave behaviour and particle behaviours. 
 - Louis de Broglie predicted the wave nature of matter theoretically and won the 1929 Nobel Prize for it.
@@ -109,9 +109,7 @@ Given a set of known initial conditions, **Newton's second law** makes a mathema
 
 ---
 
-# Part III — Wave function
-
-## Overview
+# Part IV — Wave function
 
 The **wave function** $\Psi(\mathbf{r}, t)$ is the central object of quantum mechanics. It encodes the complete information about a quantum system.
 
@@ -149,7 +147,7 @@ The magnetic number explain that these different solutions describe different an
 >- [Principal quantum number](https://en.wikipedia.org/wiki/Principal_quantum_number)
 
 ---
-## Part IV — Introduce the Schrödinger equation
+## Part V — Introduce the Schrödinger equation
 
 $${\displaystyle i\hbar {\frac {d}{dt}}\vert \Psi (t)\rangle ={\hat {H}}\vert \Psi (t)\rangle }$$
 
@@ -236,8 +234,18 @@ The quantum plot shows one energy eigenstate at a time. Its number of nodes equa
 <QuantumHarmonicOscillator />
 
 ---
+  
+# Part VII — Hydrogen Orbitals Visualization
 
- the wavefunction is a field over space:
+### Spherical Coordinates
+$$
+-\frac{\hbar^2}{2m}\nabla^2\psi
++
+V\psi=
+E\psi.
+$$
+
+the wavefunction is a field over space:
 
 $$
 \psi(x,y,z).
@@ -254,14 +262,7 @@ $$
 \frac{\partial^2}{\partial z^2}.
 $$
 
-Then
 
-$$
--\frac{\hbar^2}{2m}\nabla^2\psi
-+
-V\psi=
-E\psi.
-$$
 but atoms have approximately spherical symmetry.
 
 Therefore introduce spherical coordinates:
@@ -273,8 +274,6 @@ $$
 * ($r$): distance from nucleus,
 * ($\theta$): polar angle,
 * ($\phi$): azimuthal angle.
-  
-# Part VII — Hydrogen Orbitals Visualization
 
 ### Hydrogen Atom Wavefunctions
 The wavefunction for a hydrogen atom in spherical coordinates is:
@@ -353,16 +352,15 @@ $$
 \text{radial nodes}=n-l-1.
 $$
 
-Show examples such as 1s, 2s, 2p, 3s, 3p and 3d.
+Radial nodes appear as spherical surfaces at which the wavefunction becomes zero.
 
-Explain that radial nodes appear as spherical surfaces at which the wavefunction becomes zero.
 
 ### Angular nodes
 For example, (s) states have no angular node, (p) states have one, and (d) states have two.
 
 
 ### Common Orbitals (in Cartesian coordinates)
-
+New we show examples such as 1s, 2s, 2p, 3s, 3p and 3d.
 #### 1s orbital
 $$\psi_{1s}(x,y,z) = \frac{1}{\sqrt{\pi}} \cdot 2 \cdot e^{-2r}$$
 where $r = \sqrt{x^2 + y^2 + z^2}$
@@ -372,14 +370,17 @@ $$\psi_{2s}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \left(2 - r\right) e^{-r/2}$$
 
 #### 2p orbitals
 $$\psi_{2p_x}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \cdot x \cdot e^{-r/2}$$
+
 $$\psi_{2p_y}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \cdot y \cdot e^{-r/2}$$
+
 $$\psi_{2p_z}(x,y,z) = \frac{1}{2\sqrt{2\pi}} \cdot z \cdot e^{-r/2}$$
 
 #### 3s orbital
 $$\psi_{3s}(x,y,z) = \frac{1}{9\sqrt{3\pi}} \left(6 - 6r + r^2\right) e^{-r/3}$$
 
-#### 3d orbitals (examples)
+#### 3d orbitals
 $$\psi_{3d_{z^2}}(x,y,z) = \frac{1}{9\sqrt{30\pi}} \left(3z^2 - r^2\right) e^{-r/3}$$
+
 $$\psi_{3d_{xy}}(x,y,z) = \frac{1}{9\sqrt{30\pi}} xy \cdot e^{-r/3}$$
 
 ### Associated Laguerre Polynomials
@@ -393,19 +394,8 @@ Used in radial wavefunctions:
 
 ### Explain the meaning of color in orbital diagrams
 
-Typical orbital visualizations use two colors to show the **sign or phase of (\psi)**.
-
-For example:
-
-$$
-\psi>0
-$$
-
-versus
-
-$$
-\psi<0.
-$$
+Typical orbital visualizations use two colors to show the **sign or phase of ($\psi$)**.
+For $\psi>0$ versus $\psi<0 $
 
 The colors usually do **not** mean positive and negative electric charge.
 
@@ -417,26 +407,27 @@ The default view is now ∣ψ∣
 
 # Implementation Strategy
 
->TODO Describe the algorithms used.
+The visualization samples the probability density $|\psi_{nlm}|^2$ on a grid in the $xz$-plane, with $y=0$. 
 
-The visualization renders a **2D cross-section** of the orbital density in the $xz$-plane ($y = 0$) using an HTML Canvas and D3.
+### 1. Radial and angular functions
+The radial function is evaluated for the hydrogen atom. The generalised Laguerre polynomial $L_{n-l-1}^{2l+1}(\rho)$ is computed with its recurrence relation, avoiding a separate polynomial expansion.
 
+The angular term uses the associated Legendre polynomial $P_l^m(\cos\theta)$, also evaluated recursively, and the real and imaginary parts of the spherical harmonic $Y_l^m(\theta,\phi)$. This supports the complex phase of orbitals with $m > 0$.
 
 ### 2. Wavefunction evaluation per pixel
-For each $(x_i, z_j)$:
-- Compute $r = \sqrt{x^2 + z^2}$, $\theta = \arccos(z/r)$, $\phi = \operatorname{atan2}(0, x)$
-- Evaluate the radial part $R_{n,l}(r)$ via the generalised Laguerre polynomial $L_{n-l-1}^{2l+1}$
-- Evaluate $|Y_l^m(\theta, \phi)|$ via the associated Legendre polynomial $P_l^m$
-- Store $|\psi| = R_{n,l} \cdot |Y_l^m|$ (note: **amplitude**, not probability density $|\psi|^2$)
+For each grid position $(x_i, z_j)$, the algorithm computes $r$, $\theta$, and $\phi$, evaluates $\psi_{nlm}(x_i,0,z_j)$, then stores its density:
 
-### 3. Colour mapping
-- Find $\max|\psi|$ over the grid for normalisation
-- Apply the **Magma** perceptually-uniform colormap (D3): black $\to$ purple $\to$ orange $\to$ yellow represents low $\to$ high amplitude
-- Write RGB triplets directly into a `Canvas ImageData` buffer for O(1) per-pixel cost
+$$
+|\psi|^2 = \operatorname{Re}(\psi)^2 + \operatorname{Im}(\psi)^2.
+$$
+
+The maximum density on the grid is retained during this same pass for normalisation.
+
+### 3. Colour mapping and contours
+Each density value is divided by the grid maximum, then raised to the power $0.34$ to reveal low-density structure. 
 
 ### 4. Interactive controls
-- React `useState` tracks $(n, l, m)$; any change triggers a full re-render
-- Cascading validation keeps $l < n$ and $|m| \le l$ automatically
+React state stores $(n,l,m)$ and the view radius. Any state change recomputes the density grid. Changing $n$ or $l$ constrains the remaining quantum numbers so that $0 \le l < n$ and $0 \le m \le l$; the automatic view radius also grows approximately with $n^2$.
 
 
 ## Plot — Hydrogen orbital density (interactive)
