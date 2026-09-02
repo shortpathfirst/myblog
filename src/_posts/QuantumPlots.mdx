@@ -1,5 +1,5 @@
 ---
-title: "Understanding Complex Concepts With Visualizations"
+title: "Visualizing Quantum Waves"
 date: "2026-08-15"
 description: "A post about how to learn mathematical concepts through visualization"
 imageUrl: "/myblog/postimages/quantumplots/thumbnail.png"
@@ -9,7 +9,7 @@ tags: [
 ]
 ---
 
-# Understanding Complex Concepts With Visualizations
+# Visualizing Quantum Waves
 
 ## Introduction
 In this post 
@@ -347,18 +347,6 @@ with (a=1) $|\Psi| = |R\cdot Y|$ **not** $|\Psi|^2$  which would be the probabil
 
 ---
 
-### Radial nodes
-$$
-\text{radial nodes}=n-l-1.
-$$
-
-Radial nodes appear as spherical surfaces at which the wavefunction becomes zero.
-
-
-### Angular nodes
-For example, (s) states have no angular node, (p) states have one, and (d) states have two.
-
-
 ### Common Orbitals (in Cartesian coordinates)
 New we show examples such as 1s, 2s, 2p, 3s, 3p and 3d.
 #### 1s orbital
@@ -383,27 +371,6 @@ $$\psi_{3d_{z^2}}(x,y,z) = \frac{1}{9\sqrt{30\pi}} \left(3z^2 - r^2\right) e^{-r
 
 $$\psi_{3d_{xy}}(x,y,z) = \frac{1}{9\sqrt{30\pi}} xy \cdot e^{-r/3}$$
 
-### Associated Laguerre Polynomials
-Used in radial wavefunctions:
-- $L_1^1(x) = 2 - x$
-- $L_1^3(x) = 4 - x$
-- $L_1^5(x) = 6 - x$
-- $L_2^1(x) = 6 - 6x + x^2/2$
-- $L_2^3(x) = 20 - 10x + x^2/2$
-- etc.
-
-### Explain the meaning of color in orbital diagrams
-
-Typical orbital visualizations use two colors to show the **sign or phase of ($\psi$)**.
-For $\psi>0$ versus $\psi<0 $
-
-The colors usually do **not** mean positive and negative electric charge.
-
-
-### Plane of view
-The default view is now ∣ψ∣
-2
- on the x−z plane, which is the convention that reproduces the symmetry pattern in your reference chart.
 
 # Implementation Strategy
 
@@ -438,7 +405,10 @@ Use the selectors to choose the quantum numbers and explore how the orbital shap
 
 ## Interpreting the orbital plot
 
+
 Each image is a **heat-map of the wavefunction amplitude** $|\psi_{n,l,m}(x, 0, z)|$ on the $y = 0$ cross-section, rendered with the **Magma** colormap:
+The **default view** is now on the x−z plane, which is the convention that reproduces the symmetry pattern in your reference chart.
+
 
 | Colour | Meaning |
 |--------|---------|
@@ -452,3 +422,7 @@ Each image is a **heat-map of the wavefunction amplitude** $|\psi_{n,l,m}(x, 0, 
 - **Increasing $|m|$** at fixed $l$ rotates the angular distribution, concentrating density away from the $z$-axis (the cross-section becomes more ring-like).
 
 > The plot shows $|\psi|$ rather than $|\psi|^2$: the amplitude emphasises the overall lobe structure while the probability density $|\psi|^2$ would sharpen the bright regions and further suppress the dark ones.
+
+> Typical orbital visualizations use two colors to show the **sign or phase of ($\psi$)**.
+The colors usually do **not** mean positive and negative electric charge.
+

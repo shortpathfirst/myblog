@@ -97,6 +97,7 @@
 .herotitle {
     position: relative;
     width: 100%;
+    box-sizing: border-box;
     min-height: clamp(11rem, 24vw, 17rem);
     padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 4rem);
     display: flex;
@@ -117,6 +118,7 @@
     position: relative;
     z-index: 1;
     width: min(100%, 26rem);
+    max-width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 0.5rem;
@@ -125,6 +127,8 @@
 
 .herotitle h1 {
     position: relative;
+    width: 100%;
+    min-width: 0;
     color: #588ef3;
     font-size: clamp(1.75rem, 6vw, 3rem);
     line-height: 1.15;
@@ -165,7 +169,7 @@
     .herotitle {
         flex-direction: column;
         min-height: 0;
-        padding: 1.25rem 1rem;
+        padding: 0.75rem 0.5rem;
         gap: 1rem;
     }
 
