@@ -11,12 +11,22 @@ const BlogPageHeader = ({ data }: { data: MetadataBlog }) => {
         <section className={styles.headerSection}>
             <div className={styles.herotitle}>
                 <Image
+                    className={styles.heroBackground}
                     src={pastelabstract}
                     alt="Hero Background"
                     fill
                     priority
-                    style={{ objectFit: 'cover' }}
                 />
+                {data.imageUrl && (
+                    <Image
+                        className={styles.postImage}
+                        src={data.imageUrl}
+                        alt={data.title}
+                        width={720}
+                        height={405}
+                        priority
+                    />
+                )}
                 <h1>{data.title}</h1>
             </div>
 

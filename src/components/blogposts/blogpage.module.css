@@ -75,6 +75,7 @@
 /* Blog header */
 .headerSection {
     background-color: rgb(238, 245, 254);
+    overflow: hidden;
 }
 
 .date {
@@ -84,29 +85,55 @@
 }
 
 .description {
-    margin: 0 1rem;
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 1.25rem clamp(1rem, 4vw, 3rem);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 
 .herotitle {
     position: relative;
     width: 100%;
-    height: 200px;
+    min-height: clamp(11rem, 24vw, 17rem);
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 4rem);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
     text-align: center;
+    overflow: hidden;
+}
+
+.heroBackground {
+    object-fit: cover;
+    opacity: 0.65;
+}
+
+.postImage {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 26rem);
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(31, 41, 55, 0.2);
 }
 
 .herotitle h1 {
+    position: relative;
     color: #588ef3;
-    font-size: 3rem;
+    font-size: clamp(1.75rem, 6vw, 3rem);
+    line-height: 1.15;
     font-weight: bold;
-    padding: 0 1rem;
-    max-width: 90%;
+    padding: 0;
+    margin: 0;
+    max-width: min(100%, 56rem);
     z-index: 1;
+    overflow-wrap: anywhere;
 }
 
 .taglist {
@@ -132,6 +159,24 @@
     width: 1.125rem;
     height: 1.125rem;
     margin-right: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .herotitle {
+        flex-direction: column;
+        min-height: 0;
+        padding: 1.25rem 1rem;
+        gap: 1rem;
+    }
+
+    .description {
+        flex-direction: column;
+    }
+
+    .postImage {
+        flex-basis: auto;
+        width: min(100%, 26rem);
+    }
 }
 
 /* Blog news */
