@@ -1,13 +1,11 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
     --background: #fafafa;
     --foreground: #171717;
-    --font-family-base: 'Geist', 'Arial', sans-serif;
-    --font-family-roboto: 'Roboto', 'Arial', sans-serif;
-    --font-family-monospace: 'Geist Mono', 'Courier New', monospace;
-
+    --font-family-base: var(--font-geist-sans), 'Arial', sans-serif;
+    --font-family-roboto: var(--font-roboto), 'Roboto', 'Arial', sans-serif;
+    --font-family-monospace: var(--font-geist-mono), 'Courier New', monospace;
 }
 
 body {

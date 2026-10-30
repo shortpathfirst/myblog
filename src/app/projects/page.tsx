@@ -2,7 +2,7 @@
 import React from 'react'
 import BlogPostCard from '@/components/blogposts/blogpostcard';
 import { getProjectsData, } from '@/lib/projects';
-import styles from './page.module.css'
+import styles from '@/components/blogposts/blogpage.module.css'
 import PageHeader from '@/components/header/pageHeader';
 import { Metadata } from 'next';
 import { ProjectsInfo } from '@/lib/interfaces';
@@ -18,7 +18,7 @@ const Projects = () => {
     const projectsData: ProjectsInfo[] = getProjectsData();
 
     return (
-        <section className='container'>
+        <section className={styles.pageSection}>
             <PageHeader
                 backgroundImage={projectabstract}
                 spanColor='#cd3232'>

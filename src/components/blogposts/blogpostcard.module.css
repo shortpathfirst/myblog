@@ -1,0 +1,58 @@
+/*  Cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 0;
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(174, 238, 222, 1) 0%, rgba(150, 192, 255, 1) 100%);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+}
+
+.cardImg {
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
+    background-color: #fff;
+    height: auto;
+    border-radius: 6px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cardTitle {
+    padding: 0;
+}
+
+.cardTitle>h2 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin: 1.2rem 0;
+    font-weight: 700;
+    color: var(--card-title-color, #043fad);
+
+}
+
+.cardDescription>p {
+    margin: 0 0 0.75rem;
+    color: #4B5563;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
+    /* Set the number of lines */
+    -webkit-box-orient: vertical;
+
+}

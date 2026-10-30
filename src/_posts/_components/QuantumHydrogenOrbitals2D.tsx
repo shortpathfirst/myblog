@@ -2,8 +2,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import * as d3 from 'd3';
 
-// ── Math helpers (ψ_nlm on the x–z plane, mirrors the reference HTML) ───────
-
 function factorial(n: number): number {
   let v = 1;
   for (let k = 2; k <= n; k++) v *= k;

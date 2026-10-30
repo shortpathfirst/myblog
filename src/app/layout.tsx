@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "@/styles/globals.css";
 import "katex/dist/katex.min.css";
 import { Navbar } from "@/components/navbar/Navbar";
@@ -14,6 +14,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -45,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable}`}>
+      <body>
         <div style={{ "display": "flex", "flexDirection": "column", "minHeight": "100svh" }}>
           <Navbar></Navbar>
           <main style={{ "flex": 1, scrollPaddingTop: '80px', }}>

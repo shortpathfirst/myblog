@@ -1,10 +1,12 @@
 
 import React, { CSSProperties } from 'react'
-import styles from './blogpage.module.css'
+import styles from './blogpostcard.module.css'
 import Image from 'next/image';
 import { Tag } from '@/lib/interfaces';
 import Link from 'next/link';
 import { TechIcons } from '../techIcons/techIcons';
+
+type CardStyle = "post" | "project"
 
 type CardProps = {
 	imageSrc: string;
@@ -12,21 +14,28 @@ type CardProps = {
 	description?: string;
 	href: string;
 	tags: Tag[];
-	cardStyle?: "post" | "project"
+	cardStyle?: CardStyle;
 }
+
+const CARD_THEMES: Record<CardStyle, { background: string; titleColor: string }> = {
+	post: {
+		background: "radial-gradient(circle, rgba(174, 238, 222, 0.4) 0%, rgba(150, 192, 255, 0.4) 100%)",
+		titleColor: "#043fad",
+	},
+	project: {
+		background: "radial-gradient(circle,rgba(219, 153, 81, 0.4) 0%, rgba(222, 115, 115, 0.4) 100%)",
+		titleColor: "#a51010",
+	},
+}
+
 const BlogPostCard = ({ imageSrc, title, href, description, tags, cardStyle = "post" }: CardProps) => {
-	const backgroundPosts: CSSProperties = {
-		"background": "radial-gradient(circle, rgba(174, 238, 222, 0.4) 0%, rgba(150, 192, 255, 0.4) 100%)"
-	}
-	const backgroundProject = {
-		"background": "radial-gradient(circle,rgba(219, 153, 81, 0.4) 0%, rgba(222, 115, 115, 0.4) 100%)"
-	}
-	const background = cardStyle === "project" ? backgroundProject : backgroundPosts
+	const { background, titleColor } = CARD_THEMES[cardStyle]
+	const cardCssVars = { background, "--card-title-color": titleColor } as CSSProperties
 
 	return (
 		<Link href={href}
 			className={styles.card}
-			style={background}
+			style={cardCssVars}
 			rel="noopener noreferrer"
 		//    target="_blank"
 		>

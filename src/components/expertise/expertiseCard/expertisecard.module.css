@@ -52,7 +52,6 @@
 
 .description {
   color: #4B5563;
-  font-size: clamp(0.85rem, 0.8vw + 0.6rem, 1rem);
   line-height: 1.5;
   flex-grow: 1;
 }

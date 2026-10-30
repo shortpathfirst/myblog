@@ -18,7 +18,7 @@ const Page = async () => {
 
     return (
         // <ViewTransition>
-        <section className='container'>
+        <section className={styles.pageSection}>
             <PageHeader
                 backgroundImage={blogabstract}
                 spanColor='#588ef3'>
