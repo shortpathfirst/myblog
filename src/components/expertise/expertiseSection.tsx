@@ -54,7 +54,7 @@ function ExpertiseSection() {
                                 className={styles.logo}
                                 height={50}
                                 width={50}
-                                src={getAssetPath(service.url) || filesvg}
+                                src={(service.url) || filesvg}
                                 alt={service.name}
                             />
                         }
