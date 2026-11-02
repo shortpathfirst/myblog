@@ -11,16 +11,116 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     width: 90%;
+    margin-top: 1.5rem;
 }
 
+.cardsTitle {
+    width: 90%;
+    max-width: 1100px;
+    margin: 2rem 0 0;
+    color: #141458;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
 
 .logo {
     -webkit-user-drag: none;
     filter: invert(62%) sepia(42%) saturate(5570%) hue-rotate(204deg) brightness(107%) contrast(85%);
 }
 
+.expertiseTable {
+    width: 90%;
+    max-width: 1100px;
+    table-layout: fixed;
+    border: 1px solid #c8d8eb;
+    border-radius: 0.75rem;
+    border-spacing: 0;
+    overflow: hidden;
+    background: #f3f7fc;
+    color: #4b5563;
+    line-height: 1.6;
+}
 
-@media screen and (max-width:350px) {
+.expertiseTable th,
+.expertiseTable td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.expertiseTable th {
+    border-bottom: 1px solid #c8d8eb;
+    background: #dfeaf8;
+    color: #141458;
+    font-size: clamp(1.15rem, 1vw + 0.8rem, 1.5rem);
+}
+
+.expertiseTable th + th,
+.expertiseTable td + td {
+    border-left: 1px solid #c8d8eb;
+}
+
+.expertiseTable ul {
+    margin: 1rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.expertiseTable li + li {
+    margin-top: 0.5rem;
+}
+
+.intro {
+    margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .expertiseTable {
+        width: 90%;
+    }
+
+    .expertiseTable thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .expertiseTable tbody,
+    .expertiseTable tr {
+        display: block;
+        width: 100%;
+    }
+
+    .expertiseTable tbody {
+        display: grid;
+        width: 100%;
+    }
+
+    .expertiseTable td {
+        display: block;
+        padding: 1rem;
+    }
+
+    .expertiseTable td + td {
+        border-top: 1px solid #c8d8eb;
+        border-left: 0;
+    }
+
+    .expertiseTable td::before {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #141458;
+        font-size: 1.2rem;
+        font-weight: 600;
+        content: attr(data-label);
+    }
+}
+
+@media screen and (max-width: 350px) {
     .gridWrapper {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }

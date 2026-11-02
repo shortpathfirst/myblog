@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from './header.module.css'
-import Title from './title'
 
-const TitleBand = ({children}:{children:string}) => {
+const TitleBand = ({ children }: { children: string }) => {
     return (
         <div className={styles.titleBand}>
-            <Title>{children}</Title>
+            <h1 className={`${styles.h1Title} ${styles.gradientTitle}`}>
+                {children}
+            </h1>
         </div>
     )
 }

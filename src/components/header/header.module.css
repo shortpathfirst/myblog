@@ -36,5 +36,13 @@
     overflow: hidden;
     width: 100%;
     vertical-align: middle;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
+}
+
+.gradientTitle {
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #6c63ff, #4ea3f1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
